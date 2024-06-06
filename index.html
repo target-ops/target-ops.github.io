@@ -6,7 +6,13 @@
     <meta name="robots" content="noindex"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      body { text-align: center; padding: 20px; font: 20px Helvetica, sans-serif; color: #efe8e8; }
+      body { 
+        text-align: center; 
+        padding: 20px; 
+        font: 20px Helvetica, sans-serif; 
+        color: #efe8e8; 
+        background-color: #2e2929; 
+      }
       @media (min-width: 768px){
         body{ padding-top: 150px; }
       }
@@ -16,13 +22,12 @@
       a:hover { color: #efe8e8; text-decoration: none; }
     </style>
   </head>
-  <body bgcolor="2e2929">
+  <body>
     <article>
-        <h1>We&rsquo;ll be back soon!</h1>
+        <h1>We&rsquo;ll be bootstrapping soon!</h1>
         <div>
-            <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
+            <p>We&rsquo;re boosting some pure problem solvers solutions at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be crusing shortly!</p>
             <p>&mdash; The Team</p>
-            
         </div>
         <div style="display: flex; flex-direction: row; justify-content: space-between;">
             <p class="day"></p>
@@ -30,10 +35,14 @@
             <p class="minute"></p>
             <p class="second"></p>
         </div>
+          <!-- Your existing code... -->
+          <div>
+              <img src="https://media.licdn.com/dms/image/D4E10AQF5b0fXurnlrg/image-shrink_800/0/1697180430175?e=1718262000&v=beta&t=vczYoSyGoL-IoJNwz-qzg_IklKEjqAbY9V4y7rahN3M" alt="Funny DevOps GIF">
+          </div>
     </article>
     <script>
         const countDown = () => {
-            const countDay = new Date('December 28, 2024 00:00:00');
+            const countDay = new Date('August 1, 2024 00:00:00');
             const now = new Date();
             const counter = countDay - now;
             const second = 1000;
