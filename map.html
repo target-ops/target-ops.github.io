@@ -5,13 +5,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/sigma.min.js"></script>
     <style>
         #container {
-            max-width: 1200px;
-            height: 800px;
+            max-width: 800px;
+            height: 600px;
             margin: auto;
             border: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         #info {
             position: absolute;
@@ -44,11 +41,11 @@
             container: 'container',
             settings: {
                 defaultLabelColor: '#000',
-                defaultLabelSize: 25,
+                defaultLabelSize: 14,
                 defaultLabelBGColor: '#ddd',
                 defaultHoverLabelBGColor: '#002147',
                 defaultLabelHoverColor: '#fff',
-                labelThreshold: 0,
+                labelThreshold: 6,
                 defaultEdgeType: 'arrow'
             }
         });
@@ -64,7 +61,7 @@
                     label: 'target-ops',
                     x: 0.5,
                     y: 0.5,
-                    size: 10,
+                    size: 2,
                     color: '#000'
                 });
 
@@ -74,7 +71,7 @@
                         label: repo.name,
                         x: Math.random(),
                         y: Math.random(),
-                        size: 5,
+                        size: 1,
                         color: '#69b3a2'
                     });
 
@@ -89,13 +86,9 @@
                 s.refresh();
             });
 
-            s.bind('clickNode', function(e) {
-    if (e.data.node.id === 'n0') {
-        window.open('https://target-ops.github.io/', '_blank');
-    } else {
-        window.open('https://github.com/target-ops/' + e.data.node.label, '_blank');
-    }
-});
+        s.bind('clickNode', function(e) {
+            window.open('https://github.com/target-ops/' + e.data.node.label, '_blank');
+        });
 
         s.bind('overNode', function(e) {
             info.style.display = 'block';
@@ -118,3 +111,6 @@
     </script>
 </body>
 </html>
+
+
+
