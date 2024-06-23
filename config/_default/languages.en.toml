@@ -1,0 +1,25 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Target Ops"
+
+[params]
+  displayName = "English"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+#  logo = "TargetOpsLogoNOBG.png"
+  description = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
+
+[author]
+  name = "Target Ops"
+  image = "TargetOpsLogoWhiteBG.png"
+  headline = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
+  bio = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
+  links = [
+    { github = "https://github.com/target-ops" },
+    { slack = "https://github.com/target-ops" },
+  ]
+
+
+  
