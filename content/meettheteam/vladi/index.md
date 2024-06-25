@@ -2,10 +2,9 @@
 title: "Vladi"
 weight: 2
 draft: false
-slug: "meettheteam"
+slug: "vladi"
 tags: ["Team"]
 series_order: 3
 ---
-### Vladi
-
+### About Vladi
 ---
