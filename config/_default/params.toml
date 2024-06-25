@@ -13,7 +13,7 @@ autoSwitchAppearance = false
 enableSearch = true
 enableCodeCopy = true
 
-mainSections = ["docs"]
+mainSections = ["solution"]
 # robots = ""
 
 disableImageOptimization = false
@@ -38,10 +38,10 @@ smartTOCHideUnfocusedChildren = false
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "pawel.png" # used in: hero, and card
-  #homepageImage = "background.svg" # used in: hero, and card
+  #homepageImage = "pawel.png" # used in: hero, and card
+  homepageImage = "background.svg" # used in: hero, and card
   showRecent = true
-  showRecentItems = 3
+  showRecentItems = 2
   showMoreLink = true
   showMoreLinkDest = "solution"
   cardView = true
