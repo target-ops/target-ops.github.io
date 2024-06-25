@@ -13,7 +13,7 @@ title = ""
 
 [author]
   name = "Target Ops"
-  image = "TargetOpsLogoWhiteBG.png"
+  image = "targetOpsBlackNOBG-FULL.png"
   headline = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
   bio = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
   links = [
@@ -21,6 +21,3 @@ title = ""
     { slack = "https://join.slack.com/t/target-ops/shared_invite/zt-2kxdr9djp-YoQSCoRzARa9psxO8aYoaQ" },
     { dev = "https://app.daily.dev/squads/targetops" },
   ]
-
-
-  
