@@ -1,14 +1,14 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Target Ops"
+title = ""
 
 [params]
   displayName = "English"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-#  logo = "TargetOpsLogoNOBG.png"
+  logo = "targetOpsBlackNOBG.png"
   description = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
 
 [author]
