@@ -2,10 +2,9 @@
 title: "Hagay"
 weight: 5
 draft: false
-slug: "meettheteam"
+slug: "Hagay"
 tags: ["Team"]
 series_order: 3
 ---
-### Hagay
-
+### About Hagay
 ---

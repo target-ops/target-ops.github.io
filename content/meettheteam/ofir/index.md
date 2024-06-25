@@ -2,10 +2,9 @@
 title: "Ofir"
 weight: 1
 draft: false
-slug: "meettheteam"
+slug: "ofir"
 tags: ["Team"]
 series_order: 3
 ---
-### Ofir
-
+### About Ofir
 ---
