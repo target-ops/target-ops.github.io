@@ -7,5 +7,4 @@ tags: ["Team"]
 series_order: 3
 ---
 ### About Ofir
-
 ---
