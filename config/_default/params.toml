@@ -11,7 +11,7 @@ defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = false
 
 enableSearch = true
-enableCodeCopy = true
+enableCodeCopy = false
 
 mainSections = ["solution"]
 # robots = ""
@@ -32,17 +32,17 @@ smartTOCHideUnfocusedChildren = false
 [footer]
   showMenu = true
   showCopyright = true
-  showThemeAttribution = true
-  showAppearanceSwitcher = true
+  showThemeAttribution = false
+  showAppearanceSwitcher = false
   showScrollToTop = true
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  #homepageImage = "pawel.png" # used in: hero, and card
-  homepageImage = "background.svg" # used in: hero, and card
+  homepageImage = "pawel.png" # used in: hero, and card
+  # homepageImage = "background.svg" # used in: hero, and card
   showRecent = true
   showRecentItems = 2
-  showMoreLink = true
+  showMoreLink = false
   showMoreLinkDest = "solution"
   cardView = true
   cardViewScreenWidth = false

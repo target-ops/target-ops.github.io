@@ -19,5 +19,6 @@ title = ""
   links = [
     { github = "https://github.com/target-ops" },
     { slack = "https://join.slack.com/t/target-ops/shared_invite/zt-2kxdr9djp-YoQSCoRzARa9psxO8aYoaQ" },
+    { patreon = "https://www.patreon.com/target_ops"},
     { dev = "https://app.daily.dev/squads/targetops" },
   ]
