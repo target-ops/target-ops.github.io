@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
-baseURL = "https://localhost:1313"
+baseURL = "https://target-ops.is-cool.dev"
 defaultContentLanguage = "en"
 disableLanguages = [] #to allow translation work requiring shipping to production
 
@@ -23,6 +23,9 @@ googleAnalytics = "G-PEDMYR1V0K"
 
 [imaging]
   anchor = 'Center'
+
+[minify]
+  minifyOutput = false
 
 [taxonomies]
   tag = "tags"
