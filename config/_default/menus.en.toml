@@ -20,50 +20,12 @@
   pageRef = "solution"
   weight = 15
 
-# [[main]]
-#  name = "Shortcodes"
-#  pageRef = "docs/shortcodes"
-#  weight = 15
-
-#[[main]]
-#  name = "Examples"
-#  weight = 20
-
-#[[main]]
-#  name = "Samples"
-#  parent = "Examples"
-#  pageRef = "samples"
-#  weight = 16
-
-#[[main]]
-#  name = "Showcase"
-#  parent = "Examples"
-#  pageRef = "examples"
-#  weight = 30
-
-#[[main]]
-#  name = "Recipes"
-#  parent = "Examples"
-#  pageRef = "guides"
-#  weight = 40
 
 [[main]]
   name = "Team's"
   pageRef = "meettheteam"
   weight = 90
 
-
-#[[main]]
-#  name = "Test"
-#  pageRef = "pagTest"
-#  weight = 1000
-
-
-#[[main]]
-#  identifier = "mastodon"
-#  pre = "mastodon"
-#  weight = 300
-#  url = "https://masto.ai/@blowfish"
 
 [[main]]
   identifier = "github"
@@ -80,8 +42,3 @@
    name = "Tags"
    pageRef = "tags"
    weight = 10
-
-# [[footer]]
-#   name = "Authors"
-#   pageRef = "authors"
-#   weight = 20

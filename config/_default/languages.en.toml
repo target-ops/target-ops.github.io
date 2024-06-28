@@ -8,12 +8,12 @@ title = ""
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  logo = "targetOpsBlackNOBG.png"
+  logo = "targetOpsBlackNOBG.webp"
   description = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
 
 [author]
   name = "Target Ops"
-  image = "targetOpsBlackNOBG-FULL.png"
+  image = "targetOpsBlackNOBG-FULL.webp"
   headline = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
   bio = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
   links = [

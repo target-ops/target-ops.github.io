@@ -19,15 +19,15 @@ mainSections = ["solution"]
 disableImageOptimization = false
 disableTextInHeader = false
 
-defaultBackgroundImage = "/img/pawel.png"
-# defaultFeaturedImage = "/img/featured.svg"
+defaultBackgroundImage = "pawel.webp"
+# defaultFeaturedImage = "pawel.webp"
 
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
 
 [header]
-  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed-gradient" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true
@@ -38,7 +38,7 @@ smartTOCHideUnfocusedChildren = false
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "pawel.png" # used in: hero, and card
+  # homepageImage = "pawel.webp" # used in: hero, and card
   # homepageImage = "background.svg" # used in: hero, and card
   showRecent = true
   showRecentItems = 2
@@ -46,7 +46,7 @@ smartTOCHideUnfocusedChildren = false
   showMoreLinkDest = "solution"
   cardView = true
   cardViewScreenWidth = false
-  layoutBackgroundBlur = true # only used when layout equals background
+  layoutBackgroundBlur = false # only used when layout equals background
 
 [article]
   showDate = false
@@ -58,7 +58,7 @@ smartTOCHideUnfocusedChildren = false
   # showAuthorBottom = false
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  layoutBackgroundBlur = true # only used when heroStyle equals background
+  layoutBackgroundBlur = false # only used when heroStyle equals background
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
@@ -69,7 +69,7 @@ smartTOCHideUnfocusedChildren = false
   showPagination = true
   invertPagination = false
   showReadingTime = false
-  showTableOfContents = true
+  showTableOfContents = false
   showRelatedContent = true
   relatedContentLimit = 6
   showTaxonomies = true 
@@ -81,7 +81,7 @@ smartTOCHideUnfocusedChildren = false
 [list]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  layoutBackgroundBlur = true # only used when heroStyle equals background
+  layoutBackgroundBlur = false # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
   showSummary = false
