@@ -7,6 +7,7 @@ tags: ["Team"]
 series_order: 3
 showTableOfContents: false
 image: "https://avatars.githubusercontent.com/u/54931373?s=400&u=4382cb91652b9b71ec04b49b7f7a8044bbccbd0d&v=4"
+description: "Meet Vladi, a highly skilled DevOps professional with over a decade of experience. Specializing in high-scale architecture and GitOps, Vladi excels in continuous integration and automated deployment. With a strong emphasis on efficiency and innovation, Vladi's strategic vision and hands-on approach make him invaluable in leading R&D initiatives. Trust Vladi to drive your technical operations to new heights."
 ---
 {{< typeit 
   tag=h4

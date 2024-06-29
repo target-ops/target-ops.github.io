@@ -6,6 +6,7 @@ slug: "hagay"
 tags: ["Team"]
 series_order: 3
 showTableOfContents: false
+description: "Expert in IT management and support specializing in MDM, security training, and collaboration tools. Proficient in managing Linux servers, resolving software/hardware issues, and implementing robust solutions. Skilled in Python-based ChatOps for enhanced communication and integration with third-party services. Creative in sound design, music production, multimedia projects, graphic design, and website development. Committed to driving innovation and efficiency in R&D projects to help businesses succeed."
 ---
 
 # IT/OPS Professional

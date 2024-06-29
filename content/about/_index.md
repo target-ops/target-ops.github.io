@@ -1,6 +1,6 @@
 ---
 title: "Let’s Meet Each Other"
-description: "about target ops"
+description: "Discover target-ops, your dedicated partner in DevOps excellence. We provide customized DevOps solutions for startups and enterprises, specializing in cloud migration, infrastructure automation, CI/CD, and security. Our expert team focuses on transparency, collaboration, and innovation to drive your business success. Join the growing list of companies that trust us to enhance their DevOps capabilities. Let's achieve your business goals together!"
 showTableOfContents: false
 cascade:
   showDate: false

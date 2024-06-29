@@ -6,6 +6,7 @@ slug: "ofir"
 tags: ["Team"]
 series_order: 3
 showTableOfContents: false
+description: "Meet Ophir, a seasoned DevOps professional with over 10 years of experience in cloud infrastructure, automation, and continuous deployment. Specializing in managing large-scale infrastructures and overseeing 10,000+ applications across various cloud platforms, Ophir is an expert in Kubernetes deployment and GitOps integration. Known for pushing technological boundaries, Ophir is dedicated to enhancing efficiency and leading groundbreaking R&D projects. Elevate your tech operations with a strategic visionary and hands-on executor."
 ---
 
 # DevOps Professional
