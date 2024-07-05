@@ -13,9 +13,9 @@
 name: publish
 on:
   push:
-    branches: [main]
+    branches: [feature/autopush]
   pull_request:
-    branches: [main]
+    branches: [feature/autopush]
 
 jobs:
   publish:
