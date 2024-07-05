@@ -1,5 +1,5 @@
 ---
-title: Example article title
+title: Target Ops Example 
 published: false
 description: A simple test article
 tags: 'productivity, beginners, test'
