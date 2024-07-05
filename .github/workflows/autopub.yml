@@ -20,6 +20,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allows writing to the repository
+      pull-requests: write  # Allows creating and modifying pull requests
 
     steps:
     - uses: actions/checkout@v2
