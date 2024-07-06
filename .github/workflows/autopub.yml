@@ -18,9 +18,15 @@ jobs:
     - name: Check if markdown files exist
       id: check_files
       run: |
+        echo "Checking for Markdown files in the posts directory..."
+        ls -A posts/**/*.md 2>/dev/null || echo "No markdown files found."
+        
         if [ -z "$(ls -A posts/**/*.md 2>/dev/null)" ]; then
           echo "No markdown files found in the posts directory."
           exit 1
+        else
+          echo "Markdown files found:"
+          ls -A posts/**/*.md
         fi
 
     - name: Publish articles on dev.to
@@ -47,7 +53,7 @@ jobs:
               "article": {
                 "title": $title,
                 "body_markdown": $body,
-                "published": $published
+                "published": $published,
                 "organization_id": 9126
               }
             }')
@@ -68,4 +74,3 @@ jobs:
           ```
           ${{ steps.publish.outputs.result_summary }}
           ```
-
