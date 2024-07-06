@@ -1,7 +1,7 @@
 ---
 title: Example article title
 organization_id: 9126
-published: true
+published: false
 description: A simple test article
 tags:
   - productivity
