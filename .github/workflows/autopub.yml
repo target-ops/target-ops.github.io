@@ -15,6 +15,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Check if markdown files exist
+      id: check_files
+      run: |
+        if [ -z "$(ls -A posts/**/*.md 2>/dev/null)" ]; then
+          echo "No markdown files found in the posts directory."
+          exit 1
+        fi
+
     - name: Publish articles on dev.to
       env:
         DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
@@ -23,8 +31,7 @@ jobs:
         for file in posts/**/*.md; do
           echo "Processing $file..."
           
-          # Extract the article front matter (YAML or JSON) and content
-          # Assuming the front matter contains 'title' and 'published' fields
+          # Extract the title and published status from the front matter
           TITLE=$(grep '^title:' "$file" | sed 's/title: //')
           PUBLISHED=$(grep '^published:' "$file" | sed 's/published: //')
           
@@ -37,7 +44,7 @@ jobs:
             --arg body "$CONTENT" \
             --argjson published $(if [[ "$PUBLISHED" =~ ^(true|yes|1)$ ]]; then echo true; else echo false; fi) \
             '{
-              "listing": {
+              "article": {
                 "title": $title,
                 "body_markdown": $body,
                 "published": $published
@@ -46,13 +53,12 @@ jobs:
             }')
           
           # Send the POST request to dev.to
-          curl -X POST "https://dev.to/api/listings" \
+          curl -X POST "https://dev.to/api/articles" \
             -H "Content-Type: application/json" \
             -H "api-key: $DEVTO_TOKEN" \
             -d "$JSON_PAYLOAD"
         done
 
-    # (Optional) Add comment with dev.to changes if it's a pull request.
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ github.event_name == 'pull_request' }}
       with:
