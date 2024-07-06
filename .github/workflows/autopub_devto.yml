@@ -90,14 +90,20 @@ jobs:
         # Output the summary for use in the next step
         echo "::set-output name=result_summary::$result_summary"
       
-    - name: Send Telegram message
-      if: success()
-      run: |
-        MESSAGE="New article published on DEV.TO: \"$ARTICLE_URL\""
-
-        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-          -d "chat_id=${TELEGRAM_CHAT_ID}" \
-          -d "text=${MESSAGE}"
+        - name: Send Telegram message
+        if: success()
+        run: |
+          # Ensure ARTICLE_URL is properly formatted and debugged
+          echo "ARTICLE_URL is: $ARTICLE_URL"
+          
+          # Construct message with proper formatting
+          MESSAGE="New article published on dev.to: [Check it out]($ARTICLE_URL)"
+          
+          # Send message using Telegram API with MarkdownV2 parse mode
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "text=${MESSAGE}" \
+            -d "parse_mode=MarkdownV2"
 
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ github.event_name == 'pull_request' }}
