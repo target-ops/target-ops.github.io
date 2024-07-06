@@ -81,6 +81,7 @@ jobs:
           
           # Extract the article URL from the response
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
+          echo "$ARTICLE_URL"
 
           # Append the result to summary
           result_summary+="Processed article: $TITLE - $ARTICLE_URL"$'\n'
