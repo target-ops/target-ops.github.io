@@ -2,7 +2,7 @@ name: TheActionDev Sync
 on:
   push:
     branches:
-      - main # your default branch
+      - feature/autopush # your default branch
 
 jobs:
   operations:
