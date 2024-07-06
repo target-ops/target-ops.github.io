@@ -1,0 +1,59 @@
+name: publish
+on:
+  push:
+    branches: [feature/autopush]
+  pull_request:
+    branches: [feature/autopush]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allows writing to the repository
+      pull-requests: write  # Allows creating and modifying pull requests
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Read Markdown Files and Prepare Message
+      id: read_md
+      run: |
+        # Create a variable to hold the concatenated content of all .md files
+        CONTENT=""
+        
+        # Loop through each markdown file and append its content to CONTENT
+        for FILE in $(find posts -name '*.md'); do
+          CONTENT="$CONTENT\n\n$(cat $FILE)"
+        done
+        
+        # Save the content to a file to pass it to the next step
+        echo "$CONTENT" > combined_md_content.txt
+        
+        # Output the content (for debug purpose, you can remove this line later)
+        echo "$CONTENT"
+
+    - name: Send Markdown Content to Telegram
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        # Read the content from the file saved in the previous step
+        CONTENT=$(cat combined_md_content.txt)
+
+        # Telegram messages have a maximum length of 4096 characters. If the content is longer, split it into chunks.
+        MAX_LENGTH=4096
+        
+        # Split the content into chunks and send each chunk separately
+        while [ ${#CONTENT} -gt 0 ]; do
+          CHUNK=${CONTENT:0:$MAX_LENGTH}
+          CONTENT=${CONTENT:$MAX_LENGTH}
+          curl -s -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage -d chat_id=${TELEGRAM_CHAT_ID} -d text="$CHUNK"
+        done
+
+    # (Optional) Add comment with Telegram update status if it's a pull request.
+    - uses: actions-ecosystem/action-create-comment@v1
+      if: ${{ github.event_name == 'pull_request' }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        body: |
+          Telegram message sent with content from Markdown files.
