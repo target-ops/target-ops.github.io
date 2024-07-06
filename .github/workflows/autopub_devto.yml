@@ -12,6 +12,11 @@ jobs:
       contents: write  # Allows writing to the repository
       pull-requests: write  # Allows creating and modifying pull requests
 
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
+
     steps:
     - uses: actions/checkout@v2
 
@@ -37,9 +42,9 @@ jobs:
         fi
 
     - name: Publish articles on dev.to
-      env:
-        DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
+      id: publish_articles
       run: |
+        result_summary=""
         # Loop through each markdown file found by the 'find' command
         find posts -type f -name "*.md" | while read file; do
           echo "Processing $file..."
@@ -65,12 +70,30 @@ jobs:
               }
             }')
           
-          # Send the POST request to dev.to
-          curl -X POST "https://dev.to/api/articles" \
+          # Send the POST request to dev.to and capture the response
+          response=$(curl -s -X POST "https://dev.to/api/articles" \
             -H "Content-Type: application/json" \
             -H "api-key: $DEVTO_TOKEN" \
-            -d "$JSON_PAYLOAD"
+            -d "$JSON_PAYLOAD")
+          
+          # Extract the article URL from the response
+          ARTICLE_URL=$(echo "$response" | jq -r '.url')
+
+          # Append the result to summary
+          result_summary+="Processed article: $TITLE - $ARTICLE_URL"$'\n'
         done
+
+        # Output the summary for use in the next step
+        echo "::set-output name=result_summary::$result_summary"
+      
+    - name: Send Telegram message
+      if: success()
+      run: |
+        MESSAGE="New articles published:\n${{ steps.publish_articles.outputs.result_summary }}"
+
+        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+          -d "chat_id=${TELEGRAM_CHAT_ID}" \
+          -d "text=${MESSAGE}"
 
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ github.event_name == 'pull_request' }}
@@ -79,5 +102,5 @@ jobs:
         body: |
           Articles processed in this pull request:
           ```
-          ${{ steps.publish.outputs.result_summary }}
+          ${{ steps.publish_articles.outputs.result_summary }}
           ```
