@@ -4,9 +4,6 @@ published: false
 description: A simple test article
 tags: 'productivity, beginners, test'
 cover_image: ./assets/cat.jpg
-canonical_url: null
-organization_id: 9126
-id: 1912793
 ---
 
 Some random text with a [link](https://code.visualstudio.com).
