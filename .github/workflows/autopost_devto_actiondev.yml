@@ -1,0 +1,19 @@
+name: TheActionDev Sync
+on:
+  push:
+    branches:
+      - main # your default branch
+
+jobs:
+  operations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Sycing Article to dev.to
+        uses: ful1e5/TheActionDev@v3
+        with:
+          api-key: ${{ secrets.DEVTO_TOKEN }} # Store your 'api-key' in Github Secret
+          directory: ./posts # Your article directory
+          ignore: Development.md, Production.md # Markdown file you wan't to ignore. Multple files separated by ,(comma)
