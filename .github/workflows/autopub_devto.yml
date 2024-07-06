@@ -92,7 +92,7 @@ jobs:
     - name: Send Telegram message
       if: success()
       run: |
-        MESSAGE="New articles published:\n ${{ steps.publish_articles.outputs.result_summary }}"
+        MESSAGE="New article published: $ARTICLE_URL"
 
         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -d "chat_id=${TELEGRAM_CHAT_ID}" \
