@@ -15,26 +15,33 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Debug directory contents
+      run: |
+        echo "Listing current directory contents:"
+        ls -al
+        echo "Listing contents of the 'posts' directory:"
+        ls -al posts
+        echo "Listing all Markdown files in the 'posts' directory and subdirectories:"
+        find posts -type f -name "*.md"
+
     - name: Check if markdown files exist
       id: check_files
       run: |
-        echo "Checking for Markdown files in the posts directory..."
-        ls -A posts/**/*.md 2>/dev/null || echo "No markdown files found."
-        
-        if [ -z "$(ls -A posts/**/*.md 2>/dev/null)" ]; then
+        FILES=$(find posts -type f -name "*.md")
+        if [ -z "$FILES" ]; then
           echo "No markdown files found in the posts directory."
           exit 1
         else
           echo "Markdown files found:"
-          ls -A posts/**/*.md
+          echo "$FILES"
         fi
 
     - name: Publish articles on dev.to
       env:
         DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
       run: |
-        # Loop through each markdown file in the posts directory
-        for file in posts/**/*.md; do
+        # Loop through each markdown file found by the 'find' command
+        find posts -type f -name "*.md" | while read file; do
           echo "Processing $file..."
           
           # Extract the title and published status from the front matter
