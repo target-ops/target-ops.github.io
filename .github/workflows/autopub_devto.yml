@@ -97,7 +97,7 @@ jobs:
           echo "ARTICLE_URL is: $ARTICLE_URL"
           
           # Construct message with proper formatting
-          MESSAGE="New article published on dev.to: [Check it out]($ARTICLE_URL)"
+          MESSAGE="New article published on dev.to: [inline URL]($ARTICLE_URL)"
           
           # Send message using Telegram API with MarkdownV2 parse mode
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
