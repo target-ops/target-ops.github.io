@@ -1,6 +1,5 @@
 ---
 title: Example article title
-organization_id: 9126
 published: true
 description: A simple test article
 tags:
@@ -12,7 +11,7 @@ cover_image: ./assets/cat.jpg
 
 Some random text with a [link](https://code.visualstudio.com).
 
-## Serious title 2
+## Serious title 3
 
 Add some text here and there!
 
