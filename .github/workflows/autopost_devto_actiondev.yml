@@ -16,4 +16,4 @@ jobs:
         with:
           api-key: ${{ secrets.DEVTO_TOKEN }} # Store your 'api-key' in Github Secret
           directory: ./posts # Your article directory
-          ignore: Development.md, Production.md # Markdown file you wan't to ignore. Multple files separated by ,(comma)
+   
