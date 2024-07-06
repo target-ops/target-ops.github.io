@@ -97,7 +97,7 @@ jobs:
 
         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -d "chat_id=${TELEGRAM_CHAT_ID}" \
-          -d "text=${MESSAGE}+${ARTICLE_URL}"
+          -d "text=${ARTICLE_URL}"
 
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ github.event_name == 'pull_request' }}
