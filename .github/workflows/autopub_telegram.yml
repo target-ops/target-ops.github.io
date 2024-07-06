@@ -40,14 +40,27 @@ jobs:
         # Read the content from the file saved in the previous step
         CONTENT=$(cat combined_md_content.txt)
 
+        # Function to escape special characters for MarkdownV2
+        escape_markdown_v2() {
+          echo "$1" | sed -e 's/\_/\\_/g' -e 's/\*/\\*/g' -e 's/\[/\\[/g' -e 's/\]/\\]/g' -e 's/(/\\(/g' -e 's/)/\\)/g' \
+                          -e 's/~\\/\\~/g' -e 's/\`/\\`/g' -e 's/>/\\>/g' -e 's/#/\\#/g' -e 's/\+/\\+/g' -e 's/-/\\-/g' \
+                          -e 's/=/\\=/g' -e 's/|/\\|/g' -e 's/{/\\{/g' -e 's/}/\\}/g' -e 's/\./\\./g' -e 's/!/\\!/g'
+        }
+
+        # Escape the content for MarkdownV2
+        ESCAPED_CONTENT=$(escape_markdown_v2 "$CONTENT")
+
         # Telegram messages have a maximum length of 4096 characters. If the content is longer, split it into chunks.
         MAX_LENGTH=4096
         
         # Split the content into chunks and send each chunk separately
-        while [ ${#CONTENT} -gt 0 ]; do
-          CHUNK=${CONTENT:0:$MAX_LENGTH}
-          CONTENT=${CONTENT:$MAX_LENGTH}
-          curl -s -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage -d chat_id=${TELEGRAM_CHAT_ID} -d text="$CHUNK"
+        while [ ${#ESCAPED_CONTENT} -gt 0 ]; do
+          CHUNK=${ESCAPED_CONTENT:0:$MAX_LENGTH}
+          ESCAPED_CONTENT=${ESCAPED_CONTENT:$MAX_LENGTH}
+          curl -s -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage \
+               -d chat_id=${TELEGRAM_CHAT_ID} \
+               -d text="$CHUNK" \
+               -d parse_mode=MarkdownV2
         done
 
     # (Optional) Add comment with Telegram update status if it's a pull request.
