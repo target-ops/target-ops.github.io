@@ -99,11 +99,11 @@ jobs:
           # Construct message with proper formatting
           MESSAGE="New article published on dev.to: [inline URL]($ARTICLE_URL)"
           
-          # Send message using Telegram API with MarkdownV2 parse mode
+          # Send message using Telegram API with Markdown parse mode
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
             -d "text=${MESSAGE}" \
-            -d "parse_mode=MarkdownV2"
+            -d "parse_mode=Markdown"
 
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ github.event_name == 'pull_request' }}
