@@ -39,7 +39,7 @@ jobs:
         if [ -z "$FILES" ]; then
           echo "No markdown files found in the posts directory."
           exit 1
-        else:
+        else
           echo "Markdown files found:"
           echo "$FILES"
         fi
@@ -83,19 +83,18 @@ jobs:
           # Extract the article URL from the response
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
           echo "Article URL: $ARTICLE_URL"
-          echo "Final URL: " $ARTICLE_URL
+
+          # Set the ARTICLE_URL environment variable
+          echo "::set-env name=ARTICLE_URL::$ARTICLE_URL"
         done
 
-        # Output the summary and URLs for use in the next step
-        echo "::set-output name=result_summary::$result_summary"
-        echo "::set-output name=url::$ARTICLE_URL"
-      
     - name: Send Telegram message
       if: success()
       run: |
-        echo "passed url: ${{ needs.publish.outputs.url }}"
+        echo "Article URL: $ARTICLE_URL"
         MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
 
+        # Uncomment when ready to send Telegram message
         # curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
         #   -d "chat_id=${TELEGRAM_CHAT_ID}" \
         #   -d "text=${MESSAGE}"
