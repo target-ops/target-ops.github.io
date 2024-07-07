@@ -97,7 +97,8 @@ jobs:
       run: |
         ARTICLE_URL=$(echo "${{ steps.read_article_url.outputs.article_url }}")
         echo "Article URL: $ARTICLE_URL"
-        MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
+        MESSAGE="New articles published on dev.to:
+        $ARTICLE_URL"
 
         # Uncomment when ready to send Telegram message
          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
@@ -113,3 +114,5 @@ jobs:
           ```
           ${{ steps.publish_articles.outputs.result_summary }}
           ```
+    - name: Clear ARTICLE_URL file
+      run: echo "" > $ARTICLE_URL_FILE      
