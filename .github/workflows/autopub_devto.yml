@@ -6,7 +6,7 @@ on:
     branches: [feature/autopush]
 
 env:
-  DEVTO_URL: ""
+  ARTICLE_URL: ""
 
 jobs:
   publish:
