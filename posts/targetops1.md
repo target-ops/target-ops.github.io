@@ -6,7 +6,7 @@ tags:
   - productivity
   - beginners
   - test
-cover_image: ./posts/assets/cat.jpg
+cover_image: ./assets/cat.jpg
 ---
 
 Some random text with a [link](https://code.visualstudio.com).
