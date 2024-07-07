@@ -36,7 +36,7 @@ jobs:
         if [ -z "$FILES" ]; then
           echo "No markdown files found in the posts directory."
           exit 1
-        else
+        else:
           echo "Markdown files found:"
           echo "$FILES"
         fi
@@ -45,6 +45,8 @@ jobs:
       id: publish_articles
       run: |
         result_summary=""
+        article_urls=""
+        
         # Loop through each markdown file found by the 'find' command
         find posts -type f -name "*.md" | while read file; do
           echo "Processing $file..."
@@ -78,18 +80,22 @@ jobs:
           
           # Extract the article URL from the response
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
+          echo "Article URL: $ARTICLE_URL"
 
-          # Append the result to summary
+          # Append the result to summary and URLs list
           result_summary+="Processed article: $TITLE - $ARTICLE_URL"$'\n'
+          article_urls+="$ARTICLE_URL\n"
         done
 
-        # Output the summary for use in the next step
+        # Output the summary and URLs for use in the next step
         echo "::set-output name=result_summary::$result_summary"
+        echo "::set-output name=article_urls::$article_urls"
       
     - name: Send Telegram message
       if: success()
       run: |
-        MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
+        ARTICLE_URLS=${{ steps.publish_articles.outputs.article_urls }}
+        MESSAGE="New articles published on dev.to:\n${ARTICLE_URLS}"
 
         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -d "chat_id=${TELEGRAM_CHAT_ID}" \
