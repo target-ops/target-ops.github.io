@@ -1,0 +1,118 @@
+name: publish
+on:
+  push:
+    branches: [feature/autopush]
+  pull_request:
+    branches: [feature/autopush]
+
+env:
+  ARTICLE_URL_FILE: ${{ github.workspace }}/article_url.txt
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allows writing to the repository
+      pull-requests: write  # Allows creating and modifying pull requests
+
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Debug directory contents
+      run: |
+        echo "Listing current directory contents:"
+        ls -al
+        echo "Listing contents of the 'posts' directory:"
+        ls -al posts
+        echo "Listing all Markdown files in the 'posts' directory and subdirectories:"
+        find posts -type f -name "*.md"
+
+    - name: Check if markdown files exist
+      id: check_files
+      run: |
+        FILES=$(find posts -type f -name "*.md")
+        if [ -z "$FILES" ]; then
+          echo "No markdown files found in the posts directory."
+          exit 1
+        else
+          echo "Markdown files found:"
+          echo "$FILES"
+        fi
+
+    - name: Publish articles on dev.to
+      id: publish_articles
+      run: |
+        result_summary=""
+        
+        # Loop through each markdown file found by the 'find' command
+        find posts -type f -name "*.md" | while read file; do
+          echo "Processing $file..."
+          
+          # Extract the title and published status from the front matter
+          TITLE=$(grep '^title:' "$file" | sed 's/title: //')
+          PUBLISHED=$(grep '^published:' "$file" | sed 's/published: //')
+          
+          # Extract the content without front matter
+          CONTENT=$(awk 'BEGIN {flag=0} /^---$/ {flag++; next} flag==2 {print}' "$file")
+
+          # Create the JSON payload for the POST request
+          JSON_PAYLOAD=$(jq -n \
+            --arg title "$TITLE" \
+            --arg body "$CONTENT" \
+            --argjson published $(if [[ "$PUBLISHED" =~ ^(true|yes|1)$ ]]; then echo true; else echo false; fi) \
+            '{
+              "article": {
+                "title": $title,
+                "body_markdown": $body,
+                "published": $published,
+                "organization_id": 9126
+              }
+            }')
+          
+          # Send the POST request to dev.to and capture the response
+          response=$(curl -s -X POST "https://dev.to/api/articles" \
+            -H "Content-Type: application/json" \
+            -H "api-key: $DEVTO_TOKEN" \
+            -d "$JSON_PAYLOAD")
+          
+          # Extract the article URL from the response
+          ARTICLE_URL=$(echo "$response" | jq -r '.url')
+          echo "Article URL: $ARTICLE_URL"
+
+          # Store the ARTICLE_URL in a file
+          echo "$ARTICLE_URL" > $ARTICLE_URL_FILE
+        done
+
+    - name: Read ARTICLE_URL from file
+      id: read_article_url
+      run: echo "::set-output name=article_url::$(cat $ARTICLE_URL_FILE)"
+
+    - name: Send Telegram message
+      if: success()
+      run: |
+        ARTICLE_URL=$(echo "${{ steps.read_article_url.outputs.article_url }}")
+        echo "Article URL: $ARTICLE_URL"
+        MESSAGE="New articles published on dev.to:
+        $ARTICLE_URL"
+
+        # Uncomment when ready to send Telegram message
+         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+           -d "chat_id=${TELEGRAM_CHAT_ID}" \
+           -d "text=${MESSAGE}"
+
+    - uses: actions-ecosystem/action-create-comment@v1
+      if: ${{ github.event_name == 'pull_request' }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        body: |
+          Articles processed in this pull request:
+          ```
+          ${{ steps.publish_articles.outputs.result_summary }}
+          ```
+    - name: Clear ARTICLE_URL file
+      run: echo "" > $ARTICLE_URL_FILE      

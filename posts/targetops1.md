@@ -7,8 +7,6 @@ tags:
   - beginners
   - test
 cover_image: ./assets/cat.jpg
-id: 1914856
-date: '2024-07-07T18:38:14Z'
 ---
 
 Some random text with a [link](https://code.visualstudio.com).
