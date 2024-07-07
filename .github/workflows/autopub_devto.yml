@@ -80,9 +80,12 @@ jobs:
           # Extract the article URL from the response
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
 
-          echo ${env.ARTICLE_URL}
-          env.ARTICLE_URL=$ARTICLE_URL
-          echo ${env.ARTICLE_URL}
+          # Check if ARTICLE_URL is not empty before setting the environment variable
+          if [ -n "$ARTICLE_URL" ]; then
+            echo "Article published at: $ARTICLE_URL"
+            export ARTICLE_URL="$ARTICLE_URL" # Set the environment variable for the current shell
+            echo "export ARTICLE_URL=$ARTICLE_URL" >> $GITHUB_ENV # Set it for subsequent steps
+          fi
 
           # Append the result to summary
           result_summary+="Processed article: $TITLE - $ARTICLE_URL"$'\n'
@@ -94,8 +97,7 @@ jobs:
     - name: Send Telegram message
       if: success()
       run: |
-        echo ${env.ARTICLE_URL}
-        MESSAGE="New articles published on dev.to:\n${echo ${env.ARTICLE_URL}"
+        MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
 
         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -d "chat_id=${TELEGRAM_CHAT_ID}" \
