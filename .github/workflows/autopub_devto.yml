@@ -97,6 +97,9 @@ jobs:
 
           # Store the ARTICLE_URL in a file
           echo "$ARTICLE_URL" > $ARTICLE_URL_FILE
+          
+          # Append result summary for this article
+          result_summary="$result_summary\n$title - $ARTICLE_URL"
         done
 
     - name: Read ARTICLE_URL from file
@@ -123,7 +126,7 @@ jobs:
         body: |
           Articles processed in this pull request:
           ```
-          ${{ steps.publish_articles.outputs.result_summary }}
+          $result_summary
           ```
     - name: Clear ARTICLE_URL file
       run: echo "" > $ARTICLE_URL_FILE
