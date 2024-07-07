@@ -83,7 +83,7 @@ jobs:
           
           # Extract the article URL from the response
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
-          echo "Article URL: $ARTICLE_URL" >> $DEVTO_URL
+          echo "Article URL: $ARTICLE_URL"
           echo "Final URL: " $DEVTO_URL
 
           # Append the result to summary and URLs list
