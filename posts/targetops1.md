@@ -11,7 +11,7 @@ cover_image: ./posts/assets/cat.jpg
 
 Some random text with a [link](https://code.visualstudio.com).
 
-## Serious title 6
+## Serious title 7
 
 Add some text here and there!
 

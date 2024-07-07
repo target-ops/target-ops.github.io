@@ -1,3 +1,5 @@
+is there a way to get the url of the posted article?
+
 name: publish
 on:
   push:
@@ -9,8 +11,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write  # Allows writing to the repository
+      pull-requests: write  # Allows creating and modifying pull requests
 
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -46,7 +48,6 @@ jobs:
       id: publish_articles
       run: |
         result_summary=""
-        all_urls=""
         # Loop through each markdown file found by the 'find' command
         find posts -type f -name "*.md" | while read file; do
           echo "Processing $file..."
@@ -77,32 +78,26 @@ jobs:
             -H "Content-Type: application/json" \
             -H "api-key: $DEVTO_TOKEN" \
             -d "$JSON_PAYLOAD")
-            echo "Response from dev.to API:"
-            echo "$response"
-
           
           # Extract the article URL from the response
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
-          echo "$ARTICLE_URL"
 
-          # Append the result to summary and all_urls
+          echo ${env.ARTICLE_URL}
+          env.ARTICLE_URL=$ARTICLE_URL
+          echo ${env.ARTICLE_URL}
+
+          # Append the result to summary
           result_summary+="Processed article: $TITLE - $ARTICLE_URL"$'\n'
-          all_urls+="$ARTICLE_URL"$'\n'
         done
 
-        # Output the summary and all URLs for use in the next step
+        # Output the summary for use in the next step
         echo "::set-output name=result_summary::$result_summary"
-        echo "::set-output name=all_urls::$all_urls"
-        echo ${env.ARTICLE_URL}
-        env.ARTICLE_URL=$ARTICLE_URL
-        echo ${env.ARTICLE_URL}
       
     - name: Send Telegram message
       if: success()
       run: |
         echo ${env.ARTICLE_URL}
-        ALL_URLS="${{ steps.publish_articles.outputs.all_urls }}"
-        MESSAGE="New articles published on dev.to: \n${env.ARTICLE_URL}"
+        MESSAGE="New articles published on dev.to:\n${echo ${env.ARTICLE_URL}"
 
         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -d "chat_id=${TELEGRAM_CHAT_ID}" \
