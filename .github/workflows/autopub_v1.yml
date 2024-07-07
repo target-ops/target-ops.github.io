@@ -26,7 +26,7 @@ jobs:
           conventional_commits: true
 
       - name: Get published URL
-        run: echo "${{ steps.publish_devto.outputs }}"
+        run: echo "${{ steps.publish_devto.outputs.result_url }}" > $ARTICLE_URL_FILE
 
       - name: Send URL to Telegram
         if: success()  # Only send if previous steps were successful
