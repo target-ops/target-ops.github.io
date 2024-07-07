@@ -46,7 +46,7 @@ jobs:
       run: |
         result_summary=""
         article_urls=""
-
+        
         # Loop through each markdown file found by the 'find' command
         find posts -type f -name "*.md" | while read file; do
           echo "Processing $file..."
@@ -85,32 +85,22 @@ jobs:
           # Append the result to summary and URLs list
           result_summary+="Processed article: $TITLE - $ARTICLE_URL"$'\n'
           article_urls+="$ARTICLE_URL\n"
-
-          echo "Accumulated article_urls: $article_urls"
         done
-        
-        # Write the result_summary and article_urls to environment files for use in the next step
-        echo "result_summary=$result_summary" >> $GITHUB_ENV
-        echo "article_urls=$article_urls" >> $GITHUB_ENV
 
+        # Output the summary and URLs for use in the next step
+        echo "::set-output name=result_summary::$result_summary"
+        echo "::set-output name=article_urls::$article_urls"
+      
     - name: Send Telegram message
-      if: success()
-      run: |
-        # Capture the accumulated URLs from the environment variable
-        ARTICLE_URLS="${{ env.article_urls }}"
+        if: success()
+        run: |
+          ARTICLE_URLS=$(echo "${{ steps.publish_articles.outputs.article_urls }}" | tr '\n' ' ')  # Replace newlines with spaces
+          MESSAGE="New articles published on dev.to:\n$ARTICLE_URLS"
 
-        # Ensure the ARTICLE_URLS is not empty
-        if [ -z "$ARTICLE_URLS" ]; then
-          echo "No article URLs to send."
-          exit 1
-        fi
-        
-        MESSAGE="New articles published on dev.to:\n${ARTICLE_URLS}"
-        echo "Sending the following message to Telegram: $MESSAGE"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "text=${MESSAGE}"
 
-        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-          -d "chat_id=${TELEGRAM_CHAT_ID}" \
-          -d "text=${MESSAGE}"
 
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ github.event_name == 'pull_request' }}
@@ -119,5 +109,5 @@ jobs:
         body: |
           Articles processed in this pull request:
           ```
-          ${{ env.result_summary }}
+          ${{ steps.publish_articles.outputs.result_summary }}
           ```
