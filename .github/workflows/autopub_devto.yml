@@ -9,7 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Allows writing to the repository
+      contents: write  # Allows writing to the repositor
       pull-requests: write  # Allows creating and modifying pull requests
 
     env:
