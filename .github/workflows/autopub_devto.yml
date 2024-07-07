@@ -48,7 +48,6 @@ jobs:
       id: publish_articles
       run: |
         result_summary=""
-        article_urls=""
         
         # Loop through each markdown file found by the 'find' command
         find posts -type f -name "*.md" | while read file; do
@@ -85,20 +84,14 @@ jobs:
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
           echo "Article URL: $ARTICLE_URL"
           echo "Final URL: " $ARTICLE_URL
-
-          # Append the result to summary and URLs list
-          result_summary+="Processed article: $TITLE - $ARTICLE_URL"$'\n'
-          article_urls+="$ARTICLE_URL\n"
         done
 
         # Output the summary and URLs for use in the next step
         echo "::set-output name=result_summary::$result_summary"
-        echo "::set-output name=article_urls::$article_urls"
       
     - name: Send Telegram message
       if: success()
       run: |
-        ARTICLE_URLS=$(echo "${{ steps.publish_articles.outputs.article_urls }}" | tr '\n' ' ')  # Replace newlines with spaces
         MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
         echo "passed url:" $ARTICLE_URL
 
