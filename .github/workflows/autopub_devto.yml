@@ -92,15 +92,14 @@ jobs:
         echo "::set-output name=article_urls::$article_urls"
       
     - name: Send Telegram message
-        if: success()
-        run: |
-          ARTICLE_URLS=$(echo "${{ steps.publish_articles.outputs.article_urls }}" | tr '\n' ' ')  # Replace newlines with spaces
-          MESSAGE="New articles published on dev.to:\n$ARTICLE_URLS"
+      if: success()
+      run: |
+        ARTICLE_URLS=$(echo "${{ steps.publish_articles.outputs.article_urls }}" | tr '\n' ' ')  # Replace newlines with spaces
+        MESSAGE="New articles published on dev.to:\n$ARTICLE_URLS"
 
-          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d "chat_id=${TELEGRAM_CHAT_ID}" \
-            -d "text=${MESSAGE}"
-
+        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+          -d "chat_id=${TELEGRAM_CHAT_ID}" \
+          -d "text=${MESSAGE}"
 
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ github.event_name == 'pull_request' }}
