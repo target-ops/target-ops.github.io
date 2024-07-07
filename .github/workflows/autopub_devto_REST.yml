@@ -27,17 +27,17 @@ jobs:
       run: |
         echo "Listing current directory contents:"
         ls -al
-        echo "Listing contents of the 'posts' directory:"
-        ls -al posts
-        echo "Listing all Markdown files in the 'posts' directory and subdirectories:"
-        find posts -type f -name "*.md"
+        echo "Listing contents of the 'posts/new' directory:"
+        ls -al content/posts/new
+        echo "Listing all Markdown files in the 'posts/new' directory and subdirectories:"
+        find posts/new -type f -name "*.md"
 
     - name: Check if markdown files exist
       id: check_files
       run: |
-        FILES=$(find posts -type f -name "*.md")
+        FILES=$(find posts/new -type f -name "*.md")
         if [ -z "$FILES" ]; then
-          echo "No markdown files found in the posts directory."
+          echo "No markdown files found in the posts/new directory."
           exit 1
         else
           echo "Markdown files found:"
@@ -50,7 +50,7 @@ jobs:
         result_summary=""
         
         # Loop through each markdown file found by the 'find' command
-        find posts -type f -name "*.md" | while read file; do
+        find posts/new -type f -name "*.md" | while read file; do
           echo "Processing $file..."
           
           # Extract the title and published status from the front matter
