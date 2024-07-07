@@ -45,14 +45,6 @@ jobs:
         conventional_commits: true
         # (Optional) Do not make actual changes on dev.to if it's a pull request.
         # dry_run: ${{ github.event_name == 'pull_request' }}
-
-    - name: Get published URL
-      run: echo "${{ steps.publish_devto.outputs.result_url }}" > published_url.txt
-      env:
-        PUBLISHED_URL: ${{ steps.publish_devto.outputs.result_url }}
-
-    - name: Set global environment variable
-      run: echo "PUBLISHED_URL=${{ steps.publish_devto.outputs.result_url }}" >> $GITHUB_ENV
     
 
     # (Optional) Add comment with dev.to changes if it's a pull request.
