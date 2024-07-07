@@ -18,6 +18,9 @@ on:
   pull_request:
     branches: [feature/autopush]
 
+env:
+  ARTICLE_URL_FILE: ${{ github.workspace }}/article_url.txt
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -47,14 +50,8 @@ jobs:
         # dry_run: ${{ github.event_name == 'pull_request' }}
 
     - name: Get published URL
-      run: echo "${{ steps.publish_devto.outputs.result_url }}" > published_url.txt
-      env:
-        PUBLISHED_URL: ${{ steps.publish_devto.outputs.result_url }}
-
-    - name: Set global environment variable
-      run: echo "PUBLISHED_URL=${{ steps.publish_devto.outputs.result_url }}" >> $GITHUB_ENV
-           echo "URL IS:" $GITHUB_ENV
-    
+      run: echo "${{ steps.publish_devto.outputs.result_url }}" > $ARTICLE_URL_FILE
+      
 
     # (Optional) Add comment with dev.to changes if it's a pull request.
     - uses: actions-ecosystem/action-create-comment@v1
