@@ -94,7 +94,6 @@ jobs:
     - name: Send Telegram message
       if: success()
       run: |
-        echo ${env.ARTICLE_URL}
         MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
 
         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
