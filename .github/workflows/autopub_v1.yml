@@ -28,4 +28,14 @@ jobs:
 
       - name: Set global environment variable
         run: echo "PUBLISHED_URL=${{ steps.publish_devto.outputs.result_url }}" >> $GITHUB_ENV
+
+      - uses: actions-ecosystem/action-create-comment@v1
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Articles processed in this pull request:
+            ```
+            ${{ steps.publish_articles.outputs.result_summary }}
+            ```
         
