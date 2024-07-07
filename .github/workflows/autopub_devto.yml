@@ -100,6 +100,7 @@ jobs:
       run: |
         ARTICLE_URLS=$(echo "${{ steps.publish_articles.outputs.article_urls }}" | tr '\n' ' ')  # Replace newlines with spaces
         MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
+        echo "passed url:" $ARTICLE_URL
 
         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -d "chat_id=${TELEGRAM_CHAT_ID}" \
