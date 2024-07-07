@@ -46,7 +46,7 @@ jobs:
       run: |
         result_summary=""
         article_urls=""
-        
+
         # Loop through each markdown file found by the 'find' command
         find posts -type f -name "*.md" | while read file; do
           echo "Processing $file..."
@@ -85,6 +85,8 @@ jobs:
           # Append the result to summary and URLs list
           result_summary+="Processed article: $TITLE - $ARTICLE_URL"$'\n'
           article_urls+="$ARTICLE_URL\n"
+
+          echo "Accumulated article_urls: $article_urls"
         done
 
         # Output the summary and URLs for use in the next step
@@ -94,8 +96,17 @@ jobs:
     - name: Send Telegram message
       if: success()
       run: |
-        ARTICLE_URLS=${{ steps.publish_articles.outputs.article_urls }}
+        # Capture the accumulated URLs from the output
+        ARTICLE_URLS="${{ steps.publish_articles.outputs.article_urls }}"
+        
+        # Ensure the ARTICLE_URLS is not empty
+        if [ -z "$ARTICLE_URLS" ]; then
+          echo "No article URLs to send."
+          exit 1
+        fi
+        
         MESSAGE="New articles published on dev.to:\n${ARTICLE_URLS}"
+        echo "Sending the following message to Telegram: $MESSAGE"
 
         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -d "chat_id=${TELEGRAM_CHAT_ID}" \
