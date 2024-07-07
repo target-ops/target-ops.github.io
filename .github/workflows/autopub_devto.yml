@@ -16,7 +16,6 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
-      ARTICLE_URL: ""
 
     steps:
     - uses: actions/checkout@v2
@@ -79,10 +78,6 @@ jobs:
           
           # Extract the article URL from the response
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
-
-          echo ${env.ARTICLE_URL}
-          env.ARTICLE_URL=$ARTICLE_URL
-          echo ${env.ARTICLE_URL}
 
           # Append the result to summary
           result_summary+="Processed article: $TITLE - $ARTICLE_URL"$'\n'
