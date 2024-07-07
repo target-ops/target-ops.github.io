@@ -9,7 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Allows writing to the repositor
+      contents: write  # Allows writing to the repository
       pull-requests: write  # Allows creating and modifying pull requests
 
     env:
@@ -88,19 +88,15 @@ jobs:
 
           echo "Accumulated article_urls: $article_urls"
         done
-
+        
         # Write the result_summary and article_urls to environment files for use in the next step
-        echo "result_summary<<EOF" >> $GITHUB_ENV
-        echo "$result_summary" >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
-
-        echo "article_urls<<EOF" >> $GITHUB_ENV
-        echo "$article_urls" >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
+        echo "result_summary=$result_summary" >> $GITHUB_ENV
+        echo "article_urls=$article_urls" >> $GITHUB_ENV
 
     - name: Send Telegram message
       if: success()
       run: |
+        # Capture the accumulated URLs from the environment variable
         ARTICLE_URLS="${{ env.article_urls }}"
 
         # Ensure the ARTICLE_URLS is not empty
