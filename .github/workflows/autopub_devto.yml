@@ -16,6 +16,7 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
+      ARTICLE_URL: ""
 
     steps:
     - uses: actions/checkout@v2
@@ -92,12 +93,16 @@ jobs:
         # Output the summary and all URLs for use in the next step
         echo "::set-output name=result_summary::$result_summary"
         echo "::set-output name=all_urls::$all_urls"
+        echo ${env.ARTICLE_URL}
+        env.ARTICLE_URL=$ARTICLE_URL
+        echo ${env.ARTICLE_URL}
       
     - name: Send Telegram message
       if: success()
       run: |
+        echo ${env.ARTICLE_URL}
         ALL_URLS="${{ steps.publish_articles.outputs.all_urls }}"
-        MESSAGE="New articles published on dev.to: \n${ALL_URLS}"
+        MESSAGE="New articles published on dev.to: \n${env.ARTICLE_URL}"
 
         curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
           -d "chat_id=${TELEGRAM_CHAT_ID}" \
