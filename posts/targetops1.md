@@ -7,13 +7,11 @@ tags:
   - beginners
   - test
 cover_image: ./assets/cat.jpg
-id: 1914836
-date: '2024-07-07T18:09:05Z'
 ---
 
 Some random text with a [link](https://code.visualstudio.com).
 
-## Serious title 7
+## Serious title 8
 
 Add some text here and there!
 
