@@ -1,16 +1,3 @@
-
-# This workflow will push and update articles on dev.to each time a new
-# commit is pushed to the main branch.
-#
-# To make it work, you need a dev.to API key, see:
-# https://developers.forem.com/api/#section/Authentication/api_key
-#
-# Once you have generated the token, you need to add them as a secret in your
-# GitHub repository:
-# - DEVTO_TOKEN: your dev.to API key
-# See https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets
-# for more information about GitHub secrets.
-
 name: publish
 on:
   push:
@@ -26,40 +13,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Publish articles on dev.to
-      uses: sinedied/publish-devto@v2
-      id: publish_devto
-      with:
-        # Your dev.to personal API key to publish and update articles.
-        # See https://docs.dev.to/api/#section/Authentication/api_key
-        devto_key: ${{ secrets.DEVTO_TOKEN }}
-        # Your GitHub personal access token, used to create commits for updated files.
-        # If you have a protected branch, you need to use a personal access token
-        # with the 'repo' permission.
-        # See https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        # (Optional) The files to publish. Default is "posts/**/*.md"
-        files: 'posts/**/*.md'
-        # (Optional) The git branch to use. Default is 'main'.
-        branch: feature/autopush
-        # (Optional) Use conventional commit messages. Default is false.
-        # See https://www.conventionalcommits.org. 
-        conventional_commits: true
-        # (Optional) Do not make actual changes on dev.to if it's a pull request.
-        # dry_run: ${{ github.event_name == 'pull_request' }}
+      - uses: actions/checkout@v2
 
-    - name: Get published URL
-      run: echo "${{ steps.publish_devto.outputs.result_url }}" > $ARTICLE_URL_FILE
-      
+      - name: Publish articles on dev.to
+        uses: sinedied/publish-devto@v2
+        id: publish_devto
+        with:
+          devto_key: ${{ secrets.DEVTO_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: 'posts/**/*.md'
+          branch: feature/autopush
+          conventional_commits: true
 
-    # (Optional) Add comment with dev.to changes if it's a pull request.
-    - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ github.event_name == 'pull_request' }}
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        body: |
-          Changes result:
-          ```
-          ${{ steps.publish_devto.outputs.result_summary }}
-          ```
+      - name: Get published URL
+        run: echo "${{ steps.publish_devto.outputs.result_url }}" > $ARTICLE_URL_FILE
+
+      - name: Send URL to Telegram
+        if: success()  # Only send if previous steps were successful
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHAT_ID }}  # Replace with your Telegram channel ID
+        run: |
+          curl -s -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage -d "chat_id=${TELEGRAM_CHANNEL_ID}&text=New article published: $(cat $ARTICLE_URL_FILE)"
+
+      - name: Comment on Pull Request
+        uses: actions-ecosystem/action-create-comment@v1
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Changes result:
+            ```
+            ${{ steps.publish_devto.outputs.result_summary }}
+            ```
