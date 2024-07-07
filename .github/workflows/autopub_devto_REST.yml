@@ -27,8 +27,8 @@ jobs:
       run: |
         echo "Listing current directory contents:"
         ls -al
-        echo "Listing contents of the 'posts/new' directory:"
-        ls -al content/posts/new
+        echo "Listing contents of the 'posts' directory:"
+        ls -al posts
         echo "Listing all Markdown files in the 'posts/new' directory and subdirectories:"
         find posts/new -type f -name "*.md"
 
@@ -48,15 +48,15 @@ jobs:
       id: publish_articles
       run: |
         result_summary=""
-        
+
         # Loop through each markdown file found by the 'find' command
         find posts/new -type f -name "*.md" | while read file; do
           echo "Processing $file..."
-          
+
           # Extract the title and published status from the front matter
           TITLE=$(grep '^title:' "$file" | sed 's/title: //')
           PUBLISHED=$(grep '^published:' "$file" | sed 's/published: //')
-          
+
           # Extract the content without front matter
           CONTENT=$(awk 'BEGIN {flag=0} /^---$/ {flag++; next} flag==2 {print}' "$file")
 
@@ -73,19 +73,22 @@ jobs:
                 "organization_id": 9126
               }
             }')
-          
+
           # Send the POST request to dev.to and capture the response
           response=$(curl -s -X POST "https://dev.to/api/articles" \
             -H "Content-Type: application/json" \
             -H "api-key: $DEVTO_TOKEN" \
             -d "$JSON_PAYLOAD")
-          
+
           # Extract the article URL from the response
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
           echo "Article URL: $ARTICLE_URL"
 
           # Store the ARTICLE_URL in a file
           echo "$ARTICLE_URL" > $ARTICLE_URL_FILE
+
+          # Move the processed file to the 'posts' directory
+          mv "$file" "posts/$(basename "$file")"
         done
 
     - name: Read ARTICLE_URL from file
@@ -115,4 +118,4 @@ jobs:
           ${{ steps.publish_articles.outputs.result_summary }}
           ```
     - name: Clear ARTICLE_URL file
-      run: echo "" > $ARTICLE_URL_FILE      
+      run: echo "" > $ARTICLE_URL_FILE
