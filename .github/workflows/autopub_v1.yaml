@@ -1,0 +1,31 @@
+name: DEVTO publish
+on:
+  push:
+    branches: [feature/autopost]
+  pull_request:
+    branches: [feature/autopost]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish articles on dev.to
+        id: publish_devto
+        uses: sinedied/publish-devto@v2
+        with:
+          devto_key: ${{ secrets.DEVTO_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: 'posts/**/*.md'
+          branch: feature/autopost
+          conventional_commits: true
+
+      - name: Get published URL
+        run: echo "${{ steps.publish_devto.outputs.result_url }}" > published_url.txt
+        env:
+          PUBLISHED_URL: ${{ steps.publish_devto.outputs.result_url }}
+
+      - name: Set global environment variable
+        run: echo "PUBLISHED_URL=${{ steps.publish_devto.outputs.result_url }}" >> $GITHUB_ENV
+        
