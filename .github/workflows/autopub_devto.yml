@@ -6,7 +6,7 @@ on:
     branches: [feature/autopush]
 
 env:
-  ARTICLE_URL: ""
+  ARTICLE_URL: ${ARTICLE_URL}
 
 jobs:
   publish:
@@ -92,12 +92,12 @@ jobs:
     - name: Send Telegram message
       if: success()
       run: |
-        MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
         echo "passed url:" $ARTICLE_URL
+        MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
 
-        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-          -d "chat_id=${TELEGRAM_CHAT_ID}" \
-          -d "text=${MESSAGE}"
+        # curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+        #   -d "chat_id=${TELEGRAM_CHAT_ID}" \
+        #   -d "text=${MESSAGE}"
 
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ github.event_name == 'pull_request' }}
