@@ -6,7 +6,7 @@ on:
     branches: [feature/autopush]
 
 env:
-  ARTICLE_URL: ""
+  ARTICLE_URL_FILE: ${{ github.workspace }}/article_url.txt
 
 jobs:
   publish:
@@ -84,13 +84,18 @@ jobs:
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
           echo "Article URL: $ARTICLE_URL"
 
-          # Set the ARTICLE_URL environment variable
-          echo "::set-env name=ARTICLE_URL::$ARTICLE_URL"
+          # Store the ARTICLE_URL in a file
+          echo "$ARTICLE_URL" > $ARTICLE_URL_FILE
         done
+
+    - name: Read ARTICLE_URL from file
+      id: read_article_url
+      run: echo "::set-output name=article_url::$(cat $ARTICLE_URL_FILE)"
 
     - name: Send Telegram message
       if: success()
       run: |
+        ARTICLE_URL=$(echo "${{ steps.read_article_url.outputs.article_url }}")
         echo "Article URL: $ARTICLE_URL"
         MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
 
