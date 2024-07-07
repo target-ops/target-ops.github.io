@@ -89,16 +89,20 @@ jobs:
           echo "Accumulated article_urls: $article_urls"
         done
 
-        # Output the summary and URLs for use in the next step
-        echo "::set-output name=result_summary::$result_summary"
-        echo "::set-output name=article_urls::$article_urls"
-      
+        # Write the result_summary and article_urls to environment files for use in the next step
+        echo "result_summary<<EOF" >> $GITHUB_ENV
+        echo "$result_summary" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+
+        echo "article_urls<<EOF" >> $GITHUB_ENV
+        echo "$article_urls" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+
     - name: Send Telegram message
       if: success()
       run: |
-        # Capture the accumulated URLs from the output
-        ARTICLE_URLS="${{ steps.publish_articles.outputs.article_urls }}"
-        
+        ARTICLE_URLS="${{ env.article_urls }}"
+
         # Ensure the ARTICLE_URLS is not empty
         if [ -z "$ARTICLE_URLS" ]; then
           echo "No article URLs to send."
@@ -119,5 +123,5 @@ jobs:
         body: |
           Articles processed in this pull request:
           ```
-          ${{ steps.publish_articles.outputs.result_summary }}
+          ${{ env.result_summary }}
           ```
