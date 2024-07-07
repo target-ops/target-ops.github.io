@@ -48,15 +48,21 @@ jobs:
       id: publish_articles
       run: |
         result_summary=""
-        
+
         # Loop through each markdown file found by the 'find' command
         find posts -type f -name "*.md" | while read file; do
           echo "Processing $file..."
           
+          # Check if the article is already published
+          PUBLISHED=$(grep '^published:' "$file" | sed 's/published: //')
+          if [[ "$PUBLISHED" =~ ^(true|yes|1)$ ]]; then
+            echo "Article is already published. Skipping..."
+            continue
+          fi
+
           # Extract the title and published status from the front matter
           TITLE=$(grep '^title:' "$file" | sed 's/title: //')
-          PUBLISHED=$(grep '^published:' "$file" | sed 's/published: //')
-          
+
           # Extract the content without front matter
           CONTENT=$(awk 'BEGIN {flag=0} /^---$/ {flag++; next} flag==2 {print}' "$file")
 
@@ -64,7 +70,7 @@ jobs:
           JSON_PAYLOAD=$(jq -n \
             --arg title "$TITLE" \
             --arg body "$CONTENT" \
-            --argjson published $(if [[ "$PUBLISHED" =~ ^(true|yes|1)$ ]]; then echo true; else echo false; fi) \
+            --argjson published true \
             '{
               "article": {
                 "title": $title,
@@ -80,9 +86,14 @@ jobs:
             -H "api-key: $DEVTO_TOKEN" \
             -d "$JSON_PAYLOAD")
           
-          # Extract the article URL from the response
+          # Extract the article URL and ID from the response
           ARTICLE_URL=$(echo "$response" | jq -r '.url')
+          ARTICLE_ID=$(echo "$response" | jq -r '.id')
           echo "Article URL: $ARTICLE_URL"
+          echo "Article ID: $ARTICLE_ID"
+
+          # Prepend the ID to the Markdown file
+          sed -i "2i id: $ARTICLE_ID" "$file"
 
           # Store the ARTICLE_URL in a file
           echo "$ARTICLE_URL" > $ARTICLE_URL_FILE
@@ -115,4 +126,4 @@ jobs:
           ${{ steps.publish_articles.outputs.result_summary }}
           ```
     - name: Clear ARTICLE_URL file
-      run: echo "" > $ARTICLE_URL_FILE      
+      run: echo "" > $ARTICLE_URL_FILE
