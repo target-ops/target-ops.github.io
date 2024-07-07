@@ -1,3 +1,13 @@
+---
+title: Welcome to target-ops squad
+published: true
+description: Target-Ops Squad
+tags:
+  - productivity
+  - beginners
+  - test
+---
+
 Welcome to target-ops squad , if you are here , then you took the red pill
 ==========================================================================
 
