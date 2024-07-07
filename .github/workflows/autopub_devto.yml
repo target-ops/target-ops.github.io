@@ -6,7 +6,7 @@ on:
     branches: [feature/autopush]
 
 env:
-  ARTICLE_URL: ${ARTICLE_URL}
+  ARTICLE_URL: ""
 
 jobs:
   publish:
@@ -88,11 +88,12 @@ jobs:
 
         # Output the summary and URLs for use in the next step
         echo "::set-output name=result_summary::$result_summary"
+        echo "::set-output name=url::$ARTICLE_URL"
       
     - name: Send Telegram message
       if: success()
       run: |
-        echo "passed url:" $ARTICLE_URL
+        echo "passed url: ${{ needs.publish.outputs.url }}"
         MESSAGE="New articles published on dev.to:\n$ARTICLE_URL"
 
         # curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
