@@ -53,6 +53,7 @@ jobs:
 
     - name: Set global environment variable
       run: echo "PUBLISHED_URL=${{ steps.publish_devto.outputs.result_url }}" >> $GITHUB_ENV
+           echo "URL IS:" $GITHUB_ENV
     
 
     # (Optional) Add comment with dev.to changes if it's a pull request.
