@@ -20,6 +20,10 @@
   pageRef = "solution"
   weight = 15
 
+[[main]]
+  name = "Articles"
+  pageRef = "posts"
+  weight = 20
 
 [[main]]
   name = "Team's"
