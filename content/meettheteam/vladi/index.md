@@ -13,9 +13,7 @@ image: "https://avatars.githubusercontent.com/u/54931373?s=400&u=4382cb91652b9b7
   speed=50
   breakLines=false
   loop=false
->}}
-"UltraSonic Key Developer Super Master of DevOps."
-"Yet another guy that will literally dont know the phrase CAN NOT" 
+>}} 
 "Meet Vladi, a highly skilled DevOps professional with over a decade of experience in the industry. His expertise lies in high-scale architecture, with a strong emphasis on GitOps as a core principle to enhance development workflows. Vladi excels in continuous integration and automated deployment, driving efficiency and innovation in technical operations. His strategic vision and hands-on approach make him a valuable asset in leading research and development initiatives."
 {{< /typeit >}}
 {{< mdimporter url="https://raw.githubusercontent.com/vrahmanov/vrahmanov/main/README.md" >}}
