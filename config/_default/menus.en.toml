@@ -20,7 +20,7 @@
   pageRef = "solution"
   weight = 15
 
-  [[main]]
+[[main]]
   name = "Our Contribution"
   pageRef = "ourcontribution"
   weight = 20
