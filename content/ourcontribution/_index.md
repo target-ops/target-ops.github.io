@@ -7,8 +7,4 @@ cascade:
   invertPagination: true
 ---
 
-## gitSwitch
-[![GitSwitch](/assets/gitswitch.png)](/gitSwitch)
-[Gitswitch](/gitSwitch)
-
 ---
