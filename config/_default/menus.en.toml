@@ -21,9 +21,14 @@
   weight = 15
 
 [[main]]
+  name = "Our Contribution"
+  pageRef = "ourcontribution"
+  weight = 20
+
+[[main]]
   name = "Articles"
   pageRef = "posts"
-  weight = 20
+  weight = 30
 
 [[main]]
   name = "Team's"
