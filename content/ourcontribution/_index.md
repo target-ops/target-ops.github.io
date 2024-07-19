@@ -1,6 +1,6 @@
 ---
-title: "Let’s Meet Target Ops Team"
-description: "about target ops"
+title: "Our Contributions"
+description: "Target Ops Github Repositories"
 cascade:
   showDate: false
   showAuthor: false
