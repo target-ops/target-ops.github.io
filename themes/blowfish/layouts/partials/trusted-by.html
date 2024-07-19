@@ -1,0 +1,12 @@
+{{ if .Site.Params.trustedBy }}
+<section class="trusted-by">
+  <h6>Trusted By:</h6>
+  <div class="trusted-by-container">
+    {{ range .Site.Params.trustedBy }}
+      <div class="trusted-by-item">
+        <img src="{{ .logo | relURL }}" alt="{{ .name }}" title="{{ .name }}">
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

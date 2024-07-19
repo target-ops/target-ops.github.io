@@ -10,9 +10,12 @@ title = ""
   dateFormat = "2 January 2006"
   logo = "targetOpsBlackNOBG.webp"
   description = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
+  [[params.trustedBy]]
+    name = "TopeAI"
+    logo = "topeai.webp"
 
 [author]
-  name = "Target Ops"
+  name = ""
   image = "targetOpsBlackNOBG-FULL.webp"
   headline = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
   bio = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
@@ -23,3 +26,7 @@ title = ""
     { patreon = "https://www.patreon.com/target_ops"},
     { dev = "https://app.daily.dev/squads/targetops" },
   ]
+
+
+
+  

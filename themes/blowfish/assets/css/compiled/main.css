@@ -4007,6 +4007,28 @@ pre {
   z-index: 100;
 }
 
+
+.trusted-by {
+  width: 200px;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.trusted-by-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.trusted-by-item img {
+  max-width: 120px;
+  max-height: 80px;
+  object-fit: contain;
+  margin-left: 300px;
+}
+
 .nested-menu:hover + .menuhide {
   visibility: visible;
   opacity: 1;

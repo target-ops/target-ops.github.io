@@ -476,6 +476,7 @@ pre {
   text-underline-offset: 4px;
 }
 
+
 /* Gallery Specific Styles */
 .grid-w10 { width: calc(10% - 5px); margin: 0px !important; }
 .grid-w15 { width: calc(15% - 5px); margin: 0px !important; }
