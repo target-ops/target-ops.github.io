@@ -1,6 +1,6 @@
 ---
-title: "Our Solution"
-description: "Learn the solution that target ops offers"
+title: "Our Solutions"
+description: "Learn the solutions that target ops offers"
 
 cascade:
   showDate: false
