@@ -16,13 +16,13 @@
   weight = 10
 
 [[main]]
-  name = "Solution"
-  pageRef = "solution"
+  name = "Solutions"
+  pageRef = "solutions"
   weight = 15
 
 [[main]]
-  name = "Our Contribution"
-  pageRef = "ourcontribution"
+  name = "OSS"
+  pageRef = "oss"
   weight = 20
 
 [[main]]
