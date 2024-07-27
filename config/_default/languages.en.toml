@@ -18,8 +18,9 @@ title = ""
   bio = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
   links = [
     { github = "https://github.com/target-ops" },
+    { email = "mailto:ofir@target-ops.io" },
     { slack = "https://join.slack.com/t/target-ops/shared_invite/zt-2kxdr9djp-YoQSCoRzARa9psxO8aYoaQ" },
     { linkedin = "https://www.linkedin.com/company/target-ops"},
     { patreon = "https://www.patreon.com/target_ops"},
-    { dev = "https://app.daily.dev/squads/targetops" },
+    { dev = "https://dev.to/target-ops" }
   ]
