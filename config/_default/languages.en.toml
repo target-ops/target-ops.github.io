@@ -1,7 +1,8 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = ""
+title = "Target Ops"
+
 
 [params]
   displayName = "English"
@@ -10,6 +11,7 @@ title = ""
   dateFormat = "2 January 2006"
   logo = "targetOpsBlackNOBG.webp"
   description = "DevOps Solutions for Growing Startups & Established Enterprises 🚀 "
+
 
 [author]
   name = "Target Ops"
