@@ -17,7 +17,6 @@ mainSections = ["solution"]
 # robots = ""
 
 disableImageOptimization = false
-disableTextInHeader = false
 
 defaultBackgroundImage = "pawel.webp"
 # defaultFeaturedImage = "pawel.webp"
@@ -25,6 +24,8 @@ defaultBackgroundImage = "pawel.webp"
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
+
+disableTextInHeader = true
 
 [header]
   layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
