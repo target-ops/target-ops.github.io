@@ -12,88 +12,88 @@
 
   <!-- About -->
   <url>
-    <loc>https://target-ops.io/about</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/about/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Solutions Overview -->
   <url>
-    <loc>https://target-ops.io/solutions</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/solutions/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- DevOps Consulting -->
   <url>
-    <loc>https://target-ops.io/solutions/devops-consulting</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/solutions/devops-consulting/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Cloud Migration -->
   <url>
-    <loc>https://target-ops.io/solutions/cloud-migration</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/solutions/cloud-migration/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Infrastructure Automation -->
   <url>
-    <loc>https://target-ops.io/solutions/infrastructure-automation</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/solutions/infrastructure-automation/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- CI/CD Pipelines -->
   <url>
-    <loc>https://target-ops.io/solutions/cicd</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/solutions/cicd/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Security & Compliance -->
   <url>
-    <loc>https://target-ops.io/solutions/security-compliance</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/solutions/security-compliance/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Team -->
   <url>
-    <loc>https://target-ops.io/team</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/team/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Open Source -->
   <url>
-    <loc>https://target-ops.io/open-source</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/open-source/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Articles -->
   <url>
-    <loc>https://target-ops.io/articles</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/articles/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Contact -->
   <url>
-    <loc>https://target-ops.io/contact</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://target-ops.io/contact/</loc>
+    <lastmod>2025-10-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
