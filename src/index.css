@@ -1,0 +1,299 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 6%;
+    --foreground: 210 15% 95%;
+
+    --card: 220 20% 8%;
+    --card-foreground: 210 15% 95%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 210 15% 95%;
+
+    --primary: 200 100% 50%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 210 15% 85%;
+
+    --muted: 220 15% 12%;
+    --muted-foreground: 210 10% 60%;
+
+    --accent: 195 100% 60%;
+    --accent-foreground: 220 25% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 12%;
+    --ring: 200 100% 50%;
+
+    /* Custom design tokens */
+    --tech-blue: 200 100% 50%;
+    --tech-cyan: 195 100% 60%;
+    --tech-purple: 260 60% 65%;
+    --surface-elevated: 220 20% 10%;
+    --surface-hover: 220 15% 15%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 100% 50%), hsl(195 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 6%), hsl(220 20% 8%));
+    --gradient-accent: linear-gradient(90deg, hsl(200 100% 50%), hsl(260 60% 65%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(200 100% 50% / 0.3);
+    --shadow-soft: 0 4px 20px hsl(220 25% 6% / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode uses same tokens - already optimized for dark */
+    --background: 220 25% 6%;
+    --foreground: 210 15% 95%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Logo animation tricks */
+  @keyframes spin-once {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes bounce-once {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25%);
+    }
+  }
+
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-4px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(4px);
+    }
+  }
+
+  @keyframes flip {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+  @keyframes pulse-once {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.15);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes disappear {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-away {
+    0% {
+      transform: translateX(0);
+    }
+    10% {
+      transform: translateX(-2px);
+    }
+    20% {
+      transform: translateX(-30px);
+    }
+    25% {
+      transform: translateX(-30px) translateY(-2px);
+    }
+    30% {
+      transform: translateX(-30px) translateY(2px);
+    }
+    35% {
+      transform: translateX(-30px) translateY(-2px);
+    }
+    40% {
+      transform: translateX(-30px) translateY(2px);
+    }
+    45% {
+      transform: translateX(-30px);
+    }
+    50% {
+      transform: translateX(-200px) rotate(-15deg);
+    }
+    55% {
+      transform: translateX(-200px) rotate(15deg);
+    }
+    60% {
+      transform: translateX(-200px) rotate(-15deg);
+    }
+    65% {
+      transform: translateX(-200px) rotate(0deg);
+    }
+    70% {
+      transform: translateX(-30px);
+    }
+    75% {
+      transform: translateX(-30px) translateY(2px);
+    }
+    80% {
+      transform: translateX(-30px) translateY(-2px);
+    }
+    85% {
+      transform: translateX(-30px) translateY(2px);
+    }
+    90% {
+      transform: translateX(-30px);
+    }
+    95% {
+      transform: translateX(-2px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-spin-once {
+    animation: spin-once 0.6s ease-in-out;
+  }
+
+  .animate-bounce-once {
+    animation: bounce-once 0.6s ease-in-out;
+  }
+
+  .animate-shake {
+    animation: shake 0.6s ease-in-out;
+  }
+
+  .animate-flip {
+    animation: flip 0.6s ease-in-out;
+  }
+
+  .animate-pulse-once {
+    animation: pulse-once 0.6s ease-in-out;
+  }
+
+  .animate-disappear {
+    animation: disappear 0.8s ease-in-out;
+  }
+
+  .animate-slide-away {
+    animation: slide-away 2s ease-in-out;
+  }
+
+  /* Vertical scrolling animation for Open Source projects */
+  @keyframes scroll-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  .animate-scroll-vertical {
+    animation: scroll-vertical 20s linear infinite;
+  }
+
+  .animate-scroll-vertical:hover {
+    animation-play-state: paused;
+  }
+
+  /* Horizontal scrolling animation for Services carousel */
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-horizontal-fast {
+    animation: scroll-horizontal 20s linear infinite;
+  }
+
+  /* Hide scrollbar for carousel */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

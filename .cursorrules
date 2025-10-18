@@ -1,0 +1,203 @@
+# Target-Ops DevOps Showcase - Cursor AI Ruleset
+
+## Project Overview
+A modern React-based showcase website for Target-Ops DevOps consultancy, migrating from Hugo static site to a dynamic React application with TypeScript, Vite, and shadcn/ui components.
+
+## Tech Stack
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui (Radix UI primitives)
+- **Routing**: React Router DOM v6
+- **Icons**: lucide-react
+- **State Management**: React Query (TanStack Query)
+- **Form Handling**: React Hook Form + Zod validation
+
+## Code Standards & Best Practices
+
+### TypeScript
+- Always use TypeScript for all new files
+- Use proper type definitions, avoid `any` unless absolutely necessary
+- Define interfaces for props and data structures
+- Use type inference where possible
+- Export types/interfaces when they're reusable
+
+### React Components
+- Use functional components with hooks
+- Follow the component structure:
+  ```tsx
+  import statements
+  // Types/Interfaces
+  // Component
+  export default Component
+  ```
+- Keep components focused and single-responsibility
+- Extract reusable logic into custom hooks
+- Use proper naming: PascalCase for components, camelCase for functions/variables
+
+### File Organization
+```
+src/
+├── components/         # Reusable UI components
+│   ├── ui/            # shadcn/ui components (don't modify directly)
+│   └── [Component].tsx # Custom components
+├── pages/             # Route pages
+├── hooks/             # Custom React hooks
+├── lib/               # Utilities and helpers
+└── types/             # TypeScript type definitions
+```
+
+### Styling Guidelines
+- Use Tailwind CSS utility classes
+- Follow the design system colors:
+  - Primary gradient: `bg-gradient-primary`
+  - Tech colors: `tech-blue`, `tech-cyan`, `tech-purple`
+  - Surface colors: `surface-elevated`, `surface-hover`
+- Use consistent spacing (multiples of 4: 4, 8, 12, 16, 24, etc.)
+- Maintain responsive design: mobile-first approach with `sm:`, `md:`, `lg:` breakpoints
+- Use transitions for hover states: `transition-all duration-300`
+
+### Component Patterns
+- Use shadcn/ui components as base: Button, Card, Badge, etc.
+- Wrap shadcn components when adding custom behavior
+- Keep icon sizes consistent: `h-6 w-6` for standard, `h-8 w-8` for larger
+- Use lucide-react for all icons
+
+### Routing
+- Use React Router v6 patterns
+- Page components should include Navigation and Footer
+- Use descriptive route names matching the URL structure
+
+### Data Management
+- Use React Query for API calls and server state
+- Keep local state minimal, prefer derived state
+- Use proper loading and error states
+- Handle edge cases gracefully
+
+## Content Migration Guidelines
+
+### From Hugo to React
+- Convert Hugo markdown frontmatter to TypeScript data structures
+- Extract content from `content/` directory
+- Create data files in `src/data/` for static content
+- Preserve all metadata (titles, descriptions, tags, etc.)
+
+### Content Structure
+Create these data structures:
+- `src/data/solutions.ts` - Solutions/services data
+- `src/data/team.ts` - Team member profiles
+- `src/data/projects.ts` - Open source projects
+- `src/data/articles.ts` - Blog posts/articles
+
+### Content Format
+```typescript
+// Example structure
+export interface Solution {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  features: string[];
+  slug: string;
+  image?: string;
+  weight?: number;
+}
+```
+
+## Design Principles
+
+### Visual Style
+- **Theme**: Dark mode professional tech aesthetic
+- **Colors**: Blue/cyan gradients for primary actions, slate/gray for surfaces
+- **Typography**: Clean, hierarchical, readable
+- **Spacing**: Generous whitespace, breathing room
+- **Effects**: Subtle glows, smooth transitions, glassmorphism
+
+### User Experience
+- Fast page loads (Vite optimization)
+- Smooth transitions between pages
+- Responsive on all devices
+- Accessible (ARIA labels, keyboard navigation)
+- Clear call-to-actions
+
+### Animation Guidelines
+- Use subtle animations: `group-hover:` effects
+- Transition duration: 300ms standard
+- Scale transforms: 1.05-1.1 max
+- Translate transforms: small movements (1-2 units)
+
+## Performance
+
+### Optimization
+- Lazy load images
+- Code split routes
+- Minimize bundle size
+- Use proper React.memo when needed
+- Optimize re-renders
+
+### Build
+- Development: `npm run dev`
+- Production: `npm run build`
+- Preview: `npm run preview`
+- Lint: `npm run lint`
+
+## SEO & Meta Tags
+- Update `index.html` with proper meta tags
+- Add Open Graph tags for social sharing
+- Include structured data where appropriate
+- Use semantic HTML
+
+## Accessibility
+- Use semantic HTML elements
+- Include ARIA labels where needed
+- Ensure keyboard navigation works
+- Maintain color contrast ratios
+- Add alt text to images
+
+## Version Control
+- Write clear, descriptive commit messages
+- Follow conventional commits: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`
+- Keep commits atomic and focused
+
+## Testing Considerations
+- Test responsive behavior manually
+- Verify all routes work
+- Check cross-browser compatibility
+- Test form validations
+- Ensure accessibility standards
+
+## Contact Integration
+- Set up contact form (email service integration TBD)
+- Include Slack, LinkedIn, Telegram links
+- Add social media icons consistently
+
+## Known Issues to Address
+- [ ] Complete Articles page with blog content
+- [ ] Complete Team page with member profiles
+- [ ] Add actual OSS project data
+- [ ] Implement Contact form functionality
+- [ ] Add loading states for dynamic content
+- [ ] Set up analytics tracking
+- [ ] Add proper error boundaries
+- [ ] Optimize images and assets
+
+## Content Sources
+Migrate content from Hugo site at: `/Users/ofirhaim/Target/target-ops.github.io/content/`
+- about/_index.md
+- solutions/*/index.md
+- oss/*/index.md
+- posts/*/index.md
+- meettheteam/*/index.md
+
+## Additional Resources
+- shadcn/ui docs: https://ui.shadcn.com
+- Tailwind CSS: https://tailwindcss.com
+- React Router: https://reactrouter.com
+- Lucide Icons: https://lucide.dev
+
+## Questions to Answer
+- Analytics platform preference?
+- Email service for contact form?
+- Deployment target (Vercel, Netlify, GitHub Pages)?
+- Content management approach (static vs headless CMS)?
+

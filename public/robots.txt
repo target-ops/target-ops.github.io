@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://target-ops.io/sitemap.xml
+
+# Crawl-delay for polite crawlers
+Crawl-delay: 1
