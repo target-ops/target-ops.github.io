@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
       <div className="max-w-7xl mx-auto">
         {/* Why Choose Us */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 px-2">
             <span className="text-foreground">Why Choose </span>
             <span className="bg-gradient-primary bg-clip-text text-transparent">Target-Ops</span>
           </h2>

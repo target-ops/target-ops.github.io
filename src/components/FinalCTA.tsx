@@ -10,7 +10,7 @@ const FinalCTA = () => {
           <span className="text-primary font-semibold text-xs sm:text-sm">🚀 Free Consultation Available</span>
         </div>
         
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 px-2">
           Ready to Transform Your DevOps?
         </h2>
         

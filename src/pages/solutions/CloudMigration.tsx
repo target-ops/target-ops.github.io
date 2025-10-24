@@ -474,7 +474,7 @@ const CloudMigration = () => {
               🚀 Free Consultation Available
             </div>
             <p className="text-xl text-muted-foreground mb-10">
-              Book a free 30-minute consultation—no sales pitch, just honest advice about your DevOps challenges.
+              Book a free 30-minute consultation, no sales pitch, just honest advice about your DevOps challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-10 py-6 shadow-lg shadow-primary/20" asChild>

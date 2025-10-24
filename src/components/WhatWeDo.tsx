@@ -40,7 +40,7 @@ const WhatWeDo = () => {
       <div className="max-w-7xl mx-auto">
         {/* What We Do */}
         <div className="text-center mb-6 sm:mb-10 md:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 px-2">
             <span className="text-foreground">Before Us </span>
             <span className="bg-gradient-primary bg-clip-text text-transparent">vs. After Us</span>
           </h2>

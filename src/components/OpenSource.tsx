@@ -22,7 +22,7 @@ const OpenSource = () => {
           <div>
             <div className="flex items-center gap-2 mb-4 sm:mb-6">
               <Code2 className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   We Give Back
                 </span>
