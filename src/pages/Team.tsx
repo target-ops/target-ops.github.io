@@ -20,11 +20,11 @@ const Team = () => {
       <main className="pt-16">
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+            <div className="text-center mb-12 sm:mb-16">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-2 bg-gradient-primary bg-clip-text text-transparent">
                 Meet Our Team
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
                 The experts driving DevOps excellence at Target-Ops. Our team brings decades of combined experience 
                 in cloud technologies, automation, and enterprise solutions.
               </p>
@@ -71,9 +71,9 @@ const Team = () => {
               ))}
             </div>
             
-            <div className="text-center bg-surface-elevated p-8 rounded-lg border border-border">
-              <h2 className="text-2xl font-semibold mb-4">Join Our Team</h2>
-              <p className="text-muted-foreground mb-6">
+            <div className="text-center bg-surface-elevated p-6 sm:p-8 rounded-lg border border-border">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-4 px-2">Join Our Team</h2>
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-2">
                 We're always looking for top talent to join our mission of delivering DevOps excellence. 
                 If you're passionate about cloud technologies and automation, we'd love to hear from you.
               </p>

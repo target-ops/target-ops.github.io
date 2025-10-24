@@ -31,12 +31,12 @@ const About = () => {
         {/* Hero */}
         <section className="relative pt-24 pb-12 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Our Story
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed px-4">
               Three friends. Decades of experience. One mission: Give back to the tech community.
             </p>
           </div>
@@ -45,8 +45,8 @@ const About = () => {
         {/* The Story */}
         <section className="relative pt-4 pb-8 px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-background/50 backdrop-blur-sm border-border p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
-              <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
+            <Card className="bg-background/50 backdrop-blur-sm border-border p-6 sm:p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+              <div className="space-y-6 sm:space-y-8 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 <p>
                   <strong className="text-foreground text-2xl">It all started with coffee and frustration.</strong>
                 </p>
@@ -78,8 +78,8 @@ const About = () => {
         {/* What Makes Us Different */}
         <section className="relative py-8 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">What Makes Us Different</h2>
-            <Card className="bg-background/50 backdrop-blur-sm border-border p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center px-2">What Makes Us Different</h2>
+            <Card className="bg-background/50 backdrop-blur-sm border-border p-6 sm:p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
                   <strong className="text-foreground">Engineers First, Consultants Second</strong>
@@ -119,9 +119,9 @@ const About = () => {
         {/* How We Work */}
         <section className="relative py-8 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">How We Work</h2>
-            <Card className="bg-background/50 backdrop-blur-sm border-border p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
-              <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center px-2">How We Work</h2>
+            <Card className="bg-background/50 backdrop-blur-sm border-border p-6 sm:p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+              <div className="space-y-6 sm:space-y-8 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 <div>
                   <p className="text-xl font-semibold text-foreground mb-3">We Join Your Team</p>
                   <p>
@@ -145,8 +145,8 @@ const About = () => {
         {/* Community & Open Source */}
         <section className="relative py-8 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Giving Back</h2>
-            <Card className="bg-background/50 backdrop-blur-sm border-border p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center px-2">Giving Back</h2>
+            <Card className="bg-background/50 backdrop-blur-sm border-border p-6 sm:p-8 transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
                   The tech community gave us everything — open source, shared wisdom, late-night Stack Overflow answers, and mentors who cared.
@@ -174,9 +174,9 @@ const About = () => {
         {/* What We Do */}
         <section className="relative py-8 px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-background/50 backdrop-blur-sm border-border p-12 text-center transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">What We Actually Do</h2>
-              <p className="text-xl text-muted-foreground mb-12">
+            <Card className="bg-background/50 backdrop-blur-sm border-border p-8 sm:p-10 md:p-12 text-center transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 px-2">What We Actually Do</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-12 px-4">
                 We fix DevOps problems. Cloud migrations. CI/CD pipelines. Infrastructure automation. Security hardening. The whole stack.
               </p>
               <Button size="lg" variant="outline" className="hover:scale-105 hover:border-primary transition-all duration-300 group" asChild>
@@ -192,10 +192,10 @@ const About = () => {
         {/* Meet the Team CTA */}
         <section className="relative py-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 px-2">
               Want to Work Together?
             </h2>
-            <p className="text-xl text-muted-foreground mb-10">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 px-4">
               No sales team. No gatekeepers. Just three engineers who love solving problems.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
