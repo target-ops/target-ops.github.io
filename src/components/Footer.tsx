@@ -22,22 +22,22 @@ const Footer = () => {
 
   return (
     <footer className="bg-surface-elevated border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-block mb-6">
+            <Link to="/" className="inline-block mb-4 sm:mb-6">
               <img 
                 src="/assets/targetOpsBlackNOBG-FULL.webp" 
                 alt="Target-Ops Logo" 
-                className="h-12 w-auto"
+                className="h-10 sm:h-12 w-auto"
               />
             </Link>
-            <p className="text-muted-foreground mb-6 max-w-md">
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-md">
               Empowering startups and enterprises to achieve DevOps excellence through 
               tailored solutions, automation, and continuous innovation.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               <Button variant="ghost" size="sm" asChild>
                 <a href="https://github.com/target-ops" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github className="h-5 w-5" />
@@ -68,13 +68,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -85,13 +85,13 @@ const Footer = () => {
 
           {/* Solutions */}
           <div>
-            <h3 className="font-semibold text-foreground mb-6">Solutions</h3>
-            <ul className="space-y-3">
+            <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">Solutions</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {solutions.map((solution) => (
                 <li key={solution.name}>
                   <Link
                     to={solution.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     {solution.name}
                   </Link>
@@ -102,16 +102,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-muted-foreground text-sm">
+        <div className="border-t border-border mt-8 sm:mt-12 pt-6 sm:pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+            <p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
               © 2024 Target-Ops. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy" className="text-muted-foreground hover:text-primary text-sm transition-colors">
+            <div className="flex space-x-4 sm:space-x-6">
+              <Link to="/privacy" className="text-muted-foreground hover:text-primary text-xs sm:text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-muted-foreground hover:text-primary text-sm transition-colors">
+              <Link to="/terms" className="text-muted-foreground hover:text-primary text-xs sm:text-sm transition-colors">
                 Terms of Service
               </Link>
             </div>
