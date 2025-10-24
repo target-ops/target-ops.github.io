@@ -13,11 +13,11 @@ const Footer = () => {
   ];
 
   const solutions = [
-    { name: "DevOps Consulting", href: "/solutions#devops" },
-    { name: "Cloud Migration", href: "/solutions#cloud" },
-    { name: "Infrastructure Automation", href: "/solutions#automation" },
-    { name: "CI/CD Pipelines", href: "/solutions#cicd" },
-    { name: "Security & Compliance", href: "/solutions#security" },
+    { name: "DevOps Consulting", href: "/solutions/devops-consulting" },
+    { name: "Cloud Migration", href: "/solutions/cloud-migration" },
+    { name: "Infrastructure Automation", href: "/solutions/infrastructure-automation" },
+    { name: "CI/CD Pipelines", href: "/solutions/cicd" },
+    { name: "Security & Compliance", href: "/solutions/security-compliance" },
   ];
 
   return (
