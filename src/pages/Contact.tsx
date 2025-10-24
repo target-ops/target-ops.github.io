@@ -85,11 +85,11 @@ const Contact = () => {
       <main className="pt-16">
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+            <div className="text-center mb-12 sm:mb-16">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-2 bg-gradient-primary bg-clip-text text-transparent">
                 Let's Talk About Your DevOps Challenges
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
                 Book a free 30-minute consultation. No sales pitch — just honest advice from engineers who've been there.
               </p>
             </div>
@@ -98,7 +98,7 @@ const Contact = () => {
               {/* Contact Form */}
               <Card className="bg-surface-elevated border-border">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Request a Free Consultation</CardTitle>
+                  <CardTitle className="text-xl sm:text-2xl">Request a Free Consultation</CardTitle>
                   <CardDescription>
                     Tell us about your challenges. We'll respond within 24 hours with next steps.
                   </CardDescription>
@@ -196,7 +196,7 @@ const Contact = () => {
               <div className="space-y-8">
                 <Card className="bg-surface-elevated border-border">
                   <CardHeader>
-                    <CardTitle className="text-xl">Direct Contact</CardTitle>
+                    <CardTitle className="text-lg sm:text-xl">Direct Contact</CardTitle>
                     <CardDescription>
                       Prefer to reach out directly? Connect with us through your preferred channel.
                     </CardDescription>
@@ -225,7 +225,7 @@ const Contact = () => {
                 
                 <Card className="bg-surface-elevated border-border">
                   <CardHeader>
-                    <CardTitle className="text-xl">What Happens Next?</CardTitle>
+                    <CardTitle className="text-lg sm:text-xl">What Happens Next?</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
