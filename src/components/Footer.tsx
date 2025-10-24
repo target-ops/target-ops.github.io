@@ -23,9 +23,9 @@ const Footer = () => {
   return (
     <footer className="bg-surface-elevated border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
           {/* Company Info */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 col-span-1">
             <Link to="/" className="inline-block mb-4 sm:mb-6">
               <img 
                 src="/assets/targetOpsBlackNOBG-FULL.webp" 
@@ -66,38 +66,41 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h3>
-            <ul className="space-y-2 sm:space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Quick Links & Solutions - Side by Side on Mobile */}
+          <div className="col-span-1 lg:col-span-2 grid grid-cols-2 gap-6 sm:gap-8">
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h3>
+              <ul className="space-y-2 sm:space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
+                      className="text-xs sm:text-sm md:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Solutions */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">Solutions</h3>
-            <ul className="space-y-2 sm:space-y-3">
-              {solutions.map((solution) => (
-                <li key={solution.name}>
-                  <Link
-                    to={solution.href}
-                    className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >
-                    {solution.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Solutions */}
+            <div>
+              <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">Solutions</h3>
+              <ul className="space-y-2 sm:space-y-3">
+                {solutions.map((solution) => (
+                  <li key={solution.name}>
+                    <Link
+                      to={solution.href}
+                      className="text-xs sm:text-sm md:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
+                    >
+                      {solution.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 

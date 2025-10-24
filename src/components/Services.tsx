@@ -126,7 +126,7 @@ const Services = () => {
                     </ul>
                     <Button variant="outline" className="w-full group-hover:bg-gradient-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 rounded-xl" asChild>
                       <Link to={`/solutions/${solution.slug}`}>
-                        Learn More
+                        Learn About {solution.title}
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </Button>
@@ -161,7 +161,7 @@ const Services = () => {
                     </ul>
                     <Button variant="outline" className="w-full group-hover:bg-gradient-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 rounded-xl" asChild>
                       <Link to={`/solutions/${solution.slug}`}>
-                        Learn More
+                        Learn About {solution.title}
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </Button>
