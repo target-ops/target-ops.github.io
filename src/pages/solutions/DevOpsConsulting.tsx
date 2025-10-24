@@ -31,12 +31,12 @@ const DevOpsConsulting = () => {
             <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-6">
               <Settings className="h-8 w-8 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 DevOps Consulting
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto px-2">
               Stop struggling with slow deployments and team silos. We assess your processes, 
               create a clear roadmap, and implement DevOps practices that reduce deployment time by up to 80%.
             </p>
@@ -60,8 +60,8 @@ const DevOpsConsulting = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Sound Familiar?</h2>
-              <p className="text-xl text-muted-foreground">These are the challenges we solve every day</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Sound Familiar?</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">These are the challenges we solve every day</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-surface-elevated border-border">
@@ -99,8 +99,8 @@ const DevOpsConsulting = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What's Included</h2>
-              <p className="text-xl text-muted-foreground">Everything you need for DevOps success</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What's Included</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Everything you need for DevOps success</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
               <div className="grid md:grid-cols-2 gap-4">
@@ -130,8 +130,8 @@ const DevOpsConsulting = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">The Results You Can Expect</h2>
-              <p className="text-xl text-muted-foreground">Real outcomes from real implementations</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">The Results You Can Expect</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Real outcomes from real implementations</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-gradient-to-br from-primary/10 to-tech-blue/10 border-primary/30 p-8 text-center">
@@ -154,8 +154,8 @@ const DevOpsConsulting = () => {
         <section className="relative py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Story</h2>
-              <p className="text-xl text-muted-foreground">How we transformed a SaaS startup's deployment process</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">How we transformed a SaaS startup's deployment process</p>
             </div>
             <Card className="bg-gradient-to-br from-surface-elevated to-background border-primary/20">
               <CardContent className="p-8 md:p-12">
@@ -239,8 +239,8 @@ const DevOpsConsulting = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-              <p className="text-xl text-muted-foreground">Real feedback from companies we've transformed</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What Our Clients Say</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Real feedback from companies we've transformed</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-card border-border">
@@ -319,8 +319,8 @@ const DevOpsConsulting = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">We Work With All Sizes</h2>
-              <p className="text-xl text-muted-foreground">From startups to enterprises - custom solutions for every stage</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">We Work With All Sizes</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">From startups to enterprises - custom solutions for every stage</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-card border-primary/30 hover:border-primary transition-all">
@@ -414,8 +414,8 @@ const DevOpsConsulting = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-xl text-muted-foreground">Everything you need to know before getting started</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Frequently Asked Questions</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Everything you need to know before getting started</p>
             </div>
             <div className="space-y-6">
               {[

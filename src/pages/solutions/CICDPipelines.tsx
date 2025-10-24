@@ -31,12 +31,12 @@ const CICDPipelines = () => {
             <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-6">
               <GitBranch className="h-8 w-8 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 CI/CD Pipelines
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-2">
               Still deploying code manually? We build automated pipelines that test and deploy your code in minutes—enabling your team to release updates 10x faster while catching bugs before they reach production.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -53,7 +53,7 @@ const CICDPipelines = () => {
         {/* The Problems We Solve */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">The Problems We Solve</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Problems We Solve</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
                 <Rocket className="h-10 w-10 text-tech-blue mb-4" />
@@ -84,8 +84,8 @@ const CICDPipelines = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What's Included</h2>
-              <p className="text-xl text-muted-foreground">Complete CI/CD pipeline solution</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What's Included</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Complete CI/CD pipeline solution</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
               <div className="grid md:grid-cols-2 gap-6">
@@ -139,7 +139,7 @@ const CICDPipelines = () => {
         {/* Results */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">The Results</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Results</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-gradient-to-br from-tech-blue/10 to-tech-cyan/10 border-tech-blue/30 p-8 text-center">
                 <div className="text-5xl font-bold text-tech-blue mb-2">10x</div>
@@ -161,8 +161,8 @@ const CICDPipelines = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Story</h2>
-              <p className="text-xl text-muted-foreground">SaaS Startup: From Weekly to Daily Deployments</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">SaaS Startup: From Weekly to Daily Deployments</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
               <div className="space-y-6 text-muted-foreground">
@@ -192,7 +192,7 @@ const CICDPipelines = () => {
         {/* Testimonials */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">What Our Clients Say</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">What Our Clients Say</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
                 <div className="mb-4">
@@ -234,8 +234,8 @@ const CICDPipelines = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">We Work With All Sizes</h2>
-              <p className="text-xl text-muted-foreground">From startups to enterprises - deployment pipelines for every stage</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">We Work With All Sizes</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">From startups to enterprises - deployment pipelines for every stage</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
@@ -305,8 +305,8 @@ const CICDPipelines = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-xl text-muted-foreground">Everything you need to know before getting started</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Frequently Asked Questions</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Everything you need to know before getting started</p>
             </div>
             <div className="space-y-6">
               {[

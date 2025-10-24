@@ -31,12 +31,12 @@ const SecurityCompliance = () => {
             <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-6">
               <Shield className="h-8 w-8 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Security & Compliance
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-2">
               Worried about security vulnerabilities or failing compliance audits? We harden your infrastructure, implement security best practices, and get you audit-ready for SOC 2, HIPAA, PCI-DSS, or GDPR.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -53,7 +53,7 @@ const SecurityCompliance = () => {
         {/* The Problems We Solve */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">The Problems We Solve</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Problems We Solve</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
                 <Shield className="h-10 w-10 text-tech-purple mb-4" />
@@ -84,8 +84,8 @@ const SecurityCompliance = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What's Included</h2>
-              <p className="text-xl text-muted-foreground">Complete security and compliance solution</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What's Included</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Complete security and compliance solution</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
               <div className="grid md:grid-cols-2 gap-6">
@@ -139,7 +139,7 @@ const SecurityCompliance = () => {
         {/* Results */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">The Results</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Results</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-gradient-to-br from-tech-purple/10 to-tech-blue/10 border-tech-purple/30 p-8 text-center">
                 <div className="text-5xl font-bold text-tech-purple mb-2">100%</div>
@@ -161,8 +161,8 @@ const SecurityCompliance = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Story</h2>
-              <p className="text-xl text-muted-foreground">HealthTech Company: SOC 2 Compliant in 8 Weeks</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">HealthTech Company: SOC 2 Compliant in 8 Weeks</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
               <div className="space-y-6 text-muted-foreground">
@@ -192,7 +192,7 @@ const SecurityCompliance = () => {
         {/* Testimonials */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">What Our Clients Say</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">What Our Clients Say</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
                 <div className="mb-4">
@@ -234,8 +234,8 @@ const SecurityCompliance = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">We Work With All Sizes</h2>
-              <p className="text-xl text-muted-foreground">From startups to enterprises - security solutions for every stage</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">We Work With All Sizes</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">From startups to enterprises - security solutions for every stage</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
@@ -305,8 +305,8 @@ const SecurityCompliance = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-xl text-muted-foreground">Everything you need to know before getting started</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Frequently Asked Questions</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Everything you need to know before getting started</p>
             </div>
             <div className="space-y-6">
               {[

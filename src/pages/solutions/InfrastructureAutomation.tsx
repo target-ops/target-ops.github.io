@@ -31,12 +31,12 @@ const InfrastructureAutomation = () => {
             <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-6">
               <Zap className="h-8 w-8 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Infrastructure Automation
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-2">
               Tired of manual server setup and configuration? We automate your entire infrastructure—from provisioning to scaling—so your team can deploy in minutes instead of days and eliminate human errors.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -53,7 +53,7 @@ const InfrastructureAutomation = () => {
         {/* The Problems We Solve */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">The Problems We Solve</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Problems We Solve</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
                 <Clock className="h-10 w-10 text-tech-cyan mb-4" />
@@ -84,8 +84,8 @@ const InfrastructureAutomation = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What's Included</h2>
-              <p className="text-xl text-muted-foreground">Complete infrastructure automation solution</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What's Included</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Complete infrastructure automation solution</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
               <div className="grid md:grid-cols-2 gap-6">
@@ -139,7 +139,7 @@ const InfrastructureAutomation = () => {
         {/* Results */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">The Results</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Results</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-gradient-to-br from-tech-cyan/10 to-tech-blue/10 border-tech-cyan/30 p-8 text-center">
                 <div className="text-5xl font-bold text-tech-cyan mb-2">90%</div>
@@ -161,8 +161,8 @@ const InfrastructureAutomation = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Story</h2>
-              <p className="text-xl text-muted-foreground">E-commerce Platform: From 2-Day Deploys to 15 Minutes</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">E-commerce Platform: From 2-Day Deploys to 15 Minutes</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
               <div className="space-y-6 text-muted-foreground">
@@ -191,7 +191,7 @@ const InfrastructureAutomation = () => {
         {/* Testimonials */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">What Our Clients Say</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">What Our Clients Say</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
                 <div className="mb-4">
@@ -233,8 +233,8 @@ const InfrastructureAutomation = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">We Work With All Sizes</h2>
-              <p className="text-xl text-muted-foreground">From startups to enterprises - automated infrastructure for every stage</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">We Work With All Sizes</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">From startups to enterprises - automated infrastructure for every stage</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
@@ -304,8 +304,8 @@ const InfrastructureAutomation = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-xl text-muted-foreground">Everything you need to know before getting started</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Frequently Asked Questions</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Everything you need to know before getting started</p>
             </div>
             <div className="space-y-6">
               {[

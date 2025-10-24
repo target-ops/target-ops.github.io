@@ -31,10 +31,10 @@ const CloudMigration = () => {
             <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-6">
               <Cloud className="h-8 w-8 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2 bg-gradient-primary bg-clip-text text-transparent">
               Cloud Migration
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed px-2">
               Moving to the cloud but worried about downtime or data loss? We plan and execute your entire migration—from AWS to GCP to Azure—ensuring <strong className="text-foreground">zero downtime</strong> and immediate cost savings of <strong className="text-foreground">30-50%</strong>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -57,8 +57,8 @@ const CloudMigration = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Sound Familiar?</h2>
-              <p className="text-xl text-muted-foreground">These are the challenges we solve every day</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Sound Familiar?</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">These are the challenges we solve every day</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-surface-elevated border-border">
@@ -96,8 +96,8 @@ const CloudMigration = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What's Included</h2>
-              <p className="text-xl text-muted-foreground">Complete cloud migration, end-to-end</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What's Included</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Complete cloud migration, end-to-end</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
               <div className="grid md:grid-cols-2 gap-4">
@@ -127,8 +127,8 @@ const CloudMigration = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">The Results You Can Expect</h2>
-              <p className="text-xl text-muted-foreground">Real outcomes from real migrations</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">The Results You Can Expect</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Real outcomes from real migrations</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-gradient-to-br from-primary/10 to-tech-blue/10 border-primary/30 p-8 text-center">
@@ -151,8 +151,8 @@ const CloudMigration = () => {
         <section className="relative py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Story</h2>
-              <p className="text-xl text-muted-foreground">How we migrated a fintech startup to AWS with zero downtime</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">How we migrated a fintech startup to AWS with zero downtime</p>
             </div>
             <Card className="bg-gradient-to-br from-card to-background border-primary/20">
               <CardContent className="p-8 md:p-12">
@@ -234,8 +234,8 @@ const CloudMigration = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-              <p className="text-xl text-muted-foreground">Real feedback from successful migrations</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What Our Clients Say</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Real feedback from successful migrations</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-card border-border">
@@ -314,8 +314,8 @@ const CloudMigration = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">We Migrate All Sizes</h2>
-              <p className="text-xl text-muted-foreground">From startups to enterprises - safe migrations every time</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">We Migrate All Sizes</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">From startups to enterprises - safe migrations every time</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-card border-primary/30 hover:border-primary transition-all">
@@ -409,8 +409,8 @@ const CloudMigration = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-xl text-muted-foreground">Everything you need to know before migrating</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Frequently Asked Questions</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Everything you need to know before migrating</p>
             </div>
             <div className="space-y-6">
               {[
