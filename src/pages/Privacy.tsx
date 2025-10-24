@@ -91,7 +91,7 @@ const Privacy = () => {
                     <li>Object to processing of your personal information</li>
                   </ul>
                   <p className="mt-4">
-                    To exercise these rights, please contact us at <a href="mailto:privacy@target-ops.io" className="text-primary hover:underline">privacy@target-ops.io</a>
+                    To exercise these rights, please contact us at <a href="mailto:target@target-ops.io" className="text-primary hover:underline">target@target-ops.io</a>
                   </p>
                 </section>
 
@@ -122,7 +122,7 @@ const Privacy = () => {
                     If you have any questions about this Privacy Policy, please contact us:
                   </p>
                   <ul className="list-none space-y-2 mt-4">
-                    <li><strong className="text-foreground">Email:</strong> <a href="mailto:privacy@target-ops.io" className="text-primary hover:underline">privacy@target-ops.io</a></li>
+                    <li><strong className="text-foreground">Email:</strong> <a href="mailto:target@target-ops.io" className="text-primary hover:underline">target@target-ops.io</a></li>
                     <li><strong className="text-foreground">Website:</strong> <a href="https://target-ops.io/contact" className="text-primary hover:underline">target-ops.io/contact</a></li>
                   </ul>
                 </section>
