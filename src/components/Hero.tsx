@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Cloud, Zap, Shield, GitBranch } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -18,11 +17,6 @@ const Hero = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-5xl mx-auto">
-          {/* Badge */}
-          <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm font-semibold bg-primary/10 text-primary border-primary/20">
-            Your DevOps Team, On Demand
-          </Badge>
-
           {/* Main heading - Clear service offering */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight px-2">
             <span className="text-foreground">

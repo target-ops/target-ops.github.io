@@ -7,7 +7,8 @@ import {
   Zap, 
   GitBranch, 
   Shield, 
-  ArrowRight
+  ArrowRight,
+  CheckCircle2
 } from "lucide-react";
 import { solutions } from "@/data/solutions";
 import React, { useRef, useState } from "react";
@@ -60,16 +61,16 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-surface-elevated">
+    <section className="py-12 sm:py-16 md:py-24 bg-surface-elevated">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
             <span className="text-foreground">Stop Fighting Fires. </span>
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Start Shipping Features.
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Full-service DevOps consulting — from cloud migrations to CI/CD pipelines. We fix what's broken, automate what's manual, and optimize what's expensive.
           </p>
         </div>
@@ -102,28 +103,28 @@ const Services = () => {
             {solutions.map((solution) => {
               const Icon = iconMap[solution.icon];
               return (
-                <Card key={`first-${solution.id}`} className="group bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow/20 flex-shrink-0 w-[280px] sm:w-[340px] md:w-[380px] snap-start">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="h-6 w-6 text-primary-foreground" />
+                <Card key={`first-${solution.id}`} className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px] snap-start rounded-2xl overflow-hidden">
+                  <CardHeader className="pb-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/30 to-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-primary/20">
+                      <Icon className="h-6 w-6 text-primary" />
                     </div>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
+                    <CardTitle className="text-lg sm:text-xl group-hover:text-primary transition-colors duration-300">
                       {solution.title}
                     </CardTitle>
-                    <CardDescription className="text-muted-foreground">
+                    <CardDescription className="text-sm text-muted-foreground leading-relaxed">
                       {solution.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 mb-6">
+                  <CardContent className="pt-0">
+                    <ul className="space-y-2 mb-5">
                       {solution.features.slice(0, 3).map((feature, idx) => (
                         <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
+                          <CheckCircle2 className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
-                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300" asChild>
+                    <Button variant="outline" className="w-full group-hover:bg-gradient-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 rounded-xl" asChild>
                       <Link to={`/solutions/${solution.slug}`}>
                         Learn More
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -137,28 +138,28 @@ const Services = () => {
             {solutions.map((solution) => {
               const Icon = iconMap[solution.icon];
               return (
-                <Card key={`second-${solution.id}`} className="group bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow/20 flex-shrink-0 w-[280px] sm:w-[340px] md:w-[380px] snap-start">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="h-6 w-6 text-primary-foreground" />
+                <Card key={`second-${solution.id}`} className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px] snap-start rounded-2xl overflow-hidden">
+                  <CardHeader className="pb-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/30 to-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-primary/20">
+                      <Icon className="h-6 w-6 text-primary" />
                     </div>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
+                    <CardTitle className="text-lg sm:text-xl group-hover:text-primary transition-colors duration-300">
                       {solution.title}
                     </CardTitle>
-                    <CardDescription className="text-muted-foreground">
+                    <CardDescription className="text-sm text-muted-foreground leading-relaxed">
                       {solution.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 mb-6">
+                  <CardContent className="pt-0">
+                    <ul className="space-y-2 mb-5">
                       {solution.features.slice(0, 3).map((feature, idx) => (
                         <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
+                          <CheckCircle2 className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
-                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300" asChild>
+                    <Button variant="outline" className="w-full group-hover:bg-gradient-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 rounded-xl" asChild>
                       <Link to={`/solutions/${solution.slug}`}>
                         Learn More
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -171,10 +172,11 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="text-center mt-16">
-          <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-all duration-300 shadow-glow" asChild>
+        <div className="text-center mt-10 sm:mt-12 md:mt-16">
+          <Button size="lg" className="bg-gradient-primary hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-xl shadow-primary/30 rounded-xl px-8 py-6 text-base sm:text-lg" asChild>
             <Link to="/solutions">
               Check Our Solutions
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>
