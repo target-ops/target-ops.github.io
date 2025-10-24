@@ -36,60 +36,60 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-background">
+    <section className="py-12 sm:py-16 md:py-20 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* What We Do */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-2">
             <span className="text-foreground">Before Us </span>
             <span className="bg-gradient-primary bg-clip-text text-transparent">vs. After Us</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
             Startups don't realize they have an ops problem — they just know things feel broken.
             <span className="block text-primary font-semibold mt-2">Here's what changes when we step in.</span>
           </p>
         </div>
 
         {/* Before/After Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {painPoints.map((point, index) => {
             const Icon = point.icon;
             return (
-              <Card key={index} className="bg-card border-border p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+              <Card key={index} className="bg-card border-border p-4 sm:p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="h-6 w-6 text-primary" />
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold">{point.service}</h3>
+                    <h3 className="text-base sm:text-lg font-bold">{point.service}</h3>
                   </div>
                   
                   {/* Before State */}
-                  <div className="mb-3 p-3 bg-red-500/5 border border-red-500/20 rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <XCircle className="h-4 w-4 text-red-400 flex-shrink-0" />
-                      <p className="text-xs uppercase tracking-wide text-red-400 font-bold">
+                  <div className="mb-2 sm:mb-3 p-2.5 sm:p-3 bg-red-500/5 border border-red-500/20 rounded-lg">
+                    <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
+                      <XCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-red-400 flex-shrink-0" />
+                      <p className="text-[10px] sm:text-xs uppercase tracking-wide text-red-400 font-bold">
                         Before
                       </p>
                     </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs sm:text-xs text-muted-foreground leading-relaxed">
                       {point.before}
                     </p>
                   </div>
 
                   {/* After State */}
-                  <div className="p-3 bg-green-500/5 border border-green-500/20 rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-400 flex-shrink-0" />
-                      <p className="text-xs uppercase tracking-wide text-green-400 font-bold">
+                  <div className="p-2.5 sm:p-3 bg-green-500/5 border border-green-500/20 rounded-lg">
+                    <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
+                      <CheckCircle2 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-400 flex-shrink-0" />
+                      <p className="text-[10px] sm:text-xs uppercase tracking-wide text-green-400 font-bold">
                         After
                       </p>
                     </div>
-                    <p className="text-xs text-foreground font-medium leading-relaxed mb-2">
+                    <p className="text-xs sm:text-xs text-foreground font-medium leading-relaxed mb-2">
                       {point.after}
                     </p>
-                    <div className="pt-2 mt-2 border-t border-green-500/20">
-                      <p className="text-xs text-green-400 font-bold">
+                    <div className="pt-1.5 sm:pt-2 mt-1.5 sm:mt-2 border-t border-green-500/20">
+                      <p className="text-xs sm:text-xs text-green-400 font-bold">
                         {point.metric}
                       </p>
                     </div>
@@ -101,18 +101,18 @@ const WhatWeDo = () => {
         </div>
 
         {/* Outcomes */}
-        <Card className="bg-gradient-to-br from-primary/5 via-background to-tech-cyan/5 border-primary/20 p-12">
+        <Card className="bg-gradient-to-br from-primary/5 via-background to-tech-cyan/5 border-primary/20 p-6 sm:p-8 md:p-12">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-8 text-center">The Results You Get</h3>
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8 text-center px-2">The Results You Get</h3>
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
               {outcomes.map((outcome, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <span className="text-lg text-foreground">{outcome}</span>
+                <div key={index} className="flex items-start space-x-2 sm:space-x-3">
+                  <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0 mt-0.5 sm:mt-1" />
+                  <span className="text-sm sm:text-base md:text-lg text-foreground">{outcome}</span>
                 </div>
               ))}
             </div>
-            <p className="text-center text-muted-foreground text-lg border-t border-border pt-8">
+            <p className="text-center text-muted-foreground text-sm sm:text-base md:text-lg border-t border-border pt-6 sm:pt-8 px-2">
               We don't just optimize infrastructure — we build systems your engineers love maintaining.
             </p>
           </div>
