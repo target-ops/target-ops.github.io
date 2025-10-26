@@ -5,6 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { CheckCircle2, ArrowRight, Settings, Clock, TrendingDown, Users, Quote, Target, Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const DevOpsConsulting = () => {
   return (
@@ -417,7 +423,7 @@ const DevOpsConsulting = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Frequently Asked Questions</h2>
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Everything you need to know before getting started</p>
             </div>
-            <div className="space-y-6">
+            <Accordion type="single" collapsible className="w-full">
               {[
                 {
                   q: "How long does a typical DevOps consulting engagement take?",
@@ -452,23 +458,16 @@ const DevOpsConsulting = () => {
                   a: "Yes! After the initial engagement, we offer flexible support options including monthly retainers, on-demand consulting hours, or periodic optimization reviews. Many clients start with our 3-month post-implementation support and then choose ongoing partnership."
                 }
               ].map((faq, idx) => (
-                <div key={idx} className="group">
-                  <div className="flex items-start space-x-4 py-6 border-b border-border hover:border-primary/30 transition-colors">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold text-sm group-hover:bg-primary/20 transition-colors">
-                      {idx + 1}
-                    </div>
-                    <div className="flex-1 space-y-2">
-                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {faq.q}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {faq.a}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <AccordionItem key={idx} value={`item-${idx}`} className="border-b border-border">
+                  <AccordionTrigger className="text-left hover:text-primary transition-colors py-4 px-2 data-[state=open]:text-primary">
+                    <span className="text-sm sm:text-base md:text-lg font-semibold">{faq.q}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed pb-4 px-2">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
         </section>
 
