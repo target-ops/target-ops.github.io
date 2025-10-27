@@ -14,8 +14,10 @@ const articleRoutes = [
   '/articles/mastering-ingress-nginx',
   '/articles/ipv6-kubernetes',
   '/articles/k9s-advanced',
+  '/articles/best-practices-helm-chart',
+  '/articles/anyclown-vscode-extension',
   '/articles/choosing-cloud-provider',
-  '/articles/homebrew-tap'
+  '/articles/vscode-devops-pack'
 ];
 
 // All routes that need static HTML files
@@ -88,13 +90,21 @@ const routeMeta = {
     title: 'K9s Advanced Usage | Kubernetes CLI Management',
     description: 'Master the K9s terminal UI for Kubernetes — advanced shortcuts, custom views, and productivity hacks for managing clusters like a pro.',
   },
+  '/articles/best-practices-helm-chart': {
+    title: 'Best Practices for Helm Charts | Kubernetes Package Management',
+    description: 'Crafting Helm charts that adhere to best practices ensures reliability, maintainability, and scalability for your Kubernetes applications.',
+  },
+  '/articles/anyclown-vscode-extension': {
+    title: 'AnyClown: Clone Git Repos to VS Code | Chrome Extension',
+    description: 'One-click Git repository cloning directly to VS Code. From URL to ready-to-code in seconds with the AnyClown Chrome extension.',
+  },
   '/articles/choosing-cloud-provider': {
     title: 'Choosing a Cloud Provider | AWS vs GCP vs Azure',
     description: 'Beyond the basics — a strategic framework for selecting AWS, GCP, or Azure based on technical architecture, cost models, and organizational needs.',
   },
-  '/articles/homebrew-tap': {
-    title: 'Creating a Personal Homebrew Tap | CLI Distribution Guide',
-    description: 'Build and distribute your own Homebrew packages — a complete guide to creating a custom tap for your CLI tools and utilities.',
+  '/articles/vscode-devops-pack': {
+    title: 'VScode DevOps Ultra Pack | Ultimate VS Code Extensions for DevOps',
+    description: 'Everything you need for DevOps in VS Code - Terraform, Docker, Kubernetes, AWS, GCP, CI/CD tools in one extension pack.',
   },
   '/contact': {
     title: 'Contact Target-Ops | Get a Free DevOps Consultation',

@@ -114,6 +114,22 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Article: Best Practices for Helm Charts -->
+  <url>
+    <loc>https://target-ops.io/articles/best-practices-helm-chart</loc>
+    <lastmod>2024-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article: AnyClown VS Code Extension -->
+  <url>
+    <loc>https://target-ops.io/articles/anyclown-vscode-extension</loc>
+    <lastmod>2024-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Article: Choosing a Cloud Provider -->
   <url>
     <loc>https://target-ops.io/articles/choosing-cloud-provider</loc>
@@ -122,12 +138,12 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article: Creating a Homebrew Tap -->
+  <!-- Article: VScode DevOps Pack -->
   <url>
-    <loc>https://target-ops.io/articles/homebrew-tap</loc>
+    <loc>https://target-ops.io/articles/vscode-devops-pack</loc>
     <lastmod>2024-02-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
   <!-- Contact -->

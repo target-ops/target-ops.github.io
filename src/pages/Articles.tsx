@@ -9,8 +9,10 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Articles = () => {
-  const featuredArticles = articles.filter(article => article.featured);
-  const otherArticles = articles.filter(article => !article.featured);
+  // Sort articles by date (newest first)
+  const sortedArticles = [...articles].sort((a, b) => 
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return (
     <div className="min-h-screen bg-background">
@@ -49,59 +51,20 @@ const Articles = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Real-world DevOps insights, battle-tested strategies, and hands-on tutorials from engineers who've deployed at scale.
+              Real-world DevOps insights, battle-tested strategies, and hands-on tutorials from engineers who've deployed at scale. New articles every week.
             </p>
           </div>
         </section>
 
-        {/* Featured Articles */}
-        {featuredArticles.length > 0 && (
-          <section className="relative py-12 px-4">
-            <div className="max-w-7xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8">Featured Articles</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {featuredArticles.map((article) => (
-                  <Card key={article.id} className="bg-background/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow/20 group">
-                    <CardHeader>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                        <Calendar className="h-4 w-4" />
-                        {new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                        <span>•</span>
-                        <span>{article.readTime}</span>
-                      </div>
-                      <CardTitle className="text-xl line-clamp-2 group-hover:text-primary transition-colors">{article.title}</CardTitle>
-                      <CardDescription className="text-muted-foreground line-clamp-3">
-                        {article.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {article.tags.map((tag, idx) => (
-                          <Badge key={idx} variant="secondary" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary transition-colors" asChild>
-                        <Link to={`/articles/${article.id}`}>
-                          Read Article
-                          <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* All Articles */}
+        {/* Articles Grid */}
         <section className="relative py-12 px-4">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">All Articles</h2>
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold">Latest Articles</h2>
+              <span className="text-sm text-muted-foreground">{articles.length} articles</span>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {otherArticles.map((article) => (
+              {sortedArticles.map((article) => (
                 <Card key={article.id} className="bg-background/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow/20 group">
                   <CardHeader>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
