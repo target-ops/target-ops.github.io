@@ -15,13 +15,11 @@ const Hero = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-tech-blue/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tech-cyan/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 md:pt-0">
         <div className="max-w-5xl mx-auto">
           {/* Main heading - Clear service offering */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight px-2">
-            <span className="text-foreground">
-              We Build, Run, and Optimize
-            </span>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight px-2 text-white">
+            We Build, Run, and Optimize
             <br />
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Your DevOps Infrastructure
