@@ -296,4 +296,23 @@ All colors MUST be HSL.
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Article content styles - Better typography for long-form content */
+  .prose {
+    @apply text-foreground;
+  }
+
+  /* Make inline code stand out without code block styling */
+  .prose :not(pre) > code {
+    @apply bg-surface-elevated px-1.5 py-0.5 rounded text-primary font-mono text-sm;
+  }
+
+  /* Code blocks get full highlight.js styling */
+  .prose pre {
+    @apply bg-surface-elevated border border-border rounded-lg my-6;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-sm font-mono;
+  }
 }

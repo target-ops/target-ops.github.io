@@ -3,9 +3,10 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Calendar, BookOpen } from "lucide-react";
+import { ArrowRight, Calendar, BookOpen, ExternalLink } from "lucide-react";
 import { articles } from "@/data/articles";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const Articles = () => {
   const featuredArticles = articles.filter(article => article.featured);
@@ -82,10 +83,10 @@ const Articles = () => {
                         ))}
                       </div>
                       <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary transition-colors" asChild>
-                        <a href={article.externalUrl} target="_blank" rel="noopener noreferrer">
+                        <Link to={`/articles/${article.id}`}>
                           Read Article
-                          <ExternalLink className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                          <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </Link>
                       </Button>
                     </CardContent>
                   </Card>
@@ -123,10 +124,10 @@ const Articles = () => {
                       ))}
                     </div>
                     <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary transition-colors" asChild>
-                      <a href={article.externalUrl} target="_blank" rel="noopener noreferrer">
+                      <Link to={`/articles/${article.id}`}>
                         Read Article
-                        <ExternalLink className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </a>
+                        <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>

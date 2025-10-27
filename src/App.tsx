@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Solutions from "./pages/Solutions";
 import OpenSourcePage from "./pages/OpenSourcePage";
 import Articles from "./pages/Articles";
+import ArticleDetail from "./pages/ArticleDetail";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/solutions/security-compliance" element={<SecurityCompliance />} />
           <Route path="/open-source" element={<OpenSourcePage />} />
           <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:id" element={<ArticleDetail />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />

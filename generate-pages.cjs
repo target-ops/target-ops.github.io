@@ -8,6 +8,16 @@
 const fs = require('fs');
 const path = require('path');
 
+// Article routes - manually listed for now
+// TODO: Could generate these dynamically after build from dist/assets if needed
+const articleRoutes = [
+  '/articles/mastering-ingress-nginx',
+  '/articles/ipv6-kubernetes',
+  '/articles/k9s-advanced',
+  '/articles/choosing-cloud-provider',
+  '/articles/homebrew-tap'
+];
+
 // All routes that need static HTML files
 const routes = [
   '/about',
@@ -21,6 +31,7 @@ const routes = [
   '/open-source',
   '/articles',
   '/contact',
+  ...articleRoutes,
 ];
 
 // Route-specific meta tags for better SEO
@@ -64,6 +75,26 @@ const routeMeta = {
   '/articles': {
     title: 'DevOps Blog & Articles | Target-Ops Insights',
     description: 'DevOps best practices, tutorials, and insights. Learn about cloud infrastructure, automation, CI/CD, Kubernetes, and more.',
+  },
+  '/articles/mastering-ingress-nginx': {
+    title: 'Mastering ingress-nginx | Kubernetes Ingress Controller Guide',
+    description: 'A deep dive into ingress-nginx configuration, best practices, and advanced patterns for production Kubernetes environments.',
+  },
+  '/articles/ipv6-kubernetes': {
+    title: 'Implementing IPv6 in Kubernetes | EKS and GKE Guide',
+    description: 'Learn how to properly configure IPv6 in your Kubernetes clusters on AWS EKS and Google GKE, including dual-stack networking strategies.',
+  },
+  '/articles/k9s-advanced': {
+    title: 'K9s Advanced Usage | Kubernetes CLI Management',
+    description: 'Master the K9s terminal UI for Kubernetes — advanced shortcuts, custom views, and productivity hacks for managing clusters like a pro.',
+  },
+  '/articles/choosing-cloud-provider': {
+    title: 'Choosing a Cloud Provider | AWS vs GCP vs Azure',
+    description: 'Beyond the basics — a strategic framework for selecting AWS, GCP, or Azure based on technical architecture, cost models, and organizational needs.',
+  },
+  '/articles/homebrew-tap': {
+    title: 'Creating a Personal Homebrew Tap | CLI Distribution Guide',
+    description: 'Build and distribute your own Homebrew packages — a complete guide to creating a custom tap for your CLI tools and utilities.',
   },
   '/contact': {
     title: 'Contact Target-Ops | Get a Free DevOps Consultation',

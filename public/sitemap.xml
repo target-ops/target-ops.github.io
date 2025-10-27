@@ -85,9 +85,49 @@
   <!-- Articles -->
   <url>
     <loc>https://target-ops.io/articles</loc>
-    <lastmod>2024-10-26</lastmod>
+    <lastmod>2024-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Article: Mastering ingress-nginx -->
+  <url>
+    <loc>https://target-ops.io/articles/mastering-ingress-nginx</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article: IPv6 in Kubernetes -->
+  <url>
+    <loc>https://target-ops.io/articles/ipv6-kubernetes</loc>
+    <lastmod>2024-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article: K9s Advanced Usage -->
+  <url>
+    <loc>https://target-ops.io/articles/k9s-advanced</loc>
+    <lastmod>2024-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article: Choosing a Cloud Provider -->
+  <url>
+    <loc>https://target-ops.io/articles/choosing-cloud-provider</loc>
+    <lastmod>2024-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: Creating a Homebrew Tap -->
+  <url>
+    <loc>https://target-ops.io/articles/homebrew-tap</loc>
+    <lastmod>2024-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Contact -->
