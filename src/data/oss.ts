@@ -1,5 +1,5 @@
 import { OSSProject } from "@/types";
-import { Code2, GitBranch, Package, Puzzle, Database, Eye, Bell, QrCode, Box } from "lucide-react";
+import { Code2, GitBranch, Package, Puzzle, Database, Eye, Bell, QrCode, Box, Ship } from "lucide-react";
 
 export const ossProjects: OSSProject[] = [
   {
@@ -30,6 +30,22 @@ export const ossProjects: OSSProject[] = [
       "Multi-profile management",
       "One-click switching",
       "Simple CLI setup"
+    ],
+    weight: 1
+  },
+  {
+    id: "zargov",
+    name: "zargov",
+    title: "Hover View Docker Images in ArgoCD",
+    description: "Hover over any app badge to see its Docker images and versions",
+    github: "https://github.com/target-ops/zargov",
+    externalUrl: "https://github.com/target-ops/zargov",
+    tags: ["argo", "docker", "chrome"],
+    icon: Ship,
+    features: [
+      "View Docker images and versions",
+      "Search and filter applications",
+      "Copy to clipboard",
     ],
     weight: 1
   },
