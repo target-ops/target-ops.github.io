@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight, Cloud, DollarSign, Zap, AlertTriangle, Users, Quote, Target } from "lucide-react";
+import { CheckCircle2, ArrowRight, Cloud, DollarSign, Zap, AlertTriangle, Users, Target } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import {
   Accordion,
@@ -209,24 +209,6 @@ const CloudMigration = () => {
                       <div className="flex items-center space-x-2">
                         <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                         <span className="text-sm">Passed PCI DSS compliance audit</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-8 pt-8 border-t border-border">
-                  <div className="flex items-start space-x-4">
-                    <Quote className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="text-lg italic mb-4">
-                        "We were terrified of the migration, but Target-Ops made it seamless. Not a single customer 
-                        noticed the transition, and we're now saving $25K per month. Best decision we ever made."
-                      </p>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-full"></div>
-                        <div>
-                          <p className="font-semibold">James Patterson</p>
-                          <p className="text-sm text-muted-foreground">CTO, PayFlow Fintech</p>
-                        </div>
                       </div>
                     </div>
                   </div>
