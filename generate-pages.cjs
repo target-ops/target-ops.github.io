@@ -79,32 +79,32 @@ const routeMeta = {
     description: 'DevOps best practices, tutorials, and insights. Learn about cloud infrastructure, automation, CI/CD, Kubernetes, and more.',
   },
   '/articles/mastering-ingress-nginx': {
-    title: 'Mastering ingress-nginx | Kubernetes Ingress Controller Guide',
-    description: 'A deep dive into ingress-nginx configuration, best practices, and advanced patterns for production Kubernetes environments.',
+    title: 'Kubernetes Ingress Optimization: Production ingress-nginx Tuning | Target-Ops',
+    description: 'Battle-tested ingress-nginx optimization techniques from 10 years of production experience. Reduce latency by 60%, handle 10x traffic, eliminate 502 errors.',
   },
   '/articles/ipv6-kubernetes': {
-    title: 'Implementing IPv6 in Kubernetes | EKS and GKE Guide',
-    description: 'Learn how to properly configure IPv6 in your Kubernetes clusters on AWS EKS and Google GKE, including dual-stack networking strategies.',
+    title: 'IPv6 Kubernetes: Dual-Stack EKS & GKE Guide | Target-Ops',
+    description: 'Battle-tested IPv6 Kubernetes implementation for EKS and GKE. Eliminate IPv4 exhaustion, cut NAT gateway costs by 87%, and unblock cluster scale — with Terraform patterns and production pitfalls.',
   },
   '/articles/k9s-advanced': {
-    title: 'K9s Advanced Usage | Kubernetes CLI Management',
-    description: 'Master the K9s terminal UI for Kubernetes — advanced shortcuts, custom views, and productivity hacks for managing clusters like a pro.',
+    title: 'K9s Kubernetes CLI: Advanced Productivity Techniques | Target-Ops',
+    description: 'Advanced K9s techniques from Target-Ops SREs — custom views, plugins, aliases, and real incident workflows that cut Kubernetes triage time by 40%. Copy-paste ready config.',
   },
   '/articles/best-practices-helm-chart': {
-    title: 'Best Practices for Helm Charts | Kubernetes Package Management',
-    description: 'Crafting Helm charts that adhere to best practices ensures reliability, maintainability, and scalability for your Kubernetes applications.',
+    title: 'Helm Chart Best Practices: Production-Grade Packaging | Target-Ops',
+    description: 'Battle-tested Helm chart best practices from Target-Ops engineers — structure, versioning, security, hooks, and the patterns that cut deployment incidents by 99%.',
   },
   '/articles/anyclown-vscode-extension': {
-    title: 'AnyClown: Clone Git Repos to VS Code | Chrome Extension',
-    description: 'One-click Git repository cloning directly to VS Code. From URL to ready-to-code in seconds with the AnyClown Chrome extension.',
+    title: 'AnyClown: One-Click Git Clone to VS Code | Target-Ops',
+    description: 'Stop typing git clone. AnyClown is a free Chrome extension from Target-Ops that turns any GitHub/GitLab/Bitbucket URL into a one-click clone-and-open in VS Code.',
   },
   '/articles/choosing-cloud-provider': {
-    title: 'Choosing a Cloud Provider | AWS vs GCP vs Azure',
-    description: 'Beyond the basics — a strategic framework for selecting AWS, GCP, or Azure based on technical architecture, cost models, and organizational needs.',
+    title: 'Cloud Provider Selection: AWS vs GCP vs Azure Framework | Target-Ops',
+    description: 'The decision framework Target-Ops uses to guide AWS vs GCP vs Azure selection — five questions that matter, honest provider assessments, and when multi-cloud actually makes sense.',
   },
   '/articles/vscode-devops-pack': {
-    title: 'VScode DevOps Ultra Pack | Ultimate VS Code Extensions for DevOps',
-    description: 'Everything you need for DevOps in VS Code - Terraform, Docker, Kubernetes, AWS, GCP, CI/CD tools in one extension pack.',
+    title: 'VS Code DevOps Extension Pack: Ultimate Toolkit | Target-Ops',
+    description: 'Curated by Target-Ops engineers — the VS Code DevOps Ultra Pack bundles Terraform, Docker, Kubernetes, AWS, GCP, CI/CD, and productivity extensions into one install.',
   },
   '/contact': {
     title: 'Contact Target-Ops | Get a Free DevOps Consultation',
