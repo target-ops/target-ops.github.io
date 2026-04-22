@@ -2,7 +2,7 @@
 
 Cloud provider selection is the single highest-leverage infrastructure decision most organizations make. It's also the decision that's most often made badly — chosen by a CTO's LinkedIn network, by a single vendor's sales cycle, or by inertia from a startup-era default. The result is years of operational friction, avoidable spend, and migration pain when reality catches up.
 
-At Target-Ops, we've advised on cloud strategy for organizations running everything from five-digit monthly bills on a single provider to nine-figure multi-cloud estates spanning AWS, GCP, and Azure. This guide is the framework we actually use — not a generic feature comparison, but a decision process that accounts for workload realities, team capability, exit costs, and the parts of the TCO that vendor pricing pages don't show.
+Target-Ops is a small team of senior DevOps engineers. We work across AWS, GCP, and Azure day to day, and we've watched organizations succeed and fail with each of them. This guide is the decision framework we actually use — not a generic feature comparison, but a structured way to think about workload realities, team capability, exit costs, and the parts of the TCO that vendor pricing pages don't show.
 
 Whether you're making a greenfield choice, evaluating a migration, or thinking about multi-cloud as a risk-reduction strategy, this framework will help you reach a defensible decision with eyes open on the tradeoffs.
 
@@ -188,35 +188,34 @@ The operational tax of multi-cloud — doubled training, doubled IaC patterns, i
 6. **Ignoring hiring market realities.** AWS engineers are 2–3x more plentiful than Azure or GCP specialists in most cities. This affects your 3-year roadmap.
 7. **Skipping the compliance check until late.** If you end up in a regulated industry, compliance eligibility can eliminate a provider overnight.
 
-## Real-World Example: Migrating a $400K/Month Workload
+## Worked Example: Applying the Framework to a Data-Heavy B2B SaaS
 
-A Target-Ops client — a data-heavy B2B SaaS — was running on AWS but spending 60% of their compute and analytics bill in Redshift. They felt they were outgrowing it.
+Here's how the framework applies to a common scenario: a data-heavy B2B SaaS running on AWS, where analytics workloads on Redshift are becoming the dominant cost and the team is wondering whether to move providers.
 
-**What we evaluated:**
+**Inputs to the decision:**
 - Workload shape: heavy analytics + moderate microservices + small ML
-- Team: 15-engineer platform team with deep AWS experience, modest GCP experience
-- Egress: high — analytics results were extracted to customer data warehouses
+- Team: experienced on AWS, modest GCP experience
+- Egress: high — analytics results are extracted to customer data warehouses
 - Compliance: SOC 2, no heavy regulatory requirements
-- Exit: Kubernetes-first, Postgres-centric OLTP — generally portable
+- Exit posture: Kubernetes-first, Postgres-centric OLTP — generally portable
 
-**What we recommended:** Hybrid. Move analytics workloads to GCP (BigQuery), keep everything else on AWS. Connect via dedicated interconnect to minimize egress.
+**What the framework points to:** Hybrid, not a full migration. The analytics workload is where GCP's BigQuery genuinely outperforms Redshift; the rest of the stack has no reason to move. Connect the two via dedicated interconnect to keep egress costs bounded.
 
-**Outcome at 12 months:**
-- Analytics compute cost: **-68%** (Redshift → BigQuery)
-- Query latency on large aggregations: **-75%**
-- Team productivity on analytics work: measurably faster (BigQuery's dev loop is simpler than Redshift's)
-- Total cloud bill across both providers: **-23%** net, after accounting for interconnect and duplicated tooling
-- Net new operational complexity: meaningful but manageable for a team at this scale
+**What a hybrid setup like this typically achieves:**
+- Significant reduction in analytics compute cost (BigQuery's pricing model rewards bursty analytics better than Redshift's reserved capacity model)
+- Faster developer loop on analytics work — BigQuery's SQL surface and UI tooling is more approachable
+- Net cloud bill reduction even after accounting for interconnect and duplicated tooling
+- Some new operational complexity: two providers means two sets of IaC, two IAM models, two on-call playbooks
 
-**What we didn't recommend:** Full GCP migration. The AWS skills, ecosystem, and compliance footprint were worth more than full consolidation would have been.
+**What the framework explicitly argues against:** A full GCP migration. The existing AWS skills, ecosystem, and compliance footprint are worth more than full consolidation would be.
 
-The decision framework in this article is exactly what we used to get there.
+This is the kind of analysis the five questions in this guide are designed to produce — a defensible decision grounded in actual constraints, not a single-vendor narrative.
 
 ## Conclusion
 
 Cloud provider selection isn't about picking the "best" cloud — there isn't one. It's about matching provider strengths to your specific workload shape, team capability, cost profile, and strategic constraints. Organizations that make this decision deliberately — with clear answers to the five questions in this guide — avoid the worst of the operational tax and exit costs.
 
-At Target-Ops, we guide organizations through this decision every quarter. The pattern is consistent: when the decision is made from workload reality instead of vendor narrative, teams end up with infrastructure they can actually run.
+The pattern is consistent: when the decision is made from workload reality instead of vendor narrative, teams end up with infrastructure they can actually run — and without the year-three regret that comes from choosing a provider that didn't fit.
 
 ## Next Steps
 
@@ -227,7 +226,7 @@ Ready to make a cloud provider decision you can defend?
 3. **Model 3-year TCO** including egress, support, and migration/exit cost.
 4. **Run a 30-day bake-off** with real workloads on your top two candidates.
 
-**Want an independent expert to guide your cloud strategy?** [Contact our cloud consulting team](/contact) — we've done this for organizations from Series B startups to Fortune 500 enterprises, and we have no vendor loyalty that biases the answer.
+**Want an independent technical opinion on your cloud strategy?** [Book a free 30-minute call with Target-Ops](/contact) — we'll walk through your workload shape, team, and constraints, and give you a straight answer. We're not tied to any single provider, so the recommendation is driven by what actually fits you.
 
 ## Related Resources
 

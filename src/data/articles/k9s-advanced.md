@@ -2,7 +2,7 @@
 
 K9s has quietly become the default terminal interface for serious Kubernetes work. Once you're managing more than a handful of clusters, raw `kubectl` becomes a productivity tax — every debug loop turns into a 6-command dance of get, describe, logs, exec, and edit.
 
-At Target-Ops, we operate K9s daily across hundreds of EKS, GKE, and on-prem clusters for our managed DevOps clients. Over the years we've built a library of custom views, plugins, and keyboard workflows that cut a typical investigation from 15 minutes to under 2. This guide distills the techniques that actually move the needle — the ones our SREs rely on in production, not the tutorial basics.
+At Target-Ops we use K9s every day across EKS, GKE, and self-managed clusters. Over time we've built a library of custom views, plugins, and keyboard workflows that cut a typical investigation from 15 minutes to under 2. This guide distills the techniques that actually move the needle — the ones we rely on in production, not the tutorial basics.
 
 If you already know what K9s is and you're comfortable moving around in it, this article will make you faster. If you're a platform lead rolling out standardized tooling to your team, the custom views, plugins, and aliases here are directly copy-pasteable into your onboarding repo.
 
@@ -20,7 +20,7 @@ Every time you run `kubectl get pods`, then `kubectl describe pod`, then `kubect
 - Cross-namespace comparison: scripted loops → `:pods -A` with live filtering
 - Editing a ConfigMap and verifying the pod reloaded: 4 terminals → a single K9s session
 
-At Target-Ops, mandatory K9s adoption on our SRE team measurably cut our mean time to acknowledge alerts by about 40% — because the path from alert to useful information is dramatically shorter.
+In our experience, standardizing on K9s for on-call work consistently cuts alert-to-insight time by 30–50%. The path from "something's wrong" to "I know what's wrong" is just dramatically shorter than it is with raw `kubectl`.
 
 ## Installation and First-Run Configuration
 
@@ -254,27 +254,25 @@ The diff view is genuinely useful for catching drift — especially when auditin
 4. **Running K9s in screen/tmux without sizing.** Truncated column layouts hide important info. Fix: `:config` → adjust `noIcons` and column widths.
 5. **Ignoring `:pulses` on large clusters.** The live resource aggregation is O(N) on pods. On 10K-pod clusters it can add measurable load. Fix: use sparingly or replace with Prometheus dashboards.
 
-## Real-World Example: A 3 AM Incident Cut From 40 Minutes to 4
+## Worked Example: A Typical Incident Triage in K9s
 
-Last quarter we were paged on a managed client's production cluster: API latency doubling, customers timing out. Here's what a K9s-native workflow looked like versus what raw `kubectl` would have looked like.
+Here's what a K9s-native investigation looks like for a common incident pattern — API latency suddenly doubles, customers start timing out — compared to doing the same thing in raw `kubectl`.
 
 **With K9s:**
-1. `:pulses` — saw cluster CPU was flat, so not a resource exhaustion issue
-2. `:events` + `/Warning` — spotted a flood of `FailedMount` events on a specific namespace
-3. `:pods -n <ns>` — custom view showed restarts climbing on a single StatefulSet
-4. Selected all pods, `l`, filter `timeout` — confirmed mount timeouts on the EBS volume
-5. `:pvc` — PVC in `Pending`, event showed the EBS CSI controller pod was itself stuck
-6. Ctrl-E plugin for events → root cause: KMS key rotation had revoked CSI IAM access
+1. `:pulses` — cluster CPU flat, so not a resource exhaustion issue
+2. `:events` + `/Warning` — a flood of `FailedMount` events in one namespace stands out
+3. `:pods -n <ns>` — the custom view shows restarts climbing on a single StatefulSet
+4. Select all the pods, `l`, filter `timeout` — confirmed mount timeouts on an EBS volume
+5. `:pvc` — PVC in `Pending`, event says the EBS CSI controller pod itself is stuck
+6. Ctrl-E plugin for events on the controller → root cause: a KMS key rotation revoked CSI IAM access
 
-Elapsed time: about 4 minutes from page to root cause.
-
-The same investigation in `kubectl` required flipping between at least 4 terminals, copy-pasting pod names, and would have taken our on-call closer to 30–40 minutes based on historical MTTR for similar incidents.
+This kind of investigation is routinely a few minutes of navigation in K9s. The same thing in `kubectl` means flipping between four terminals, copy-pasting pod names, and running `describe` over and over. For a pattern like this we'd expect the `kubectl` path to take 30–40 minutes instead.
 
 ## Conclusion
 
 K9s is not a toy — it's a force multiplier for any team doing serious Kubernetes operations. The gains compound: every custom view, every plugin, every alias shaves seconds off operations you perform hundreds of times per week. Over a year that's real engineering hours redirected from typing into thinking.
 
-At Target-Ops, we treat K9s configuration as infrastructure-as-code: versioned, reviewed, and deployed to every engineer's laptop through our dotfiles pipeline. If you do the same, your team gets a consistent operating environment that outperforms raw kubectl by a wide margin.
+Treat K9s configuration as infrastructure-as-code: versioned, reviewed, and deployed to every engineer's laptop through your dotfiles or onboarding pipeline. A consistent, curated setup outperforms ad-hoc raw `kubectl` by a wide margin.
 
 ## Next Steps
 
@@ -285,7 +283,7 @@ Ready to get faster with K9s? Do these in order:
 3. **Build one team-specific plugin per week.** Every painful `kubectl` workflow is a plugin opportunity.
 4. **Separate your production kubeconfig.** Read-only by default; escalate explicitly.
 
-**Need help rolling out standardized Kubernetes tooling across your SRE team?** [Contact our DevOps team](/contact) — we help platform teams build internal developer platforms that include curated K9s configurations, RBAC hardening, and operational playbooks.
+**Want help standardizing Kubernetes tooling across your engineering team?** [Book a free 30-minute call with Target-Ops](/contact) — we'll walk through your current setup and share the configs, RBAC patterns, and operational playbooks we use day to day.
 
 ## Related Resources
 

@@ -34,7 +34,7 @@ Examples:
 
 Example:
 ```
-Kubernetes ingress optimization is critical for high-performance applications serving millions of users. At Target-Ops, we've optimized ingress-nginx controllers for Fortune 500 companies, reducing latency by up to 40%. In this guide, we'll show you advanced techniques to maximize throughput, minimize response times, and ensure reliability at scale.
+Kubernetes ingress optimization is critical for high-performance applications serving millions of users. Target-Ops is a small team of senior DevOps engineers who tune ingress-nginx for production workloads as part of daily work. In this guide, we'll show you advanced techniques to maximize throughput, minimize response times, and ensure reliability at scale.
 ```
 
 ### Keyword Usage
@@ -214,7 +214,7 @@ Example: ["kubernetes ingress", "ingress-nginx optimization", "kubernetes perfor
 ```markdown
 # Kubernetes Ingress: Advanced Optimization for Production Traffic
 
-Optimizing Kubernetes ingress controllers is essential for applications serving high-traffic workloads at scale. At Target-Ops, we've fine-tuned ingress-nginx for Fortune 500 companies, achieving 40% latency reductions and handling 10x traffic spikes. This guide shares our battle-tested optimization techniques for production environments.
+Optimizing Kubernetes ingress controllers is essential for applications serving high-traffic workloads at scale. Target-Ops is a small team of senior DevOps engineers who tune ingress-nginx for production workloads as part of daily work. This guide shares the optimization techniques we rely on in production environments.
 
 Whether you're experiencing performance bottlenecks or preparing for scale, these advanced configurations will help you maximize throughput, minimize response times, and ensure reliable traffic management.
 

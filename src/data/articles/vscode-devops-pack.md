@@ -159,22 +159,22 @@ Round out the workflow:
 3. **Ignoring workspace trust prompts.** VS Code's workspace trust model gates extension features. Configure it consistently across your team.
 4. **Missing GitHub Copilot context files.** Drop `.github/copilot-instructions.md` files into repos to give Copilot team-specific context — this multiplies its usefulness.
 
-## Real-World Impact for Our Team
+## Where You'll Feel the Difference
 
-We measured before-and-after productivity when we rolled the pack out to our consulting engineers:
+A curated pack like this changes the shape of day-to-day work in a few specific ways:
 
-- **Onboarding time** (new engagement to first commit): ~4 hours → **under 30 minutes**
-- **Pipeline debugging** (author → working GitHub Actions workflow): ~45 min → **~15 min**
-- **Terraform cost overruns caught before merge:** 6 → **2 per quarter** (thanks to Infracost inline)
-- **PR review turnaround:** measurably faster — engineers could review inside the editor with full language tooling
+- **New environment setup** — what used to be "install a dozen extensions" becomes one command; first commit in a new repo is minutes, not hours
+- **Pipeline authoring** — schema validation catches broken GitHub Actions or GitLab CI before you commit, instead of through trial-and-error pushes
+- **Cost-aware Terraform** — Infracost inline makes accidental `db.r6i.24xlarge` visible in code review, before it hits the pipeline
+- **PR reviews with real language tooling** — reviewing inside the editor with schema validation catches things browser diffs silently miss
 
-The cumulative savings more than pay for the time we spend maintaining the pack.
+None of these are individually dramatic. Stacked across every working day, they compound into real time savings.
 
 ## Conclusion
 
 A curated VS Code DevOps extension pack is one of the highest-leverage investments a platform team can make. It front-loads the tools every engineer will wish they had, standardizes the environment across the team, and turns the editor into a purpose-built DevOps workstation instead of a generic code editor.
 
-At Target-Ops, we rely on the Ultra Pack every day across every client engagement. We keep it updated, maintain it as open source, and welcome contributions from the broader DevOps community.
+At Target-Ops we use the Ultra Pack every day. We keep it updated, maintain it as open source, and welcome contributions from the broader DevOps community.
 
 ## Next Steps
 
@@ -185,7 +185,7 @@ Ready to level up your VS Code setup?
 3. **Audit your workspace settings** to ensure formatters, linters, and workspace trust are configured.
 4. **Share feedback or contribute** at [target-ops/vscode-pack](https://github.com/target-ops/vscode-pack).
 
-**Want help standardizing developer tooling across your engineering org?** [Contact our team](/contact) — we build internal developer platforms and tooling standards that make engineering teams measurably faster.
+**Want to talk about developer tooling, internal platforms, or making your team measurably faster?** [Book a free 30-minute call with Target-Ops](/contact) — we're happy to compare notes or help you plan.
 
 ## Related Resources
 

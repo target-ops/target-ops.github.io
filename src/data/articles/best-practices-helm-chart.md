@@ -2,7 +2,7 @@
 
 Helm chart best practices are the difference between a repeatable deployment and a 3 AM rollback. Charts that look fine in a dev namespace routinely blow up in production: hardcoded values, missing resource limits, templated secrets committed to Git, brittle upgrades that drop data. We've seen all of it.
 
-At Target-Ops, we maintain hundreds of Helm charts across production fleets for our managed clients — from single-service deployments to enterprise monorepos with dozens of interdependent charts. This guide shares the practices that actually hold up under load, security scans, and the messy reality of multi-environment rollouts.
+At Target-Ops we work with Helm charts every day, from single-service deployments to larger internal platforms with many interdependent charts. This guide shares the practices that actually hold up under load, security scans, and the messy reality of multi-environment rollouts — the ones we reach for first when writing or auditing a chart.
 
 Whether you're building your first chart or hardening charts your team has been extending for years, these patterns will help you ship Helm packages that survive contact with production.
 
@@ -29,7 +29,7 @@ A Helm chart is the contract between your application and every environment it w
 - Chart changes that silently break downstream consumers
 - No version discipline, making "what's deployed where" impossible to answer
 
-At Target-Ops, we've rescued more than one organization from a Helm sprawl where nobody remembered how any chart worked. The fix is always the same: apply the practices below systematically.
+Helm sprawl — dozens of charts authored independently over years, with no common patterns — is something you see everywhere. The fix is always the same shape: apply the practices below systematically and consolidate what can be consolidated.
 
 ## Chart Structure: Make It Predictable
 
@@ -329,38 +329,36 @@ helm test release-name
 7. **No PDB.** Routine node drains turn into partial outages. Ship one with every workload chart.
 8. **Chart version not bumped for template changes.** CD systems use version as the cache key — silent template changes cause silent drift.
 
-## Real-World Example: Consolidating 40 Charts for a FinTech Client
+## Applied Pattern: Consolidating a Fleet of Charts With a Shared Library
 
-A FinTech client came to us with 40+ internal services, each with its own chart, authored independently over three years. Symptoms: every deployment was bespoke, rollbacks were unreliable, security scans found consistent gaps, and onboarding a new service took a week.
+A common scenario: an organization has grown to 30–50 internal services, each with its own Helm chart, authored independently over several years. Every deployment is bespoke, rollbacks are unreliable, security scans find the same gaps over and over, and onboarding a new service takes a week. The fix is almost always the same pattern.
 
-**What we did:**
+**Phase 1 — Build a shared chart library:**
+- Create a `common-lib` chart with canonical templates for Deployment, Service, HPA, PDB, NetworkPolicy, ServiceMonitor
+- Standardize labels, security contexts, probes, resource limits across all of them
 
-*Week 1 — Template library:*
-- Built a shared chart library (`common-lib`) with canonical templates for Deployment, Service, HPA, PDB, NetworkPolicy, ServiceMonitor
-- Standardized labels, security contexts, probes, resource limits
+**Phase 2 — Migrate services one at a time:**
+- Each service's chart becomes a thin wrapper around `common-lib`, overriding only what's service-specific
+- Add `values.schema.json` to every chart enforcing required production fields
+- Enable `chart-testing` in CI with kind-based install tests
 
-*Weeks 2–4 — Migration:*
-- Each service's chart became a thin wrapper around `common-lib`, overriding only what was service-specific
-- Added `values.schema.json` to every chart enforcing required production fields
-- Enabled `chart-testing` in CI with kind-based install tests
+**Phase 3 — Roll out safely:**
+- Deploy via ArgoCD (or equivalent) with automated rollback on health check failures
+- Migrate one service at a time so any regression has a small blast radius
 
-*Week 5 — Rollout:*
-- Rolled out updated charts via ArgoCD with automated rollback on health check failures
-- Deployed with zero customer-facing incidents
+**What you can expect from this pattern:**
+- Chart code typically shrinks 50–70% because duplication is gone
+- New service onboarding drops from days to a few hours
+- Security scan findings drop dramatically — one fix in `common-lib` fixes every chart
+- Deployment reliability improves because the critical production fields are enforced by schema instead of code review
 
-**Results:**
-- Chart code reduced by 68% (from ~12K lines to ~3.8K)
-- New service onboarding: 1 week → 2 hours
-- Security scan findings: 94% reduction
-- Deployment reliability (successful deploys / attempted): 87% → 99.4%
-
-The shared-library pattern is the highest-leverage Helm practice we've deployed across clients.
+The shared-library pattern is the highest-leverage Helm practice we know of. If you operate more than ~10 internal services, it pays back within a quarter.
 
 ## Conclusion
 
 Production-grade Helm charts aren't about templating cleverness — they're about discipline: predictable structure, enforced versioning, documented values, security defaults, and tests that run in CI. Get these right and Helm becomes a reliable deployment contract instead of an ongoing maintenance burden.
 
-At Target-Ops, we apply these exact patterns when hardening charts for our managed-service clients. The ROI compounds: every chart that follows the rules saves hours of debugging per month and eliminates entire categories of production incidents.
+At Target-Ops, we apply these patterns whenever we write or audit a Helm chart. The ROI compounds: every chart that follows the rules saves hours of debugging per month and eliminates entire categories of production incidents before they happen.
 
 ## Next Steps
 
@@ -371,7 +369,7 @@ Ready to harden your Helm charts? Do these in order:
 3. **Introduce `ct` (chart-testing) in CI** for lint + install validation on every PR.
 4. **Build a shared chart library** if you operate more than 10 internal services — eliminate duplication at the source.
 
-**Want expert help standardizing Helm charts across your platform?** [Contact our DevOps team](/contact) for a Helm audit and chart-library engagement.
+**Want a second pair of eyes on your Helm charts?** [Book a free 30-minute call with Target-Ops](/contact) — we'll review your current setup, flag the highest-risk gaps, and help you plan a chart-library consolidation if it makes sense for your fleet.
 
 ## Related Resources
 

@@ -20,7 +20,7 @@ If you work in a single codebase, any clone workflow is fine. But modern DevOps 
 
 **Onboarding friction:** New team members spend their first days cloning 20+ repositories. A one-click workflow cuts that from hours to minutes and reduces the "how do I set up my laptop" tickets.
 
-For our consulting team at Target-Ops, the savings measurably show up in monthly capacity — more time for the work clients actually pay for.
+For any engineer who works across many repositories, the savings show up in monthly capacity — more time for real work, less for clone ceremony.
 
 ## What AnyClown Does
 
@@ -107,9 +107,9 @@ The extension supports a small set of configurations via its options page:
 
 For teams with self-hosted Git servers (common in enterprises), the hostname mapping is what unlocks the full value of the extension.
 
-## Use Cases We See on Our Team
+## Where AnyClown Pays Off
 
-**DevOps consulting rotation.** Our engineers rotate across client engagements and often touch 15+ repositories a day between infrastructure, pipelines, and service code. AnyClown saves approximately 10 minutes per engineer per day on clone ceremony alone.
+**Multi-repo DevOps work.** Anyone rotating across infrastructure, pipeline, and service repositories touches 10–15 repositories in a typical week. Saving 45–90 seconds on each clone is minutes per day, hours per month.
 
 **Code review across many PRs.** When reviewing PRs that touch repositories you don't yet have locally, one click gets you from GitHub's PR page to a local checkout with full IDE support — great for complex reviews where browser diffs aren't enough.
 
@@ -146,7 +146,7 @@ Ready to stop typing `git clone` by hand?
 3. **Add any self-hosted Git hostnames** your team uses.
 4. **Share it with your team** as part of onboarding.
 
-**Want to talk about building custom internal developer tools like AnyClown?** [Contact our team](/contact) — we help organizations design and ship developer platforms that make their engineers measurably more productive.
+**Want to talk about developer tooling or internal platforms?** [Book a free 30-minute call with Target-Ops](/contact) — happy to trade notes or help you scope an internal tool of your own.
 
 ## Related Resources
 

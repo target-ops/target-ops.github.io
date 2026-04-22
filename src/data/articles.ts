@@ -26,7 +26,7 @@ export const articles: Article[] = [
   {
     id: "mastering-ingress-nginx",
     title: "Kubernetes Ingress Optimization: Production-Grade ingress-nginx Performance Tuning",
-    description: "Battle-tested ingress-nginx optimization techniques from 10 years of production experience. Reduce latency by 60%, handle 10x traffic, eliminate 502 errors. Real-world examples from Fortune 10+ companies.",
+    description: "Production-grade ingress-nginx optimization — worker processes, HTTP/2, connection pooling, caching, rate limiting, and the pitfalls that actually bite you at scale. Practical patterns with the math to back them up.",
     tags: ["Kubernetes", "Performance", "DevOps", "Networking"],
     date: "2024-10-27",
     readTime: "15 min read",
@@ -39,7 +39,7 @@ export const articles: Article[] = [
   {
     id: "ipv6-kubernetes",
     title: "IPv6 Kubernetes: Complete Dual-Stack Implementation Guide for EKS and GKE",
-    description: "Battle-tested IPv6 Kubernetes implementation for EKS and GKE. Eliminate IPv4 exhaustion, cut NAT gateway costs by 87%, and unblock cluster scale — with Terraform patterns and production pitfalls.",
+    description: "IPv6 Kubernetes implementation for EKS and GKE — Terraform patterns, dual-stack tradeoffs, NAT gateway cost reduction, and a phased migration playbook. The gotchas you'll hit before you reach them.",
     tags: ["Kubernetes", "IPv6", "AWS", "GCP", "Networking"],
     date: "2026-04-22",
     readTime: "16 min read",
@@ -52,7 +52,7 @@ export const articles: Article[] = [
   {
     id: "k9s-advanced",
     title: "K9s Kubernetes CLI: Advanced Productivity Techniques for Platform Engineers",
-    description: "Advanced K9s techniques from Target-Ops SREs — custom views, plugins, aliases, and real incident workflows that cut Kubernetes triage time by 40%. Copy-paste ready config.",
+    description: "Advanced K9s techniques from Target-Ops engineers — custom views, plugins, aliases, and triage workflows that make Kubernetes operations meaningfully faster. Copy-paste ready config.",
     tags: ["Kubernetes", "CLI", "Productivity", "DevOps"],
     date: "2026-04-22",
     readTime: "12 min read",
@@ -65,7 +65,7 @@ export const articles: Article[] = [
   {
     id: "best-practices-helm-chart",
     title: "Helm Chart Best Practices: Production-Grade Kubernetes Packaging",
-    description: "Battle-tested Helm chart best practices from Target-Ops engineers — structure, versioning, security, hooks, and the patterns that cut deployment incidents by 99%. Includes real fintech consolidation case study.",
+    description: "Production-grade Helm chart best practices from Target-Ops engineers — structure, versioning, security, hooks, schema validation, and the shared-library pattern that eliminates chart sprawl.",
     tags: ["Kubernetes", "Helm", "DevOps", "Best Practices"],
     date: "2026-04-22",
     readTime: "14 min read",
@@ -91,7 +91,7 @@ export const articles: Article[] = [
   {
     id: "choosing-cloud-provider",
     title: "Cloud Provider Selection: Strategic Framework for DevOps Teams",
-    description: "The decision framework Target-Ops uses to guide AWS vs GCP vs Azure selection — five questions that matter, honest provider assessments, real migration case study, and when multi-cloud actually makes sense.",
+    description: "The decision framework Target-Ops uses to reason about AWS vs GCP vs Azure — five questions that matter, honest per-vendor assessment, a worked hybrid-cloud example, and when multi-cloud actually makes sense.",
     tags: ["Cloud", "AWS", "GCP", "Azure", "Strategy"],
     date: "2026-04-22",
     readTime: "15 min read",
@@ -104,7 +104,7 @@ export const articles: Article[] = [
   {
     id: "vscode-devops-pack",
     title: "VS Code DevOps Extension Pack: The Ultimate Toolkit for DevOps Engineers",
-    description: "Curated by Target-Ops engineers — the VS Code DevOps Ultra Pack bundles Terraform, Docker, Kubernetes, AWS, GCP, CI/CD, and productivity extensions into one install. Cuts new-engagement onboarding from 4 hours to 30 minutes.",
+    description: "Curated by Target-Ops engineers — the VS Code DevOps Ultra Pack bundles Terraform, Docker, Kubernetes, AWS, GCP, CI/CD, and productivity extensions into a single install. Standardize your team's editor in one command.",
     tags: ["VS Code", "DevOps", "Extensions", "Productivity", "Tools"],
     date: "2026-04-22",
     readTime: "11 min read",

@@ -2,7 +2,7 @@
 
 IPv6 in Kubernetes is no longer optional for organizations planning to scale beyond the limits of private IPv4 ranges. If you're running large clusters on AWS or GCP, you've probably already felt the pain: RFC 1918 exhaustion, complex IP planning across VPCs, NAT gateway bottlenecks, and brittle peering arrangements that break every time you grow.
 
-At Target-Ops, we've deployed IPv6 and dual-stack Kubernetes clusters for enterprises running tens of thousands of pods across EKS and GKE. We've migrated IPv4-exhausted platforms, unblocked multi-region scale-out, and cut NAT gateway costs from five-figure monthly bills to near zero. This guide shares the exact Terraform patterns, CNI choices, and production practices we use to implement IPv6 Kubernetes without outages.
+Target-Ops is a small team of senior DevOps engineers working across Kubernetes, AWS, and GCP daily. This guide shares the Terraform patterns, CNI choices, and production practices we rely on when implementing IPv6 on EKS and GKE — the ones that actually work, and the gotchas you'll hit before you reach them.
 
 Whether you're building a new greenfield cluster or migrating an IPv4-only platform that's hitting its ceiling, this walkthrough will give you a production-ready implementation path — plus the pitfalls we've hit so you don't have to.
 
@@ -278,45 +278,45 @@ Each of these has cost us a 3 AM page at some point. Learn from them:
 7. **GKE without Dataplane V2.** Cluster creation looks like it succeeds but IPv6 doesn't actually work. Fix: set `datapath_provider = "ADVANCED_DATAPATH"` at cluster creation (can't be changed later).
 8. **Forgetting to update monitoring dashboards.** Prometheus scrape configs often hardcode IPv4-only relabel rules. Fix: verify `__meta_kubernetes_pod_ip` handling for IPv6 in your configs.
 
-## Real-World Example: Migrating a 400-Node EKS Cluster to Dual-Stack
+## Worked Migration Plan: Taking a Large EKS Cluster Dual-Stack
 
-One of our enterprise clients ran a 400-node EKS cluster serving a high-traffic B2B API. They were hitting two walls simultaneously:
+Here's the phased approach we use when planning an IPv4 → dual-stack migration on an existing EKS cluster at scale. The exact timeline depends on workload count and team capacity, but the ordering is what matters.
 
-**Problem:**
-- VPC IPv4 CIDR `/18` was 92% consumed; couldn't scale past 450 nodes without re-IPing
-- NAT gateway processing fees: **$14K/month** for cross-AZ egress alone
-- Planned acquisition was going to collide on overlapping `10.0.0.0/8` ranges
+**Starting state (typical pain points):**
+- VPC IPv4 CIDR is 85–95% consumed; adding more nodes means re-IPing
+- NAT gateway processing fees have crept into four or five figures per month
+- Cross-VPC peering is collision-prone or already broken
 
-**Our approach:**
+**Phase 1 — Prep (1–2 weeks):**
+- Audit every workload for IPv6 compatibility: hardcoded literals, Java `preferIPv4Stack`, old HTTP clients, database drivers
+- Add an IPv6 `/56` to the existing VPC and create dual-stack subnets alongside existing IPv4 subnets
+- Create the egress-only internet gateway — this is what replaces NAT gateway costs
+- Verify CoreDNS version ≥ 1.8 and bump replica count for the additional AAAA load
 
-*Week 1 — Prep:*
-- Audited all workloads for IPv6 compatibility (3 legacy services needed code changes)
-- Added IPv6 `/56` to the existing VPC and created dual-stack subnets alongside IPv4 ones
-- Created egress-only IGW
+**Phase 2 — Pilot (1 week):**
+- Spin up a new node group with `cluster_ip_family = "ipv6"` pods (dual-stack nodes)
+- Migrate a small percentage of workloads via node selector
+- Validate: AAAA DNS resolution, NetworkPolicies handling IPv6 CIDRs, ALB routing with `ip-address-type: dualstack`, Prometheus scraping IPv6 pods correctly
+- Fix any hardcoded IPv4 literals and relabel rules found during validation
 
-*Week 2 — Pilot:*
-- Spun up a new node group with `cluster_ip_family = "ipv6"` pods (dual-stack nodes)
-- Migrated 10% of workloads via node selector; validated AAAA DNS, NetworkPolicies, ALB routing
-- Fixed one Prometheus relabel rule and one hardcoded IPv4 literal in a Java service
+**Phase 3 — Rollout (2–4 weeks):**
+- Drain IPv4 node groups one AZ at a time to keep fault tolerance intact
+- Move internal service-to-service traffic fully to IPv6
+- Leave IPv4 enabled at the ALB edge for external client compatibility
 
-*Weeks 3–5 — Rollout:*
-- Drained IPv4 node groups one AZ at a time
-- Moved internal service-to-service traffic fully to IPv6
-- Left IPv4 enabled only at the ALB edge for external client compatibility
+**Realistic outcomes at the end of this:**
+- Pod IP capacity goes from constrained to effectively unbounded (a `/56` holds 256 `/64` subnets)
+- NAT gateway processing fees drop 80–90%, because IPv6 pods egress directly via the egress-only IGW with no processing fees
+- VPC peering and cross-account networking stops being a CIDR planning exercise
+- Zero customer-facing downtime if the phasing is done carefully
 
-**Results after 30 days:**
-- Pod IP capacity: effectively unlimited (from `/18` constrained to `/56`)
-- NAT gateway processing fees: **$14K → $1.8K/month** (87% reduction)
-- Acquisition networking unblocked — no CIDR collision
-- Zero customer-facing incidents during migration
-
-The annualized savings paid for the entire engagement in the first quarter.
+The NAT gateway savings alone usually pay for the engineering time within a quarter.
 
 ## Conclusion
 
 IPv6 Kubernetes is the only realistic answer for organizations running at scale on EKS and GKE. Between pod IP exhaustion, NAT gateway costs, and cross-VPC CIDR collisions, the cost of staying IPv4-only compounds every quarter — while the cost of migrating gets lower each release as cloud providers, CNIs, and application libraries improve their IPv6 story.
 
-The key to a smooth IPv6 Kubernetes rollout is starting dual-stack, validating your full stack end-to-end, and migrating workloads gradually with monitoring in place. At Target-Ops, we've used this exact playbook to migrate clusters ranging from 50 to 4,000 nodes without customer-facing downtime.
+The key to a smooth IPv6 Kubernetes rollout is starting dual-stack, validating your full stack end-to-end, and migrating workloads gradually with monitoring in place. The playbook above is the one we reach for when planning these migrations — it's phased specifically to keep every stage reversible if something unexpected turns up.
 
 ## Next Steps
 
@@ -327,7 +327,7 @@ Ready to plan your IPv6 Kubernetes migration? Here's what to do this week:
 3. **Identify IPv6-incompatible dependencies.** Check hardcoded literals, Java `preferIPv4Stack`, old clients, and any third-party services your cluster calls.
 4. **Plan the rollout.** Dual-stack first, IPv6-only for pods second, full IPv6 at the edge last.
 
-**Need expert help planning or executing your IPv6 Kubernetes migration?** [Contact our DevOps team](/contact) for a migration assessment and hands-on implementation support.
+**Planning an IPv6 Kubernetes migration and want a technical review before you start?** [Book a free 30-minute call with Target-Ops](/contact) — we'll walk through your current setup, identify the biggest risks, and help you scope the migration realistically.
 
 ## Related Resources
 
