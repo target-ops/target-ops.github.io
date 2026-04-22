@@ -236,21 +236,34 @@ const DevOpsConsulting = () => {
           </div>
         </section>
 
-        {/* Why Trust Us */}
+        {/* Why Work With Target-Ops */}
         <section className="relative py-8 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Why Work With Target-Ops</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">We do the work, we write about the work, we open-source the tools we build</p>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Experienced engineers, open work, deep technical writing</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
+              <Card className="bg-card border-border">
+                <CardContent className="p-6">
+                  <Users className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
+                  <p className="text-muted-foreground mb-4">
+                    The engineer who meets you on the intro call is the engineer doing the work.
+                    No offshore handoff. No junior rotation. No middle layer between you and the builder.
+                  </p>
+                  <Link to="/team" className="text-primary hover:underline text-sm font-medium">
+                    Meet the team →
+                  </Link>
+                </CardContent>
+              </Card>
               <Card className="bg-card border-border">
                 <CardContent className="p-6">
                   <Github className="h-10 w-10 text-primary mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Open-source tooling</h3>
                   <p className="text-muted-foreground mb-4">
-                    We build and maintain real developer tooling — the VS Code DevOps Pack, AnyClown,
-                    Homebrew taps — that other engineers actually use. Our reputation is in public.
+                    We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
+                    Homebrew taps — that other engineers use daily. Our reputation is in public.
                   </p>
                   <Link to="/open-source" className="text-primary hover:underline text-sm font-medium">
                     See our OSS work →
@@ -262,24 +275,11 @@ const DevOpsConsulting = () => {
                   <BookOpen className="h-10 w-10 text-primary mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Deep technical writing</h3>
                   <p className="text-muted-foreground mb-4">
-                    Our articles on Kubernetes ingress tuning, IPv6, Helm chart patterns, K9s workflows,
-                    and cloud provider selection are what you get when we assess and work on your infra.
+                    Our articles on Kubernetes ingress tuning, IPv6, Helm chart patterns, K9s, and
+                    cloud provider selection show exactly how we think about infrastructure.
                   </p>
                   <Link to="/articles" className="text-primary hover:underline text-sm font-medium">
                     Read the articles →
-                  </Link>
-                </CardContent>
-              </Card>
-              <Card className="bg-card border-border">
-                <CardContent className="p-6">
-                  <Users className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Senior engineers only</h3>
-                  <p className="text-muted-foreground mb-4">
-                    No offshore handoff, no junior rotation. The engineer you meet on the intro call is the
-                    engineer doing the work. Small team, high-signal conversations, no middle layer.
-                  </p>
-                  <Link to="/team" className="text-primary hover:underline text-sm font-medium">
-                    Meet the team →
                   </Link>
                 </CardContent>
               </Card>

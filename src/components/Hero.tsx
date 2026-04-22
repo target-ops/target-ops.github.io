@@ -35,15 +35,11 @@ const Hero = () => {
             We migrate your cloud infrastructure, automate deployments, build CI/CD pipelines, and optimize costs — so your engineering team can focus on shipping features, not fixing infrastructure.
           </p>
 
-          <p className="text-xs sm:text-sm text-muted-foreground mb-8 sm:mb-10 px-4">
-            <strong className="text-foreground">Trusted by 50+ companies</strong> building on AWS, GCP, and Azure — from seed stage to Series C.
-          </p>
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 px-4">
             <Button size="lg" className="bg-gradient-primary hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 group w-full sm:w-auto" asChild>
               <Link to="/contact">
-                Get a Free Consultation
+                Book a Free 30-Minute Call
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>

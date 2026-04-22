@@ -8,21 +8,21 @@ const WhatWeDo = () => {
       service: "Deployment Speed",
       before: "Releases take days or weeks. Manual testing. Features are delayed. Customers wait.",
       after: "Deploy multiple times per day. Automated testing. Features ship in hours, not weeks.",
-      metric: "From 1 deploy/week → 50+ deploys/week"
+      metric: "Target: ship daily, not weekly"
     },
     {
       icon: Rocket,
       service: "Cloud Costs",
       before: "Bills spike unexpectedly. No cost visibility. Over-provisioned resources. Budget overruns.",
-      after: "Predictable monthly costs. Real-time monitoring. Right-sized infrastructure. 30-50% savings.",
-      metric: "Average cost reduction: 40%"
+      after: "Predictable monthly costs. Real-time monitoring. Right-sized infrastructure.",
+      metric: "Typical savings: 30–50%"
     },
     {
       icon: Users,
       service: "System Reliability",
       before: "Frequent outages. Manual recovery. Incidents at 3am. Customers complain. Engineers burn out.",
-      after: "99.9% uptime. Automated monitoring. Self-healing systems. Proactive alerts. Engineers sleep.",
-      metric: "Downtime reduced by 95%"
+      after: "High-availability architecture. Automated monitoring. Self-healing systems. Proactive alerts.",
+      metric: "Target: 99.9% uptime"
     }
   ];
 

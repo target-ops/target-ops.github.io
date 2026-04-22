@@ -6,9 +6,9 @@ import { ossProjects } from "@/data/oss";
 
 const OpenSource = () => {
   const stats = [
-    { icon: Code2, label: "50+ Projects", desc: "Active repos" },
-    { icon: Star, label: "145+ Stars", desc: "GitHub community" },
-    { icon: Package, label: "1000+ Downloads", desc: "Worldwide reach" }
+    { icon: Code2, label: `${ossProjects.length} Projects`, desc: "Public repos" },
+    { icon: Star, label: "All public", desc: "On GitHub" },
+    { icon: Package, label: "Real tools", desc: "We use daily" }
   ];
 
   // Use first 6 projects for the scrolling display
@@ -32,7 +32,7 @@ const OpenSource = () => {
               Open source is how we solve real DevOps pain for engineers everywhere.
             </p>
             <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 md:mb-10 leading-relaxed">
-              From VS Code extensions to CLI tools — our projects are used by thousands of developers worldwide to automate workflows, manage infrastructure, and ship faster.
+              From VS Code extensions to CLI tools — we build and maintain the utilities that make our own DevOps work faster, and we keep them open so the rest of the community benefits too.
             </p>
             
             {/* Stats */}
