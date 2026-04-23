@@ -195,42 +195,52 @@ const SecurityCompliance = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* Why Work With Target-Ops */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">What Our Clients Say</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
-                <div className="mb-4">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-yellow-500">★</span>
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-6">
-                    "Target-Ops got us SOC 2 compliant in record time. They knew exactly what auditors would look for and made sure we were ready. Passed with flying colors."
-                  </p>
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Why Work With Target-Ops on Security & Compliance</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Experienced engineers, open work, deep technical writing</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
                 </div>
-                <div>
-                  <div className="font-semibold">Rachel Martinez</div>
-                  <div className="text-sm text-muted-foreground">CEO, HealthSync</div>
-                </div>
+                <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  The engineer who scopes your security engagement is the engineer who implements it.
+                  No offshore handoff, no junior rotation, no middle layer.
+                </p>
+                <Link to="/team" className="text-primary hover:underline text-sm font-medium">
+                  Meet the team →
+                </Link>
               </Card>
-              <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
-                <div className="mb-4">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-yellow-500">★</span>
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-6">
-                    "Their security assessment revealed vulnerabilities we didn't know existed. They fixed everything and implemented monitoring so we never get surprised again."
-                  </p>
+              <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
                 </div>
-                <div>
-                  <div className="font-semibold">David Park</div>
-                  <div className="text-sm text-muted-foreground">CTO, SecureBank</div>
+                <h3 className="text-xl font-semibold mb-2">Open-source tooling</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
+                  Homebrew taps — that other engineers use daily.
+                </p>
+                <Link to="/open-source" className="text-primary hover:underline text-sm font-medium">
+                  See our OSS work →
+                </Link>
+              </Card>
+              <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
                 </div>
+                <h3 className="text-xl font-semibold mb-2">Deep technical writing</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Our articles on Helm chart security patterns and production-grade Kubernetes
+                  infrastructure show how we approach secure-by-default setups.
+                </p>
+                <Link to="/articles" className="text-primary hover:underline text-sm font-medium">
+                  Read the articles →
+                </Link>
               </Card>
             </div>
           </div>

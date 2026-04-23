@@ -1,3 +1,12 @@
+// Import markdown files as raw strings
+import masteringIngressNginxMd from './articles/mastering-ingress-nginx.md?raw';
+import ipv6KubernetesMd from './articles/ipv6-kubernetes.md?raw';
+import k9sAdvancedMd from './articles/k9s-advanced.md?raw';
+import bestPracticesHelmChartMd from './articles/best-practices-helm-chart.md?raw';
+import anyclownVscodeExtensionMd from './articles/anyclown-vscode-extension.md?raw';
+import choosingCloudProviderMd from './articles/choosing-cloud-provider.md?raw';
+import vscodeDevopsPackMd from './articles/vscode-devops-pack.md?raw';
+
 export interface Article {
   id: string;
   title: string;
@@ -5,60 +14,104 @@ export interface Article {
   tags: string[];
   date: string;
   readTime: string;
-  externalUrl: string;
+  author: string;
+  authorRole?: string;
   featured?: boolean;
+  content: string; // Markdown content
+  coverImage?: string;
+  seoKeywords?: string[];
 }
 
 export const articles: Article[] = [
   {
     id: "mastering-ingress-nginx",
-    title: "Mastering ingress-nginx",
-    description: "A deep dive into ingress-nginx configuration, best practices, and advanced patterns for production Kubernetes environments.",
-    tags: ["Kubernetes", "Networking", "DevOps"],
-    date: "2024-03-15",
-    readTime: "12 min read",
-    externalUrl: "https://dev.to/target-ops/mastering-ingress-nginx-36d7",
-    featured: true
+    title: "Kubernetes Ingress Optimization: Production-Grade ingress-nginx Performance Tuning",
+    description: "Production-grade ingress-nginx optimization — worker processes, HTTP/2, connection pooling, caching, rate limiting, and the pitfalls that actually bite you at scale. Practical patterns with the math to back them up.",
+    tags: ["Kubernetes", "Performance", "DevOps", "Networking"],
+    date: "2024-10-27",
+    readTime: "15 min read",
+    author: "Target-Ops Team",
+    authorRole: "DevOps Engineers",
+    featured: true,
+    seoKeywords: ["kubernetes ingress optimization", "ingress-nginx performance tuning", "kubernetes performance", "ingress controller configuration", "nginx optimization", "kubernetes latency reduction"],
+    content: masteringIngressNginxMd
   },
   {
     id: "ipv6-kubernetes",
-    title: "Implementing IPv6 in Kubernetes Clusters: A Comprehensive Guide for EKS and GKE",
-    description: "Learn how to properly configure IPv6 in your Kubernetes clusters on AWS EKS and Google GKE, including dual-stack networking strategies.",
-    tags: ["Kubernetes", "IPv6", "AWS", "GCP"],
-    date: "2024-03-10",
-    readTime: "15 min read",
-    externalUrl: "https://dev.to/target-ops/implementing-ipv6-in-kubernetes-clusters-a-comprehensive-guide-for-eks-and-gke-1ee6",
-    featured: true
+    title: "IPv6 Kubernetes: Complete Dual-Stack Implementation Guide for EKS and GKE",
+    description: "IPv6 Kubernetes implementation for EKS and GKE — Terraform patterns, dual-stack tradeoffs, NAT gateway cost reduction, and a phased migration playbook. The gotchas you'll hit before you reach them.",
+    tags: ["Kubernetes", "IPv6", "AWS", "GCP", "Networking"],
+    date: "2026-04-22",
+    readTime: "16 min read",
+    author: "Target-Ops Team",
+    authorRole: "Cloud Architects",
+    featured: true,
+    seoKeywords: ["ipv6 kubernetes", "eks ipv6", "gke ipv6", "kubernetes dual stack", "kubernetes ipv6 migration", "eks dual stack terraform", "kubernetes nat gateway cost"],
+    content: ipv6KubernetesMd
   },
   {
     id: "k9s-advanced",
-    title: "K9s - CLI Management Advanced Usage",
-    description: "Master the K9s terminal UI for Kubernetes — advanced shortcuts, custom views, and productivity hacks for managing clusters like a pro.",
-    tags: ["Kubernetes", "CLI", "Productivity"],
-    date: "2024-03-05",
+    title: "K9s Kubernetes CLI: Advanced Productivity Techniques for Platform Engineers",
+    description: "Advanced K9s techniques from Target-Ops engineers — custom views, plugins, aliases, and triage workflows that make Kubernetes operations meaningfully faster. Copy-paste ready config.",
+    tags: ["Kubernetes", "CLI", "Productivity", "DevOps"],
+    date: "2026-04-22",
+    readTime: "12 min read",
+    author: "Target-Ops Team",
+    authorRole: "DevOps Engineers",
+    featured: true,
+    seoKeywords: ["k9s kubernetes", "k9s advanced", "kubernetes cli tools", "k9s tutorial", "k9s plugins", "k9s custom views", "kubernetes productivity"],
+    content: k9sAdvancedMd
+  },
+  {
+    id: "best-practices-helm-chart",
+    title: "Helm Chart Best Practices: Production-Grade Kubernetes Packaging",
+    description: "Production-grade Helm chart best practices from Target-Ops engineers — structure, versioning, security, hooks, schema validation, and the shared-library pattern that eliminates chart sprawl.",
+    tags: ["Kubernetes", "Helm", "DevOps", "Best Practices"],
+    date: "2026-04-22",
+    readTime: "14 min read",
+    author: "Target-Ops Team",
+    authorRole: "Kubernetes Engineers",
+    featured: true,
+    seoKeywords: ["helm chart best practices", "helm chart production", "kubernetes helm", "helm chart structure", "helm chart versioning", "helm chart security", "helm library chart"],
+    content: bestPracticesHelmChartMd
+  },
+  {
+    id: "anyclown-vscode-extension",
+    title: "AnyClown: One-Click Git Repository Cloning to VS Code",
+    description: "Stop typing git clone. AnyClown is a free Chrome extension from Target-Ops that turns any GitHub/GitLab/Bitbucket URL into a one-click clone-and-open in VS Code — saving DevOps engineers hours per week.",
+    tags: ["VS Code", "Chrome Extension", "Productivity", "Git", "DevOps"],
+    date: "2026-04-22",
     readTime: "8 min read",
-    externalUrl: "https://dev.to/target-ops/k9s-cli-management-advanced-usage-4f7p",
-    featured: true
+    author: "Target-Ops Team",
+    authorRole: "Tool Developers",
+    featured: false,
+    seoKeywords: ["anyclown", "vs code clone extension", "git clone vscode chrome", "one-click git clone", "vscode chrome extension", "developer productivity tools"],
+    content: anyclownVscodeExtensionMd
   },
   {
     id: "choosing-cloud-provider",
-    title: "Choosing a Cloud Provider: Deep Considerations for the Experienced DevOps Professional",
-    description: "Beyond the basics — a strategic framework for selecting AWS, GCP, or Azure based on technical architecture, cost models, and organizational needs.",
+    title: "Cloud Provider Selection: Strategic Framework for DevOps Teams",
+    description: "The decision framework Target-Ops uses to reason about AWS vs GCP vs Azure — five questions that matter, honest per-vendor assessment, a worked hybrid-cloud example, and when multi-cloud actually makes sense.",
     tags: ["Cloud", "AWS", "GCP", "Azure", "Strategy"],
-    date: "2024-02-28",
-    readTime: "10 min read",
-    externalUrl: "https://dev.to/target-ops/choosing-a-cloud-provider-deep-considerations-for-the-experienced-devops-professional-37ed",
-    featured: false
+    date: "2026-04-22",
+    readTime: "15 min read",
+    author: "Target-Ops Team",
+    authorRole: "Cloud Consultants",
+    featured: true,
+    seoKeywords: ["cloud provider selection", "aws vs gcp vs azure", "cloud provider comparison", "choosing cloud provider", "cloud strategy", "multi-cloud strategy", "cloud migration framework"],
+    content: choosingCloudProviderMd
   },
   {
-    id: "homebrew-tap",
-    title: "Creating and Using a Personal Homebrew Tap",
-    description: "Build and distribute your own Homebrew packages — a complete guide to creating a custom tap for your CLI tools and utilities.",
-    tags: ["Homebrew", "macOS", "CLI", "DevTools"],
-    date: "2024-02-20",
-    readTime: "7 min read",
-    externalUrl: "https://dev.to/target-ops/creating-and-using-a-personal-homebrew-tap-53bm",
-    featured: false
+    id: "vscode-devops-pack",
+    title: "VS Code DevOps Extension Pack: The Ultimate Toolkit for DevOps Engineers",
+    description: "Curated by Target-Ops engineers — the VS Code DevOps Ultra Pack bundles Terraform, Docker, Kubernetes, AWS, GCP, CI/CD, and productivity extensions into a single install. Standardize your team's editor in one command.",
+    tags: ["VS Code", "DevOps", "Extensions", "Productivity", "Tools"],
+    date: "2026-04-22",
+    readTime: "11 min read",
+    author: "Target-Ops Team",
+    authorRole: "Tool Developers",
+    featured: true,
+    seoKeywords: ["vscode devops", "vscode devops extension pack", "vscode extensions", "devops tools", "vscode pack", "terraform vscode", "kubernetes vscode"],
+    content: vscodeDevopsPackMd
   }
 ];
-

@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight, Cloud, DollarSign, Zap, AlertTriangle, Users, Quote, Target } from "lucide-react";
+import { CheckCircle2, ArrowRight, Cloud, DollarSign, Zap, AlertTriangle, Users, Target } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import {
   Accordion,
@@ -213,103 +213,62 @@ const CloudMigration = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-8 pt-8 border-t border-border">
-                  <div className="flex items-start space-x-4">
-                    <Quote className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="text-lg italic mb-4">
-                        "We were terrified of the migration, but Target-Ops made it seamless. Not a single customer 
-                        noticed the transition, and we're now saving $25K per month. Best decision we ever made."
-                      </p>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-full"></div>
-                        <div>
-                          <p className="font-semibold">James Patterson</p>
-                          <p className="text-sm text-muted-foreground">CTO, PayFlow Fintech</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* Why Work With Target-Ops */}
         <section className="relative py-8 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What Our Clients Say</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Real feedback from successful migrations</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Why Work With Target-Ops on Cloud Migration</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Experienced engineers, open work, deep technical writing</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-card border-border">
                 <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
                   </div>
-                  <p className="text-muted-foreground mb-4 italic">
-                    "Migrated from on-prem to AWS with zero issues. Target-Ops handled everything professionally 
-                    and our cloud costs are 50% lower than we expected."
+                  <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    The engineer who scopes your migration is the engineer who executes it.
+                    No offshore handoff, no junior rotation, no middle layer.
                   </p>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary/20 rounded-full"></div>
-                    <div>
-                      <p className="font-semibold text-sm">Lisa Martinez</p>
-                      <p className="text-xs text-muted-foreground">VP Ops, MediaStream</p>
-                    </div>
-                  </div>
+                  <Link to="/team" className="text-primary hover:underline text-sm font-medium">
+                    Meet the team →
+                  </Link>
                 </CardContent>
               </Card>
-
               <Card className="bg-card border-border">
                 <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
                   </div>
-                  <p className="text-muted-foreground mb-4 italic">
-                    "We were skeptical about cloud savings, but the optimization they did saved us $30K/month. 
-                    The ROI paid for the migration in 3 months."
+                  <h3 className="text-xl font-semibold mb-2">Open-source tooling</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
+                    Homebrew taps — that other engineers use daily.
                   </p>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary/20 rounded-full"></div>
-                    <div>
-                      <p className="font-semibold text-sm">Tom Anderson</p>
-                      <p className="text-xs text-muted-foreground">CTO, RetailTech</p>
-                    </div>
-                  </div>
+                  <Link to="/open-source" className="text-primary hover:underline text-sm font-medium">
+                    See our OSS work →
+                  </Link>
                 </CardContent>
               </Card>
-
               <Card className="bg-card border-border">
                 <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
                   </div>
-                  <p className="text-muted-foreground mb-4 italic">
-                    "Multi-cloud migration done right. They helped us leverage both AWS and GCP for different 
-                    workloads. Performance improved 3x."
+                  <h3 className="text-xl font-semibold mb-2">Deep technical writing</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Our articles on cloud provider selection, IPv6 Kubernetes, and Helm chart
+                    patterns show exactly how we approach cloud infrastructure.
                   </p>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary/20 rounded-full"></div>
-                    <div>
-                      <p className="font-semibold text-sm">Priya Sharma</p>
-                      <p className="text-xs text-muted-foreground">Head of Eng, DataWorks</p>
-                    </div>
-                  </div>
+                  <Link to="/articles" className="text-primary hover:underline text-sm font-medium">
+                    Read the articles →
+                  </Link>
                 </CardContent>
               </Card>
             </div>

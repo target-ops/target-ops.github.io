@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight, Settings, Clock, TrendingDown, Users, Quote, Target, Zap } from "lucide-react";
+import { CheckCircle2, ArrowRight, Settings, Clock, TrendingDown, Users, Target, Zap, Github, BookOpen } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import {
   Accordion,
@@ -16,11 +16,40 @@ const DevOpsConsulting = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>DevOps Consulting Services | Expert DevOps Engineers | Target-Ops</title>
-        <meta name="description" content="Professional DevOps consulting for startups and enterprises. Speed up deploys by 10×, reduce cloud costs by 50%, automate infrastructure. AWS, GCP, Azure specialists." />
-        <meta property="og:title" content="DevOps Consulting Services | Target-Ops" />
-        <meta property="og:description" content="Expert DevOps consulting: faster deployments, lower cloud costs, automated infrastructure." />
+        <title>DevOps Consulting & Strategy | Senior DevOps Engineers | Target-Ops</title>
+        <meta name="description" content="DevOps consulting and strategy from senior engineers who build and ship production infrastructure daily. Kubernetes, Terraform, CI/CD, AWS/GCP/Azure. Free 30-minute call." />
+        <meta name="keywords" content="devops consulting, devops strategy consulting, devops consultant, devops transformation, kubernetes consulting, terraform consulting, aws consulting, gcp consulting" />
+        <meta property="og:title" content="DevOps Consulting & Strategy | Target-Ops" />
+        <meta property="og:description" content="DevOps consulting from senior engineers who build and ship production infrastructure daily. Free 30-minute call to discuss your challenges." />
         <link rel="canonical" href="https://target-ops.io/solutions/devops-consulting" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "DevOps Consulting",
+          "provider": {
+            "@type": "Organization",
+            "name": "Target-Ops",
+            "url": "https://target-ops.io"
+          },
+          "areaServed": "Worldwide",
+          "description": "DevOps consulting and strategy services covering Kubernetes, Terraform, CI/CD pipelines, cloud migration, and infrastructure automation.",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://target-ops.io/contact",
+            "availability": "https://schema.org/InStock"
+          }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How long does a typical DevOps consulting engagement take?", "acceptedAnswer": { "@type": "Answer", "text": "Most engagements run 8–16 weeks from initial assessment to handoff. You usually see measurable improvements within the first few weeks through targeted quick wins, while larger transformations build over the full engagement." } },
+            { "@type": "Question", "name": "Do we need existing DevOps knowledge before engaging?", "acceptedAnswer": { "@type": "Answer", "text": "No. We work with teams at every maturity level — from founders setting up infrastructure for the first time to platform teams that want an outside opinion on their setup." } },
+            { "@type": "Question", "name": "Will you work with our existing tools?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We're tool-agnostic. We assess what you have, keep what works, and only recommend changes where there's clear value. No vendor loyalty biases the answer." } },
+            { "@type": "Question", "name": "How much does DevOps consulting cost?", "acceptedAnswer": { "@type": "Answer", "text": "Engagements vary based on scope and complexity. Focused audits start in the low tens of thousands; full transformations scale with team and infrastructure size. We scope everything explicitly after a free 30-minute call." } },
+            { "@type": "Question", "name": "Do you offer ongoing support after implementation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many engagements transition into a monthly retainer, on-demand consulting hours, or periodic optimization reviews. Everything stays flexible." } }
+          ]
+        })}</script>
       </Helmet>
       <Navigation />
       
@@ -39,12 +68,13 @@ const DevOpsConsulting = () => {
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                DevOps Consulting
+                DevOps Consulting & Strategy
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto px-2">
-              Stop struggling with slow deployments and team silos. We assess your processes, 
-              create a clear roadmap, and implement DevOps practices that reduce deployment time by up to 80%.
+              DevOps consulting from senior engineers who build and ship production infrastructure every day.
+              Kubernetes, Terraform, CI/CD, multi-cloud — we work on the patterns we write about, and we help you
+              apply them to your own platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90" asChild>
@@ -136,104 +166,69 @@ const DevOpsConsulting = () => {
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">The Results You Can Expect</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Real outcomes from real implementations</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What a Well-Run DevOps Transformation Achieves</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Typical outcomes when the practices in this guide are applied consistently</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-gradient-to-br from-primary/10 to-tech-blue/10 border-primary/30 p-8 text-center">
-                <div className="text-5xl font-bold text-primary mb-2">80%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Faster Deployment Time</div>
+                <div className="text-5xl font-bold text-primary mb-2">5–10x</div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wide">Deployment Frequency</div>
               </Card>
               <Card className="bg-gradient-to-br from-tech-blue/10 to-tech-cyan/10 border-tech-blue/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-blue mb-2">60%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Reduction in Incidents</div>
+                <div className="text-5xl font-bold text-tech-blue mb-2">50–70%</div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wide">Fewer Production Incidents</div>
               </Card>
               <Card className="bg-gradient-to-br from-tech-cyan/10 to-primary/10 border-tech-cyan/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-cyan mb-2">50%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Less Time on Manual Work</div>
+                <div className="text-5xl font-bold text-tech-cyan mb-2">30–50%</div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wide">Lower Cloud Spend</div>
               </Card>
             </div>
+            <p className="text-sm text-muted-foreground text-center mt-6 max-w-3xl mx-auto">
+              Ranges reflect what teams typically achieve when CI/CD, Infrastructure as Code,
+              and observability are implemented together rather than piecemeal. Your specific
+              numbers depend on your starting point.
+            </p>
           </div>
         </section>
 
-        {/* Case Study */}
+        {/* How Our Engagements Work */}
         <section className="relative py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">How we transformed a SaaS startup's deployment process</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">How Our DevOps Consulting Engagements Work</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Senior engineers, honest scoping, real deliverables — not decks</p>
             </div>
             <Card className="bg-gradient-to-br from-surface-elevated to-background border-primary/20">
               <CardContent className="p-8 md:p-12">
                 <div className="grid md:grid-cols-2 gap-12">
                   <div>
-                    <h3 className="text-2xl font-bold mb-4">The Challenge</h3>
+                    <h3 className="text-2xl font-bold mb-4">1. Free 30-minute call</h3>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
-                      A fast-growing SaaS company with 50+ developers was struggling with manual deployments 
-                      taking 2-3 days, frequent production incidents, and development teams working in silos. 
-                      Their infrastructure was a mix of manually configured servers with no version control, 
-                      making it impossible to scale reliably.
+                      We start with a focused conversation about what you're running, what's breaking, and what
+                      you want to be true six months from now. No sales pitch, no deck. By the end of the call
+                      we'll have a shared view of whether we're the right team to help — and if we're not, we'll
+                      tell you that too.
                     </p>
-                    <div className="space-y-3">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                        <span className="text-sm text-muted-foreground">45-hour average deployment cycle</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                        <span className="text-sm text-muted-foreground">12+ production incidents per month</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                        <span className="text-sm text-muted-foreground">Zero infrastructure automation</span>
-                      </div>
-                    </div>
+                    <h3 className="text-2xl font-bold mb-4 mt-8">2. Technical assessment</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      A structured review of your infrastructure, CI/CD, Kubernetes, IaC, observability, and
+                      security posture. You get a written findings document with prioritized recommendations
+                      and a realistic scope for what's worth doing first.
+                    </p>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-4">The Solution & Results</h3>
+                    <h3 className="text-2xl font-bold mb-4">3. Hands-on implementation</h3>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
-                      Over 12 weeks, we implemented a complete DevOps transformation: automated CI/CD pipelines, 
-                      Infrastructure as Code with Terraform, containerized applications with Kubernetes, and 
-                      comprehensive monitoring. We trained their team on the new workflows and established 
-                      a culture of collaboration.
+                      We roll up our sleeves and do the work alongside your team — Terraform modules, Helm
+                      charts, CI/CD pipelines, ingress tuning, cloud migration phases, whatever the scope
+                      calls for. Everything checked into your repo, reviewed by your engineers, owned by you.
                     </p>
-                    <div className="space-y-3">
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-sm">Deployments reduced to <strong>30 minutes</strong></span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-sm">Incidents down to <strong>2 per month</strong></span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-sm"><strong>100%</strong> infrastructure automated</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-sm">Team deployed <strong>15x more frequently</strong></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-8 pt-8 border-t border-border">
-                  <div className="flex items-start space-x-4">
-                    <Quote className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="text-lg italic mb-4">
-                        "Target-Ops didn't just implement tools—they transformed how our teams work together. 
-                        We went from dreading releases to deploying multiple times a day with confidence. 
-                        The ROI was evident within the first month."
-                      </p>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-full"></div>
-                        <div>
-                          <p className="font-semibold">Sarah Chen</p>
-                          <p className="text-sm text-muted-foreground">VP of Engineering, TechFlow SaaS</p>
-                        </div>
-                      </div>
-                    </div>
+                    <h3 className="text-2xl font-bold mb-4 mt-8">4. Knowledge transfer and handoff</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      By the end of the engagement your team runs the new setup. We document every pattern,
+                      pair with your engineers on operational playbooks, and stay available for follow-up
+                      questions for 3 months after handoff.
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -241,82 +236,84 @@ const DevOpsConsulting = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* Why Work With Target-Ops */}
         <section className="relative py-8 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What Our Clients Say</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Real feedback from companies we've transformed</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Why Work With Target-Ops</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Experienced engineers, open work, deep technical writing</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-card border-border">
                 <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4 italic">
-                    "We reduced our deployment time from 3 days to 2 hours. The team at Target-Ops understood 
-                    our constraints and delivered exactly what we needed."
+                  <Users className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
+                  <p className="text-muted-foreground mb-4">
+                    The engineer who meets you on the intro call is the engineer doing the work.
+                    No offshore handoff. No junior rotation. No middle layer between you and the builder.
                   </p>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary/20 rounded-full"></div>
-                    <div>
-                      <p className="font-semibold text-sm">Michael Rodriguez</p>
-                      <p className="text-xs text-muted-foreground">CTO, FinanceHub</p>
-                    </div>
-                  </div>
+                  <Link to="/team" className="text-primary hover:underline text-sm font-medium">
+                    Meet the team →
+                  </Link>
                 </CardContent>
               </Card>
-
               <Card className="bg-card border-border">
                 <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4 italic">
-                    "The knowledge transfer was invaluable. Our team now maintains and improves the DevOps 
-                    infrastructure independently. Best investment we made this year."
+                  <Github className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Open-source tooling</h3>
+                  <p className="text-muted-foreground mb-4">
+                    We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
+                    Homebrew taps — that other engineers use daily. Our reputation is in public.
                   </p>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary/20 rounded-full"></div>
-                    <div>
-                      <p className="font-semibold text-sm">Emily Watson</p>
-                      <p className="text-xs text-muted-foreground">Head of DevOps, CloudScale</p>
-                    </div>
-                  </div>
+                  <Link to="/open-source" className="text-primary hover:underline text-sm font-medium">
+                    See our OSS work →
+                  </Link>
                 </CardContent>
               </Card>
-
               <Card className="bg-card border-border">
                 <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4 italic">
-                    "Professional, knowledgeable, and results-driven. They didn't just consult—they rolled 
-                    up their sleeves and worked alongside our team."
+                  <BookOpen className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Deep technical writing</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Our articles on Kubernetes ingress tuning, IPv6, Helm chart patterns, K9s, and
+                    cloud provider selection show exactly how we think about infrastructure.
                   </p>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary/20 rounded-full"></div>
-                    <div>
-                      <p className="font-semibold text-sm">David Kim</p>
-                      <p className="text-xs text-muted-foreground">VP Engineering, DataStream</p>
-                    </div>
-                  </div>
+                  <Link to="/articles" className="text-primary hover:underline text-sm font-medium">
+                    Read the articles →
+                  </Link>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Technical Depth / Related Articles */}
+        <section className="relative py-8 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">The Work, in Our Own Words</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">
+                A preview of what we bring to an engagement
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { to: "/articles/mastering-ingress-nginx", title: "Kubernetes Ingress Optimization", desc: "Worker process tuning, HTTP/2, connection pooling, and the math behind production ingress-nginx configurations." },
+                { to: "/articles/ipv6-kubernetes", title: "IPv6 Kubernetes for EKS & GKE", desc: "Terraform patterns, dual-stack migration playbook, and NAT gateway cost reduction." },
+                { to: "/articles/best-practices-helm-chart", title: "Helm Chart Best Practices", desc: "Structure, versioning, security defaults, and the shared-library pattern that eliminates chart sprawl." },
+                { to: "/articles/choosing-cloud-provider", title: "Cloud Provider Selection Framework", desc: "Five questions that matter for AWS vs GCP vs Azure, and when multi-cloud is actually worth the complexity." },
+                { to: "/articles/k9s-advanced", title: "Advanced K9s Kubernetes Operations", desc: "Custom views, plugins, aliases, and triage workflows that cut incident response time dramatically." },
+                { to: "/articles/vscode-devops-pack", title: "VS Code DevOps Extension Pack", desc: "Our curated toolkit for DevOps engineers — Terraform, Kubernetes, cloud SDKs, CI/CD, all in one install." },
+              ].map((a) => (
+                <Link key={a.to} to={a.to} className="group">
+                  <Card className="bg-card border-border hover:border-primary/60 transition-colors h-full">
+                    <CardContent className="p-5">
+                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">{a.title}</h3>
+                      <p className="text-sm text-muted-foreground">{a.desc}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

@@ -16,8 +16,8 @@ const WhyChooseUs = () => {
       description: "No long contracts. No hidden fees. Just honest advice and DevOps that works."
     },
     {
-      title: "Proven Track Record",
-      description: "Decades of experience across startups and global enterprises. We've scaled systems serving millions."
+      title: "Open Work, Public Reputation",
+      description: "Our tooling is on GitHub. Our technical writing is on target-ops.io. You can read our work before you hire us — most consultancies don't let you."
     }
   ];
 

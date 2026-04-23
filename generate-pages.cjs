@@ -8,6 +8,18 @@
 const fs = require('fs');
 const path = require('path');
 
+// Article routes - manually listed for now
+// TODO: Could generate these dynamically after build from dist/assets if needed
+const articleRoutes = [
+  '/articles/mastering-ingress-nginx',
+  '/articles/ipv6-kubernetes',
+  '/articles/k9s-advanced',
+  '/articles/best-practices-helm-chart',
+  '/articles/anyclown-vscode-extension',
+  '/articles/choosing-cloud-provider',
+  '/articles/vscode-devops-pack'
+];
+
 // All routes that need static HTML files
 const routes = [
   '/about',
@@ -21,7 +33,28 @@ const routes = [
   '/open-source',
   '/articles',
   '/contact',
+  ...articleRoutes,
 ];
+
+// Redirects from old URL structure to new one.
+// Google Search Console shows these old paths still getting impressions —
+// emit meta-refresh + canonical HTML files so the equity transfers to the new URLs.
+const redirects = {
+  '/posts': '/articles',
+  '/posts/k9s': '/articles/k9s-advanced',
+  '/posts/ipv6': '/articles/ipv6-kubernetes',
+  '/posts/choosingcloudprovider': '/articles/choosing-cloud-provider',
+  '/posts/homebrewtap': '/open-source',
+  '/meettheteam': '/team',
+  '/meettheteam/ofir': '/team',
+  '/meettheteam/hagay': '/team',
+  '/oss': '/open-source',
+  '/oss/homebrewtap': '/open-source',
+  '/oss/gitswitch': '/open-source',
+  '/tags': '/articles',
+  '/solutions/ci-cd': '/solutions/cicd',
+  '/solutions/why-us': '/solutions',
+};
 
 // Route-specific meta tags for better SEO
 const routeMeta = {
@@ -34,8 +67,8 @@ const routeMeta = {
     description: 'Comprehensive DevOps solutions: Cloud migration, infrastructure automation, CI/CD pipelines, security & compliance. AWS, GCP, Azure expertise.',
   },
   '/solutions/devops-consulting': {
-    title: 'DevOps Consulting Services | Expert DevOps Engineers',
-    description: 'Professional DevOps consulting to accelerate your infrastructure. Strategic planning, implementation, and optimization by certified experts.',
+    title: 'DevOps Consulting & Strategy | Senior DevOps Engineers | Target-Ops',
+    description: 'DevOps consulting and strategy from senior engineers who build and ship production infrastructure daily. Kubernetes, Terraform, CI/CD, AWS/GCP/Azure. Free 30-minute call.',
   },
   '/solutions/cloud-migration': {
     title: 'Cloud Migration Services | AWS, GCP, Azure Migration',
@@ -65,11 +98,57 @@ const routeMeta = {
     title: 'DevOps Blog & Articles | Target-Ops Insights',
     description: 'DevOps best practices, tutorials, and insights. Learn about cloud infrastructure, automation, CI/CD, Kubernetes, and more.',
   },
+  '/articles/mastering-ingress-nginx': {
+    title: 'Kubernetes Ingress Optimization: Production ingress-nginx Tuning | Target-Ops',
+    description: 'Production-grade ingress-nginx optimization — worker processes, HTTP/2, connection pooling, rate limiting, and the pitfalls that actually bite at scale.',
+  },
+  '/articles/ipv6-kubernetes': {
+    title: 'IPv6 Kubernetes: Dual-Stack EKS & GKE Guide | Target-Ops',
+    description: 'IPv6 Kubernetes implementation for EKS and GKE — Terraform patterns, dual-stack tradeoffs, NAT gateway cost reduction, and a phased migration playbook.',
+  },
+  '/articles/k9s-advanced': {
+    title: 'K9s Kubernetes CLI: Advanced Productivity Techniques | Target-Ops',
+    description: 'Advanced K9s techniques — custom views, plugins, aliases, and triage workflows that make Kubernetes operations meaningfully faster. Copy-paste ready config.',
+  },
+  '/articles/best-practices-helm-chart': {
+    title: 'Helm Chart Best Practices: Production-Grade Packaging | Target-Ops',
+    description: 'Production-grade Helm chart best practices — structure, versioning, security, hooks, schema validation, and the shared-library pattern that eliminates chart sprawl.',
+  },
+  '/articles/anyclown-vscode-extension': {
+    title: 'AnyClown: One-Click Git Clone to VS Code | Target-Ops',
+    description: 'Stop typing git clone. AnyClown is a free Chrome extension from Target-Ops that turns any GitHub/GitLab/Bitbucket URL into a one-click clone-and-open in VS Code.',
+  },
+  '/articles/choosing-cloud-provider': {
+    title: 'Cloud Provider Selection: AWS vs GCP vs Azure Framework | Target-Ops',
+    description: 'The decision framework for AWS vs GCP vs Azure — five questions that matter, honest per-vendor assessment, a worked hybrid example, and when multi-cloud actually makes sense.',
+  },
+  '/articles/vscode-devops-pack': {
+    title: 'VS Code DevOps Extension Pack: Ultimate Toolkit | Target-Ops',
+    description: 'Curated by Target-Ops engineers — the VS Code DevOps Ultra Pack bundles Terraform, Docker, Kubernetes, AWS, GCP, CI/CD, and productivity extensions into a single install.',
+  },
   '/contact': {
     title: 'Contact Target-Ops | Get a Free DevOps Consultation',
     description: 'Get in touch with Target-Ops for a free DevOps consultation. Discuss your infrastructure challenges and get expert recommendations.',
   },
 };
+
+function generateRedirectHTML(oldPath, newPath) {
+  const destination = `https://target-ops.io${newPath}`;
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting to ${newPath}</title>
+    <link rel="canonical" href="${destination}" />
+    <meta name="robots" content="noindex, follow" />
+    <meta http-equiv="refresh" content="0; url=${destination}" />
+    <script>window.location.replace(${JSON.stringify(destination)});</script>
+  </head>
+  <body>
+    <p>This page has moved. Redirecting to <a href="${destination}">${newPath}</a>&hellip;</p>
+  </body>
+</html>`;
+}
 
 function generateHTML(route, meta, assetReferences) {
   return `<!doctype html>
@@ -182,17 +261,17 @@ function generateStaticPages() {
     try {
       const meta = routeMeta[route];
       const html = generateHTML(route, meta, assetReferences);
-      
+
       // Create directory structure
       const routePath = route.substring(1); // Remove leading slash
       const fullPath = path.join(distDir, routePath);
-      
+
       createDirectory(fullPath);
-      
+
       // Write index.html in the route directory
       const htmlPath = path.join(fullPath, 'index.html');
       fs.writeFileSync(htmlPath, html);
-      
+
       console.log(`✅ Generated: ${route}`);
       generated++;
     } catch (error) {
@@ -201,8 +280,25 @@ function generateStaticPages() {
     }
   });
 
+  let redirected = 0;
+  Object.entries(redirects).forEach(([oldPath, newPath]) => {
+    try {
+      const html = generateRedirectHTML(oldPath, newPath);
+      const routePath = oldPath.substring(1);
+      const fullPath = path.join(distDir, routePath);
+      createDirectory(fullPath);
+      fs.writeFileSync(path.join(fullPath, 'index.html'), html);
+      console.log(`↪️  Redirect: ${oldPath} → ${newPath}`);
+      redirected++;
+    } catch (error) {
+      console.error(`❌ Error generating redirect ${oldPath}:`, error.message);
+      errors++;
+    }
+  });
+
   console.log(`\n📊 Summary:`);
   console.log(`   ✅ Generated: ${generated} pages`);
+  console.log(`   ↪️  Redirects: ${redirected}`);
   console.log(`   ❌ Errors: ${errors}`);
   
   if (errors === 0) {
