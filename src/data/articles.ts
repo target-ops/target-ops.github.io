@@ -6,6 +6,7 @@ import bestPracticesHelmChartMd from './articles/best-practices-helm-chart.md?ra
 import anyclownVscodeExtensionMd from './articles/anyclown-vscode-extension.md?raw';
 import choosingCloudProviderMd from './articles/choosing-cloud-provider.md?raw';
 import vscodeDevopsPackMd from './articles/vscode-devops-pack.md?raw';
+import gitswitchPerDirectoryIdentityMd from './articles/gitswitch-per-directory-identity.md?raw';
 
 export interface Article {
   id: string;
@@ -113,5 +114,18 @@ export const articles: Article[] = [
     featured: true,
     seoKeywords: ["vscode devops", "vscode devops extension pack", "vscode extensions", "devops tools", "vscode pack", "terraform vscode", "kubernetes vscode"],
     content: vscodeDevopsPackMd
+  },
+  {
+    id: "gitswitch-per-directory-identity",
+    title: "gitswitch: Per-Directory Git Identity Binding with a Pre-Commit Guard",
+    description: "Stop committing as the wrong person. gitswitch is an open-source CLI from Target-Ops that binds a git identity (email, SSH key, gh CLI, signing) to a directory and refuses commits where the identity is wrong.",
+    tags: ["Git", "DevOps", "CLI", "Open Source", "Productivity"],
+    date: "2026-05-02",
+    readTime: "10 min read",
+    author: "Target-Ops Team",
+    authorRole: "Tool Developers",
+    featured: true,
+    seoKeywords: ["gitswitch", "git identity", "multiple git accounts", "git includeIf", "per-directory git config", "ssh key per project", "git pre-commit hook"],
+    content: gitswitchPerDirectoryIdentityMd
   }
 ];
