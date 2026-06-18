@@ -17,7 +17,8 @@ const articleRoutes = [
   '/articles/best-practices-helm-chart',
   '/articles/anyclown-vscode-extension',
   '/articles/choosing-cloud-provider',
-  '/articles/vscode-devops-pack'
+  '/articles/vscode-devops-pack',
+  '/articles/kubernetes-observability-lgtm-stack'
 ];
 
 // All routes that need static HTML files
@@ -125,6 +126,10 @@ const routeMeta = {
   '/articles/vscode-devops-pack': {
     title: 'VS Code DevOps Extension Pack: Ultimate Toolkit | Target-Ops',
     description: 'Curated by Target-Ops engineers — the VS Code DevOps Ultra Pack bundles Terraform, Docker, Kubernetes, AWS, GCP, CI/CD, and productivity extensions into a single install.',
+  },
+  '/articles/kubernetes-observability-lgtm-stack': {
+    title: 'Kubernetes Observability: A Grafana LGTM Stack with Alloy | Target-Ops',
+    description: 'How we run production Kubernetes observability on a self-hosted Grafana LGTM stack — Alloy, Mimir, Loki, and Tempo, wired for correlated metrics, logs, and traces across clusters.',
   },
   '/contact': {
     title: 'Contact Target-Ops | Get a Free DevOps Consultation',
