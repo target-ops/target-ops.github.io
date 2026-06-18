@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "@/components/ScrollToTop";
+import { LocaleProvider } from "@/i18n/LocaleContext";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Solutions from "./pages/Solutions";
@@ -31,27 +32,30 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/solutions/devops-consulting" element={<DevOpsConsulting />} />
-          <Route path="/solutions/cloud-migration" element={<CloudMigration />} />
-          <Route path="/solutions/infrastructure-automation" element={<InfrastructureAutomation />} />
-          <Route path="/solutions/cicd" element={<CICDPipelines />} />
-          <Route path="/solutions/security-compliance" element={<SecurityCompliance />} />
-          <Route path="/open-source" element={<OpenSourcePage />} />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/articles/:id" element={<ArticleDetail />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+          <LocaleProvider>
+            <ScrollToTop />
+            <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/he" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/devops-consulting" element={<DevOpsConsulting />} />
+            <Route path="/solutions/cloud-migration" element={<CloudMigration />} />
+            <Route path="/solutions/infrastructure-automation" element={<InfrastructureAutomation />} />
+            <Route path="/solutions/cicd" element={<CICDPipelines />} />
+            <Route path="/solutions/security-compliance" element={<SecurityCompliance />} />
+            <Route path="/open-source" element={<OpenSourcePage />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/articles/:id" element={<ArticleDetail />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          </LocaleProvider>
+        </BrowserRouter>
     </TooltipProvider>
     </HelmetProvider>
   </QueryClientProvider>

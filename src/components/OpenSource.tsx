@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Github, Code2, Package, Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ossProjects } from "@/data/oss";
+import { useLocale } from "@/i18n/LocaleContext";
 
 const OpenSource = () => {
+  const { t } = useLocale();
   const stats = [
-    { icon: Code2, label: `${ossProjects.length} Projects`, desc: "Public repos" },
-    { icon: Star, label: "All public", desc: "On GitHub" },
-    { icon: Package, label: "Real tools", desc: "We use daily" }
+    { icon: Code2, label: `${ossProjects.length} ${t.openSource.stats.projects}`, desc: t.openSource.stats.projectsDesc },
+    { icon: Star, label: t.openSource.stats.stars, desc: t.openSource.stats.starsDesc },
+    { icon: Package, label: t.openSource.stats.downloads, desc: t.openSource.stats.downloadsDesc }
   ];
 
   // Use first 6 projects for the scrolling display
@@ -24,15 +26,15 @@ const OpenSource = () => {
               <Code2 className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  We Give Back
+                  {t.openSource.heading}
                 </span>
               </h2>
             </div>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
-              Open source is how we solve real DevOps pain for engineers everywhere.
+              {t.openSource.subtitle}
             </p>
             <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 md:mb-10 leading-relaxed">
-              From VS Code extensions to CLI tools — we build and maintain the utilities that make our own DevOps work faster, and we keep them open so the rest of the community benefits too.
+              {t.openSource.description}
             </p>
             
             {/* Stats */}
@@ -54,14 +56,14 @@ const OpenSource = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button className="bg-gradient-primary hover:opacity-90 transition-all" asChild>
                 <Link to="/open-source">
-                  View All Projects
+                  {t.openSource.ctaPrimary}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" asChild>
                 <a href="https://github.com/target-ops" target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-4 w-4" />
-                  GitHub
+                  {t.openSource.ctaGithub}
                 </a>
               </Button>
             </div>

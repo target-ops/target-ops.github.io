@@ -1,39 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Target, Users, Rocket, XCircle, ArrowRight } from "lucide-react";
+import { useLocale } from "@/i18n/LocaleContext";
 
 const WhatWeDo = () => {
-  const painPoints = [
-    {
-      icon: Target,
-      service: "Deployment Speed",
-      before: "Releases take days or weeks. Manual testing. Features are delayed. Customers wait.",
-      after: "Deploy multiple times per day. Automated testing. Features ship in hours, not weeks.",
-      metric: "Target: ship daily, not weekly"
-    },
-    {
-      icon: Rocket,
-      service: "Cloud Costs",
-      before: "Bills spike unexpectedly. No cost visibility. Over-provisioned resources. Budget overruns.",
-      after: "Predictable monthly costs. Real-time monitoring. Right-sized infrastructure.",
-      metric: "Typical savings: 30–50%"
-    },
-    {
-      icon: Users,
-      service: "System Reliability",
-      before: "Frequent outages. Manual recovery. Incidents at 3am. Customers complain. Engineers burn out.",
-      after: "High-availability architecture. Automated monitoring. Self-healing systems. Proactive alerts.",
-      metric: "Target: 99.9% uptime"
-    }
-  ];
-
-  const outcomes = [
-    "Deploy 10× faster with automated CI/CD pipelines",
-    "Cut cloud costs by 30–50% through optimization",
-    "95% fewer manual errors with Infrastructure as Code",
-    "Zero-downtime deployments with instant rollbacks",
-    "Pass SOC 2, HIPAA, PCI-DSS audits with confidence",
-    "Auto-scale infrastructure based on real-time demand"
-  ];
+  const { t } = useLocale();
+  const icons = [Target, Rocket, Users];
+  const painPoints = t.whatWeDo.painPoints.map((p, i) => ({ ...p, icon: icons[i] }));
+  const outcomes = t.whatWeDo.outcomes;
 
   return (
     <section className="py-12 sm:py-16 md:py-20 px-4 bg-background">
@@ -41,12 +14,12 @@ const WhatWeDo = () => {
         {/* What We Do */}
         <div className="text-center mb-6 sm:mb-10 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 px-2">
-            <span className="text-foreground">Before Us </span>
-            <span className="bg-gradient-primary bg-clip-text text-transparent">vs. After Us</span>
+            <span className="text-foreground">{t.whatWeDo.h2Part1}</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">{t.whatWeDo.h2Part2}</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Startups don't realize they have an ops problem — they just know things feel broken.
-            <span className="block text-primary font-semibold mt-2 text-sm sm:text-base">Here's what changes when we step in.</span>
+            {t.whatWeDo.intro}
+            <span className="block text-primary font-semibold mt-2 text-sm sm:text-base">{t.whatWeDo.introHighlight}</span>
           </p>
         </div>
 
@@ -71,7 +44,7 @@ const WhatWeDo = () => {
                     <div className="flex items-center gap-1 mb-1.5">
                       <XCircle className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-red-400 flex-shrink-0" />
                       <p className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-wide text-red-400 font-bold">
-                        Before
+                        {t.whatWeDo.beforeLabel}
                       </p>
                     </div>
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight sm:leading-snug">
@@ -89,7 +62,7 @@ const WhatWeDo = () => {
                     <div className="flex items-center gap-1 mb-1.5">
                       <CheckCircle2 className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-green-400 flex-shrink-0" />
                       <p className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-wide text-green-400 font-bold">
-                        After
+                        {t.whatWeDo.afterLabel}
                       </p>
                     </div>
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-foreground font-medium leading-tight sm:leading-snug">
@@ -112,7 +85,7 @@ const WhatWeDo = () => {
         {/* Outcomes - Clean Simple Layout */}
         <div className="mb-6 sm:mb-8">
           <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-5 sm:mb-6 md:mb-8 text-center px-2">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">The Results You Get</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">{t.whatWeDo.resultsH3}</span>
           </h3>
           
           {/* Simple list with clean cards */}
@@ -137,8 +110,8 @@ const WhatWeDo = () => {
           {/* Bottom Message */}
           <div className="text-center p-4 sm:p-6 md:p-8 border-t border-primary/20 mt-6 sm:mt-8">
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground px-2">
-              We don't just optimize infrastructure — <br className="hidden sm:block" />
-              <span className="text-foreground font-semibold">we build systems your engineers love maintaining</span>
+              {t.whatWeDo.bottomLine1} <br className="hidden sm:block" />
+              <span className="text-foreground font-semibold">{t.whatWeDo.bottomLine2}</span>
             </p>
           </div>
         </div>

@@ -1,23 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MessageCircle, Send } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLocale } from "@/i18n/LocaleContext";
 
 const Footer = () => {
+  const { locale, t } = useLocale();
+  const homeHref = locale === "he" ? "/he" : "/";
+
   const quickLinks = [
-    { name: "About", href: "/about" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Open Source", href: "/open-source" },
-    { name: "Articles", href: "/articles" },
-    { name: "Team", href: "/team" },
-    { name: "Contact", href: "/contact" },
+    { name: t.nav.about, href: "/about" },
+    { name: t.nav.solutions, href: "/solutions" },
+    { name: t.nav.openSource, href: "/open-source" },
+    { name: t.nav.articles, href: "/articles" },
+    { name: t.nav.team, href: "/team" },
+    { name: t.nav.contact, href: "/contact" },
   ];
 
   const solutions = [
-    { name: "DevOps Consulting", href: "/solutions/devops-consulting" },
-    { name: "Cloud Migration", href: "/solutions/cloud-migration" },
-    { name: "Infrastructure Automation", href: "/solutions/infrastructure-automation" },
-    { name: "CI/CD Pipelines", href: "/solutions/cicd" },
-    { name: "Security & Compliance", href: "/solutions/security-compliance" },
+    { name: t.footer.solutionLinks.consulting, href: "/solutions/devops-consulting" },
+    { name: t.footer.solutionLinks.migration, href: "/solutions/cloud-migration" },
+    { name: t.footer.solutionLinks.automation, href: "/solutions/infrastructure-automation" },
+    { name: t.footer.solutionLinks.cicd, href: "/solutions/cicd" },
+    { name: t.footer.solutionLinks.security, href: "/solutions/security-compliance" },
   ];
 
   return (
@@ -26,16 +30,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2 col-span-1">
-            <Link to="/" className="inline-block mb-4 sm:mb-6">
-              <img 
-                src="/assets/targetOpsBlackNOBG-FULL.webp" 
-                alt="Target-Ops Logo" 
+            <Link to={homeHref} className="inline-block mb-4 sm:mb-6">
+              <img
+                src="/assets/targetOpsBlackNOBG-FULL.webp"
+                alt="Target-Ops Logo"
                 className="h-10 sm:h-12 w-auto"
               />
             </Link>
             <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-md">
-              Empowering startups and enterprises to achieve DevOps excellence through 
-              tailored solutions, automation, and continuous innovation.
+              {t.footer.description}
             </p>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               <Button variant="ghost" size="sm" asChild>
@@ -66,11 +69,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links & Solutions - Side by Side on Mobile */}
+          {/* Quick Links & Solutions */}
           <div className="col-span-1 lg:col-span-2 grid grid-cols-2 gap-6 sm:gap-8">
-            {/* Quick Links */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">Quick Links</h3>
+              <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">{t.footer.quickLinks}</h3>
               <ul className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
@@ -85,9 +87,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Solutions */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">Solutions</h3>
+              <h3 className="font-semibold text-foreground mb-4 sm:mb-6 text-sm sm:text-base">{t.footer.solutions}</h3>
               <ul className="space-y-2 sm:space-y-3">
                 {solutions.map((solution) => (
                   <li key={solution.name}>
@@ -108,14 +109,14 @@ const Footer = () => {
         <div className="border-t border-border mt-8 sm:mt-12 pt-6 sm:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
             <p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
-              © 2024 Target-Ops. All rights reserved.
+              {t.footer.copyright}
             </p>
             <div className="flex space-x-4 sm:space-x-6">
               <Link to="/privacy" className="text-muted-foreground hover:text-primary text-xs sm:text-sm transition-colors">
-                Privacy Policy
+                {t.footer.privacy}
               </Link>
               <Link to="/terms" className="text-muted-foreground hover:text-primary text-xs sm:text-sm transition-colors">
-                Terms of Service
+                {t.footer.terms}
               </Link>
             </div>
           </div>

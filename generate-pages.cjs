@@ -33,6 +33,7 @@ const routes = [
   '/open-source',
   '/articles',
   '/contact',
+  '/he',
   ...articleRoutes,
 ];
 
@@ -130,6 +131,11 @@ const routeMeta = {
     title: 'Contact Target-Ops | Get a Free DevOps Consultation',
     description: 'Get in touch with Target-Ops for a free DevOps consultation. Discuss your infrastructure challenges and get expert recommendations.',
   },
+  '/he': {
+    title: 'ייעוץ DevOps | Target-Ops',
+    description: 'ייעוץ DevOps מקצה לקצה לסטארטאפים ולארגונים. הגירה לענן, אוטומציית תשתיות, CI/CD ואבטחה — ממהנדסים שבונים פרודקשן כל יום.',
+    lang: 'he',
+  },
 };
 
 function generateRedirectHTML(oldPath, newPath) {
@@ -151,22 +157,28 @@ function generateRedirectHTML(oldPath, newPath) {
 }
 
 function generateHTML(route, meta, assetReferences) {
+  const lang = meta.lang || 'en';
+  // hreflang alternates only added on the homepage (both EN / HE variants)
+  const hreflangTags = (route === '/' || route === '/he') ? `
+    <link rel="alternate" hreflang="en" href="https://target-ops.io/" />
+    <link rel="alternate" hreflang="he" href="https://target-ops.io/he" />
+    <link rel="alternate" hreflang="x-default" href="https://target-ops.io/" />` : '';
   return `<!doctype html>
-<html lang="en">
+<html lang="${lang}">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Primary Meta Tags -->
     <title>${meta.title}</title>
     <meta name="title" content="${meta.title}" />
     <meta name="description" content="${meta.description}" />
     <meta name="keywords" content="DevOps consulting, DevOps as a service, cloud migration, infrastructure automation, CI/CD pipelines, Kubernetes consulting, AWS consulting, GCP consulting, Azure consulting" />
     <meta name="author" content="Target-Ops" />
-    <link rel="canonical" href="https://target-ops.io${route}" />
+    <link rel="canonical" href="https://target-ops.io${route}" />${hreflangTags}
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
