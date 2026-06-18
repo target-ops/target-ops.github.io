@@ -154,6 +154,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Article: gitswitch Per-Directory Git Identity -->
+  <url>
+    <loc>https://target-ops.io/articles/gitswitch-per-directory-identity</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Contact -->
   <url>
     <loc>https://target-ops.io/contact</loc>
