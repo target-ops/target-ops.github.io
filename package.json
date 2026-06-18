@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node generate-pages.cjs",
+    "build": "vite build && node generate-pages.cjs && node prerender.cjs",
     "build:dev": "vite build --mode development",
+    "prerender": "node prerender.cjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -80,6 +81,7 @@
     "globals": "^15.15.0",
     "lovable-tagger": "^1.1.9",
     "postcss": "^8.5.6",
+    "puppeteer-core": "^25.1.0",
     "tailwindcss": "^3.4.17",
     "terser": "^5.36.0",
     "typescript": "^5.8.3",
