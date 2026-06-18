@@ -31,11 +31,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
+
+      # The build's prerender step (prerender.cjs) drives headless Chrome via
+      # puppeteer-core. GitHub-hosted ubuntu runners ship Google Chrome; point
+      # puppeteer at it. (On self-hosted runners, install Chrome or set this.)
+      - name: Locate Chrome for prerender
+        run: echo "PUPPETEER_EXECUTABLE_PATH=$(which google-chrome || which google-chrome-stable || which chromium-browser)" >> "$GITHUB_ENV"
 
       - name: Build
         run: npm run build
