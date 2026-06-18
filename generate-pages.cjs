@@ -53,6 +53,7 @@ const redirects = {
   '/oss': '/open-source',
   '/oss/homebrewtap': '/open-source',
   '/oss/gitswitch': '/open-source',
+  '/oss/vscodepack': '/articles/vscode-devops-pack',
   '/tags': '/articles',
   '/solutions/ci-cd': '/solutions/cicd',
   '/solutions/why-us': '/solutions',
@@ -161,7 +162,9 @@ const OG_IMAGE = 'https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp';
 // Build JSON-LD for a route: Organization + WebSite sitewide, plus
 // BlogPosting + BreadcrumbList on article detail pages (rich-result eligible).
 function buildStructuredData(route, meta) {
-  const url = `https://target-ops.io${route}`;
+  // Trailing slash → matches the URL GitHub Pages actually serves with 200
+  // (no-slash 301-redirects), so canonical/schema point at the real page.
+  const url = `https://target-ops.io${route}/`;
   const graph = [
     {
       '@type': 'Organization',
@@ -203,7 +206,7 @@ function buildStructuredData(route, meta) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://target-ops.io/' },
-        { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://target-ops.io/articles' },
+        { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://target-ops.io/articles/' },
         { '@type': 'ListItem', position: 3, name: meta.title.replace(' | Target-Ops', ''), item: url },
       ],
     });
@@ -246,11 +249,11 @@ function generateHTML(route, meta, assetReferences) {
     <meta name="description" content="${meta.description}" />
     <meta name="keywords" content="DevOps consulting, DevOps as a service, cloud migration, infrastructure automation, CI/CD pipelines, Kubernetes consulting, AWS consulting, GCP consulting, Azure consulting" />
     <meta name="author" content="Target-Ops" />
-    <link rel="canonical" href="https://target-ops.io${route}" />
+    <link rel="canonical" href="https://target-ops.io${route}/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://target-ops.io${route}" />
+    <meta property="og:url" content="https://target-ops.io${route}/" />
     <meta property="og:title" content="${meta.title}" />
     <meta property="og:description" content="${meta.description}" />
     <meta property="og:image" content="https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp" />
@@ -258,7 +261,7 @@ function generateHTML(route, meta, assetReferences) {
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://target-ops.io${route}" />
+    <meta name="twitter:url" content="https://target-ops.io${route}/" />
     <meta name="twitter:title" content="${meta.title}" />
     <meta name="twitter:description" content="${meta.description}" />
     <meta name="twitter:image" content="https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp" />
