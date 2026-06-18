@@ -53,6 +53,7 @@ const redirects = {
   '/oss': '/open-source',
   '/oss/homebrewtap': '/open-source',
   '/oss/gitswitch': '/open-source',
+  '/oss/vscodepack': '/articles/vscode-devops-pack',
   '/tags': '/articles',
   '/solutions/ci-cd': '/solutions/cicd',
   '/solutions/why-us': '/solutions',
