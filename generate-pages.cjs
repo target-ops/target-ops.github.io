@@ -18,7 +18,8 @@ const articleRoutes = [
   '/articles/anyclown-vscode-extension',
   '/articles/choosing-cloud-provider',
   '/articles/vscode-devops-pack',
-  '/articles/kubernetes-observability-lgtm-stack'
+  '/articles/kubernetes-observability-lgtm-stack',
+  '/articles/gitswitch-per-directory-identity'
 ];
 
 // All routes that need static HTML files
@@ -68,8 +69,8 @@ const routeMeta = {
     description: 'Comprehensive DevOps solutions: Cloud migration, infrastructure automation, CI/CD pipelines, security & compliance. AWS, GCP, Azure expertise.',
   },
   '/solutions/devops-consulting': {
-    title: 'DevOps Consulting & Strategy | Senior DevOps Engineers | Target-Ops',
-    description: 'DevOps consulting and strategy from senior engineers who build and ship production infrastructure daily. Kubernetes, Terraform, CI/CD, AWS/GCP/Azure. Free 30-minute call.',
+    title: 'DevOps Strategy & Consulting Services | Target-Ops',
+    description: 'DevOps strategy consulting from senior engineers who ship production infrastructure daily. Kubernetes, Terraform, CI/CD, AWS/GCP/Azure. Book a free 30-minute call.',
   },
   '/solutions/cloud-migration': {
     title: 'Cloud Migration Services | AWS, GCP, Azure Migration',
@@ -131,11 +132,85 @@ const routeMeta = {
     title: 'Kubernetes Observability: A Grafana LGTM Stack with Alloy | Target-Ops',
     description: 'How we run production Kubernetes observability on a self-hosted Grafana LGTM stack — Alloy, Mimir, Loki, and Tempo, wired for correlated metrics, logs, and traces across clusters.',
   },
+  '/articles/gitswitch-per-directory-identity': {
+    title: 'gitswitch: Per-Directory Git Identity Binding | Target-Ops',
+    description: 'Stop committing as the wrong person. gitswitch is an open-source CLI that binds a git identity (email, SSH key, gh CLI, signing) to a directory and guards every commit.',
+  },
   '/contact': {
     title: 'Contact Target-Ops | Get a Free DevOps Consultation',
     description: 'Get in touch with Target-Ops for a free DevOps consultation. Discuss your infrastructure challenges and get expert recommendations.',
   },
 };
+
+// Publish dates per article route — used for Article/BlogPosting structured data.
+// Keep in sync with `date` in src/data/articles.ts.
+const articleDates = {
+  '/articles/mastering-ingress-nginx': '2024-10-27',
+  '/articles/ipv6-kubernetes': '2026-04-22',
+  '/articles/k9s-advanced': '2026-04-22',
+  '/articles/best-practices-helm-chart': '2026-04-22',
+  '/articles/anyclown-vscode-extension': '2026-04-22',
+  '/articles/choosing-cloud-provider': '2026-04-22',
+  '/articles/vscode-devops-pack': '2026-04-22',
+  '/articles/kubernetes-observability-lgtm-stack': '2026-06-18',
+  '/articles/gitswitch-per-directory-identity': '2026-05-02',
+};
+
+const OG_IMAGE = 'https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp';
+
+// Build JSON-LD for a route: Organization + WebSite sitewide, plus
+// BlogPosting + BreadcrumbList on article detail pages (rich-result eligible).
+function buildStructuredData(route, meta) {
+  const url = `https://target-ops.io${route}`;
+  const graph = [
+    {
+      '@type': 'Organization',
+      '@id': 'https://target-ops.io/#organization',
+      name: 'Target-Ops',
+      url: 'https://target-ops.io',
+      logo: 'https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp',
+      description: 'DevOps consulting and DevOps as a service for startups and enterprises.',
+      address: { '@type': 'PostalAddress', addressCountry: 'IL' },
+      sameAs: [
+        'https://github.com/target-ops',
+        'https://www.linkedin.com/company/target-ops',
+        'https://dev.to/target-ops',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://target-ops.io/#website',
+      url: 'https://target-ops.io',
+      name: 'Target-Ops',
+      publisher: { '@id': 'https://target-ops.io/#organization' },
+    },
+  ];
+
+  if (route.startsWith('/articles/') && articleDates[route]) {
+    graph.push({
+      '@type': 'BlogPosting',
+      '@id': `${url}#article`,
+      headline: meta.title.replace(' | Target-Ops', ''),
+      description: meta.description,
+      datePublished: articleDates[route],
+      dateModified: articleDates[route],
+      image: OG_IMAGE,
+      author: { '@type': 'Organization', name: 'Target-Ops', url: 'https://target-ops.io' },
+      publisher: { '@id': 'https://target-ops.io/#organization' },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    });
+    graph.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://target-ops.io/' },
+        { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://target-ops.io/articles' },
+        { '@type': 'ListItem', position: 3, name: meta.title.replace(' | Target-Ops', ''), item: url },
+      ],
+    });
+  }
+
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 2);
+}
 
 function generateRedirectHTML(oldPath, newPath) {
   const destination = `https://target-ops.io${newPath}`;
@@ -199,23 +274,7 @@ function generateHTML(route, meta, assetReferences) {
 
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Target-Ops",
-      "url": "https://target-ops.io",
-      "logo": "https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp",
-      "description": "DevOps consulting and DevOps as a service for startups and enterprises.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "IL"
-      },
-      "sameAs": [
-        "https://github.com/target-ops",
-        "https://www.linkedin.com/company/target-ops",
-        "https://dev.to/target-ops"
-      ]
-    }
+${buildStructuredData(route, meta)}
     </script>
     ${assetReferences}
   </head>
