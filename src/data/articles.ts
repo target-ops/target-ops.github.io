@@ -7,6 +7,7 @@ import anyclownVscodeExtensionMd from './articles/anyclown-vscode-extension.md?r
 import choosingCloudProviderMd from './articles/choosing-cloud-provider.md?raw';
 import vscodeDevopsPackMd from './articles/vscode-devops-pack.md?raw';
 import gitswitchPerDirectoryIdentityMd from './articles/gitswitch-per-directory-identity.md?raw';
+import kubernetesObservabilityLgtmStackMd from './articles/kubernetes-observability-lgtm-stack.md?raw';
 
 export interface Article {
   id: string;
@@ -127,5 +128,18 @@ export const articles: Article[] = [
     featured: true,
     seoKeywords: ["gitswitch", "git identity", "multiple git accounts", "git includeIf", "per-directory git config", "ssh key per project", "git pre-commit hook"],
     content: gitswitchPerDirectoryIdentityMd
+  },
+  {
+    id: "kubernetes-observability-lgtm-stack",
+    title: "Kubernetes Observability: A Production Grafana LGTM Stack with Alloy",
+    description: "How we run production Kubernetes observability on a self-hosted Grafana LGTM stack — Alloy, Mimir, Loki, and Tempo, wired for correlated metrics, logs, and traces across clusters.",
+    tags: ["Kubernetes", "Observability", "Grafana", "Monitoring", "DevOps"],
+    date: "2026-06-18",
+    readTime: "15 min read",
+    author: "Target-Ops Team",
+    authorRole: "Platform Engineers",
+    featured: true,
+    seoKeywords: ["kubernetes observability", "grafana lgtm stack", "grafana alloy", "mimir loki tempo", "self-hosted observability", "opentelemetry kubernetes", "loki tempo mimir helm"],
+    content: kubernetesObservabilityLgtmStackMd
   }
 ];

@@ -146,6 +146,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Article: Kubernetes Observability LGTM Stack -->
+  <url>
+    <loc>https://target-ops.io/articles/kubernetes-observability-lgtm-stack</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Contact -->
   <url>
     <loc>https://target-ops.io/contact</loc>
