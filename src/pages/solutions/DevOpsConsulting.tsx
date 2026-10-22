@@ -298,12 +298,12 @@ const DevOpsConsulting = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                { to: "/articles/mastering-ingress-nginx", title: "Kubernetes Ingress Optimization", desc: "Worker process tuning, HTTP/2, connection pooling, and the math behind production ingress-nginx configurations." },
-                { to: "/articles/ipv6-kubernetes", title: "IPv6 Kubernetes for EKS & GKE", desc: "Terraform patterns, dual-stack migration playbook, and NAT gateway cost reduction." },
-                { to: "/articles/best-practices-helm-chart", title: "Helm Chart Best Practices", desc: "Structure, versioning, security defaults, and the shared-library pattern that eliminates chart sprawl." },
-                { to: "/articles/choosing-cloud-provider", title: "Cloud Provider Selection Framework", desc: "Five questions that matter for AWS vs GCP vs Azure, and when multi-cloud is actually worth the complexity." },
-                { to: "/articles/k9s-advanced", title: "Advanced K9s Kubernetes Operations", desc: "Custom views, plugins, aliases, and triage workflows that cut incident response time dramatically." },
-                { to: "/articles/vscode-devops-pack", title: "VS Code DevOps Extension Pack", desc: "Our curated toolkit for DevOps engineers — Terraform, Kubernetes, cloud SDKs, CI/CD, all in one install." },
+                { to: "/articles/mastering-ingress-nginx/", title: "Kubernetes Ingress Optimization", desc: "Worker process tuning, HTTP/2, connection pooling, and the math behind production ingress-nginx configurations." },
+                { to: "/articles/ipv6-kubernetes/", title: "IPv6 Kubernetes for EKS & GKE", desc: "Terraform patterns, dual-stack migration playbook, and NAT gateway cost reduction." },
+                { to: "/articles/best-practices-helm-chart/", title: "Helm Chart Best Practices", desc: "Structure, versioning, security defaults, and the shared-library pattern that eliminates chart sprawl." },
+                { to: "/articles/choosing-cloud-provider/", title: "Cloud Provider Selection Framework", desc: "Five questions that matter for AWS vs GCP vs Azure, and when multi-cloud is actually worth the complexity." },
+                { to: "/articles/k9s-advanced/", title: "Advanced K9s Kubernetes Operations", desc: "Custom views, plugins, aliases, and triage workflows that cut incident response time dramatically." },
+                { to: "/articles/vscode-devops-pack/", title: "VS Code DevOps Extension Pack", desc: "Our curated toolkit for DevOps engineers — Terraform, Kubernetes, cloud SDKs, CI/CD, all in one install." },
               ].map((a) => (
                 <Link key={a.to} to={a.to} className="group">
                   <Card className="bg-card border-border hover:border-primary/60 transition-colors h-full">

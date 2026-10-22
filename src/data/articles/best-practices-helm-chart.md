@@ -369,13 +369,13 @@ Ready to harden your Helm charts? Do these in order:
 3. **Introduce `ct` (chart-testing) in CI** for lint + install validation on every PR.
 4. **Build a shared chart library** if you operate more than 10 internal services — eliminate duplication at the source.
 
-**Want a second pair of eyes on your Helm charts?** [Book a free 30-minute call with Target-Ops](/contact) — we'll review your current setup, flag the highest-risk gaps, and help you plan a chart-library consolidation if it makes sense for your fleet.
+**Want a second pair of eyes on your Helm charts?** [Book a free 30-minute call with Target-Ops](/contact/) — we'll review your current setup, flag the highest-risk gaps, and help you plan a chart-library consolidation if it makes sense for your fleet.
 
 ## Related Resources
 
-- [K9s Kubernetes CLI: Advanced Productivity Techniques for Platform Engineers](/articles/k9s-advanced)
-- [IPv6 Kubernetes: Complete Dual-Stack Implementation Guide for EKS and GKE](/articles/ipv6-kubernetes)
-- [Target-Ops DevOps Consulting](/solutions/devops-consulting)
+- [K9s Kubernetes CLI: Advanced Productivity Techniques for Platform Engineers](/articles/k9s-advanced/)
+- [IPv6 Kubernetes: Complete Dual-Stack Implementation Guide for EKS and GKE](/articles/ipv6-kubernetes/)
+- [Target-Ops DevOps Consulting](/solutions/devops-consulting/)
 - [Helm official best practices guide](https://helm.sh/docs/chart_best_practices/)
 - [chart-testing (ct) on GitHub](https://github.com/helm/chart-testing)
 

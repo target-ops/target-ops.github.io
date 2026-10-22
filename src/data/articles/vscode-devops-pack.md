@@ -185,13 +185,13 @@ Ready to level up your VS Code setup?
 3. **Audit your workspace settings** to ensure formatters, linters, and workspace trust are configured.
 4. **Share feedback or contribute** at [target-ops/vscode-pack](https://github.com/target-ops/vscode-pack).
 
-**Want to talk about developer tooling, internal platforms, or making your team measurably faster?** [Book a free 30-minute call with Target-Ops](/contact) — we're happy to compare notes or help you plan.
+**Want to talk about developer tooling, internal platforms, or making your team measurably faster?** [Book a free 30-minute call with Target-Ops](/contact/) — we're happy to compare notes or help you plan.
 
 ## Related Resources
 
-- [AnyClown: One-Click Git Repository Cloning to VS Code](/articles/anyclown-vscode-extension)
-- [K9s Kubernetes CLI: Advanced Productivity Techniques](/articles/k9s-advanced)
-- [Target-Ops DevOps Consulting](/solutions/devops-consulting)
+- [AnyClown: One-Click Git Repository Cloning to VS Code](/articles/anyclown-vscode-extension/)
+- [K9s Kubernetes CLI: Advanced Productivity Techniques](/articles/k9s-advanced/)
+- [Target-Ops DevOps Consulting](/solutions/devops-consulting/)
 - [VS Code DevOps Pack on GitHub](https://github.com/target-ops/vscode-pack)
 
 ---

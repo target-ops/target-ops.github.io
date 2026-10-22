@@ -327,13 +327,13 @@ Ready to plan your IPv6 Kubernetes migration? Here's what to do this week:
 3. **Identify IPv6-incompatible dependencies.** Check hardcoded literals, Java `preferIPv4Stack`, old clients, and any third-party services your cluster calls.
 4. **Plan the rollout.** Dual-stack first, IPv6-only for pods second, full IPv6 at the edge last.
 
-**Planning an IPv6 Kubernetes migration and want a technical review before you start?** [Book a free 30-minute call with Target-Ops](/contact) — we'll walk through your current setup, identify the biggest risks, and help you scope the migration realistically.
+**Planning an IPv6 Kubernetes migration and want a technical review before you start?** [Book a free 30-minute call with Target-Ops](/contact/) — we'll walk through your current setup, identify the biggest risks, and help you scope the migration realistically.
 
 ## Related Resources
 
-- [Kubernetes Ingress Optimization: Production-Grade ingress-nginx Performance Tuning](/articles/mastering-ingress-nginx)
-- [Target-Ops Cloud Infrastructure Consulting](/solutions/cloud-infrastructure)
-- [Target-Ops DevOps Managed Services](/solutions/devops-consulting)
+- [Kubernetes Ingress Optimization: Production-Grade ingress-nginx Performance Tuning](/articles/mastering-ingress-nginx/)
+- [Target-Ops Cloud Infrastructure Consulting](/solutions/cloud-migration/)
+- [Target-Ops DevOps Managed Services](/solutions/devops-consulting/)
 - [AWS: EKS IPv6 official documentation](https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html)
 - [Google Cloud: GKE dual-stack networking](https://cloud.google.com/kubernetes-engine/docs/how-to/dual-stack)
 - [Kubernetes: IPv4/IPv6 dual-stack](https://kubernetes.io/docs/concepts/services-networking/dual-stack/)

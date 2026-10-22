@@ -579,12 +579,12 @@ Ready to optimize your Kubernetes ingress? Here's your action plan:
    - Confirm monitoring and alerting work
    - Document runbooks for common issues
 
-**Want a second pair of eyes on your ingress configuration?** Target-Ops offers [DevOps consulting](/contact) and [DevOps-as-a-Service](/contact) — we'll audit your ingress setup, identify the highest-impact changes, and help you implement them without production surprises. Start with a free 30-minute call.
+**Want a second pair of eyes on your ingress configuration?** Target-Ops offers [DevOps consulting](/contact/) and [DevOps-as-a-Service](/contact/) — we'll audit your ingress setup, identify the highest-impact changes, and help you implement them without production surprises. Start with a free 30-minute call.
 
 ## Related Resources
 
-- [Kubernetes Security Best Practices](/articles/kubernetes-security) - Secure your ingress properly
-- [DevOps Consulting Services](/solutions/devops-consulting) - Expert guidance for your infrastructure
+- Kubernetes Security Best Practices - Secure your ingress properly
+- [DevOps Consulting Services](/solutions/devops-consulting/) - Expert guidance for your infrastructure
 - [Official ingress-nginx Documentation](https://kubernetes.github.io/ingress-nginx/) - Comprehensive reference
 - [NGINX Performance Tuning Guide](https://www.nginx.com/blog/tuning-nginx/) - Deep dive into NGINX internals
 

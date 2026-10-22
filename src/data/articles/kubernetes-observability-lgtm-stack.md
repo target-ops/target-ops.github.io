@@ -284,14 +284,14 @@ It is more operational responsibility than handing a vendor your telemetry. But 
 4. **Roll the agent out to remote clusters**, each with its own tenant ID, and watch them appear in one Grafana.
 5. **Tune retention and cardinality** to your budget once real data is flowing.
 
-**Want help designing or migrating to a self-hosted observability stack?** [Contact Target-Ops](/contact) — we build and run this pattern in production and can tailor it to your fleet.
+**Want help designing or migrating to a self-hosted observability stack?** [Contact Target-Ops](/contact/) — we build and run this pattern in production and can tailor it to your fleet.
 
 ## Related Resources
 
-- [Helm Chart Best Practices: Production-Grade Kubernetes Packaging](/articles/best-practices-helm-chart)
-- [Kubernetes Ingress Optimization: Production ingress-nginx Tuning](/articles/mastering-ingress-nginx)
-- [K9s Kubernetes CLI: Advanced Productivity Techniques](/articles/k9s-advanced)
-- [Infrastructure Automation Solutions](/solutions/infrastructure-automation)
+- [Helm Chart Best Practices: Production-Grade Kubernetes Packaging](/articles/best-practices-helm-chart/)
+- [Kubernetes Ingress Optimization: Production ingress-nginx Tuning](/articles/mastering-ingress-nginx/)
+- [K9s Kubernetes CLI: Advanced Productivity Techniques](/articles/k9s-advanced/)
+- [Infrastructure Automation Solutions](/solutions/infrastructure-automation/)
 - [Grafana Alloy Documentation](https://grafana.com/docs/alloy/latest/)
 - [Grafana Mimir Documentation](https://grafana.com/docs/mimir/latest/)
 - [Grafana Loki Documentation](https://grafana.com/docs/loki/latest/)
