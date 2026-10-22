@@ -26,7 +26,7 @@ const ArticleDetail = () => {
 
   // If article not found, redirect to articles page
   if (!article) {
-    return <Navigate to="/articles" replace />;
+    return <Navigate to="/articles/" replace />;
   }
 
   return (
@@ -64,7 +64,7 @@ const ArticleDetail = () => {
         {/* Back button */}
         <div className="relative max-w-4xl mx-auto px-4 pt-8">
           <Button variant="ghost" asChild>
-            <Link to="/articles">
+            <Link to="/articles/">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Articles
             </Link>
@@ -148,7 +148,7 @@ const ArticleDetail = () => {
               Book a free 30-minute consultation with our DevOps experts. No sales pitch, just honest advice about your infrastructure challenges.
             </p>
             <Button size="lg" className="bg-gradient-primary hover:opacity-90" asChild>
-              <Link to="/contact">
+              <Link to="/contact/">
                 Schedule Free Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -197,4 +197,3 @@ const ArticleDetail = () => {
 };
 
 export default ArticleDetail;
-
