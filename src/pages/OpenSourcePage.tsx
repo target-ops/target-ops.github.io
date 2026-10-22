@@ -15,7 +15,7 @@ const OpenSourcePage = () => {
         <meta name="description" content="Target-Ops open source DevOps tools: K9s utilities, VS Code extensions, Homebrew taps, and infrastructure automation scripts. 50+ projects, 145+ GitHub stars, 1000+ downloads." />
         <meta property="og:title" content="Open Source DevOps Tools | Target-Ops" />
         <meta property="og:description" content="50+ open source DevOps tools including K9s utilities, VS Code extensions, and infrastructure automation scripts." />
-        <link rel="canonical" href="https://target-ops.io/open-source" />
+        <link rel="canonical" href="https://target-ops.io/open-source/" />
       </Helmet>
       <Navigation />
       <main className="relative overflow-hidden">
