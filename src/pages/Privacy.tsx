@@ -9,7 +9,7 @@ const Privacy = () => {
       <Helmet>
         <title>Privacy Policy | Target-Ops</title>
         <meta name="description" content="Target-Ops Privacy Policy. Learn how we collect, use, and protect your personal information." />
-        <link rel="canonical" href="https://target-ops.io/privacy" />
+        <link rel="canonical" href="https://target-ops.io/privacy/" />
       </Helmet>
       <Navigation />
       <main className="pt-16">

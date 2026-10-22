@@ -24,7 +24,7 @@ const Solutions = () => {
         <meta name="description" content="Target-Ops DevOps solutions: cloud migration, infrastructure automation, CI/CD pipelines, Kubernetes consulting, and security compliance. Expert DevOps consulting for startups and enterprises." />
         <meta property="og:title" content="DevOps Solutions | Target-Ops" />
         <meta property="og:description" content="Cloud migration, infrastructure automation, CI/CD pipelines, Kubernetes consulting, and security compliance. Expert DevOps solutions." />
-        <link rel="canonical" href="https://target-ops.io/solutions" />
+        <link rel="canonical" href="https://target-ops.io/solutions/" />
       </Helmet>
       <Navigation />
       <main className="relative pt-16 overflow-hidden">

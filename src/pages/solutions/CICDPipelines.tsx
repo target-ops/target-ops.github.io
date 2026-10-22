@@ -20,7 +20,7 @@ const CICDPipelines = () => {
         <meta name="description" content="Build automated CI/CD pipelines with GitHub Actions, GitLab CI, and Jenkins. Deploy 10× faster with automated testing, security scanning, and zero-downtime releases." />
         <meta property="og:title" content="CI/CD Pipeline Services | Target-Ops" />
         <meta property="og:description" content="Automated CI/CD pipelines: faster deploys, automated testing, zero downtime." />
-        <link rel="canonical" href="https://target-ops.io/solutions/cicd" />
+        <link rel="canonical" href="https://target-ops.io/solutions/cicd/" />
       </Helmet>
       <Navigation />
       

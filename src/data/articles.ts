@@ -9,6 +9,18 @@ import vscodeDevopsPackMd from './articles/vscode-devops-pack.md?raw';
 import gitswitchPerDirectoryIdentityMd from './articles/gitswitch-per-directory-identity.md?raw';
 import kubernetesObservabilityLgtmStackMd from './articles/kubernetes-observability-lgtm-stack.md?raw';
 
+
+/**
+ * Strip a leading "# Title" H1 from article markdown.
+ * Every article page renders the title as the single page H1 in
+ * ArticleDetail.tsx; the markdown files also start with the same title as
+ * an H1, which made every /articles/* page ship two H1s (bad for SEO).
+ * The H1 stays in the .md source (it is the document title there); we only
+ * remove it from the rendered body copy.
+ */
+const stripLeadingH1 = (markdown: string): string =>
+  markdown.replace(/^\s*#\s+[^\n]+\n+/, '');
+
 export interface Article {
   id: string;
   title: string;
@@ -36,7 +48,7 @@ export const articles: Article[] = [
     authorRole: "DevOps Engineers",
     featured: true,
     seoKeywords: ["kubernetes ingress optimization", "ingress-nginx performance tuning", "kubernetes performance", "ingress controller configuration", "nginx optimization", "kubernetes latency reduction"],
-    content: masteringIngressNginxMd
+    content: stripLeadingH1(masteringIngressNginxMd)
   },
   {
     id: "ipv6-kubernetes",
@@ -49,7 +61,7 @@ export const articles: Article[] = [
     authorRole: "Cloud Architects",
     featured: true,
     seoKeywords: ["ipv6 kubernetes", "eks ipv6", "gke ipv6", "kubernetes dual stack", "kubernetes ipv6 migration", "eks dual stack terraform", "kubernetes nat gateway cost"],
-    content: ipv6KubernetesMd
+    content: stripLeadingH1(ipv6KubernetesMd)
   },
   {
     id: "k9s-advanced",
@@ -62,7 +74,7 @@ export const articles: Article[] = [
     authorRole: "DevOps Engineers",
     featured: true,
     seoKeywords: ["k9s kubernetes", "k9s advanced", "kubernetes cli tools", "k9s tutorial", "k9s plugins", "k9s custom views", "kubernetes productivity"],
-    content: k9sAdvancedMd
+    content: stripLeadingH1(k9sAdvancedMd)
   },
   {
     id: "best-practices-helm-chart",
@@ -75,7 +87,7 @@ export const articles: Article[] = [
     authorRole: "Kubernetes Engineers",
     featured: true,
     seoKeywords: ["helm chart best practices", "helm chart production", "kubernetes helm", "helm chart structure", "helm chart versioning", "helm chart security", "helm library chart"],
-    content: bestPracticesHelmChartMd
+    content: stripLeadingH1(bestPracticesHelmChartMd)
   },
   {
     id: "anyclown-vscode-extension",
@@ -88,7 +100,7 @@ export const articles: Article[] = [
     authorRole: "Tool Developers",
     featured: false,
     seoKeywords: ["anyclown", "vs code clone extension", "git clone vscode chrome", "one-click git clone", "vscode chrome extension", "developer productivity tools"],
-    content: anyclownVscodeExtensionMd
+    content: stripLeadingH1(anyclownVscodeExtensionMd)
   },
   {
     id: "choosing-cloud-provider",
@@ -101,7 +113,7 @@ export const articles: Article[] = [
     authorRole: "Cloud Consultants",
     featured: true,
     seoKeywords: ["cloud provider selection", "aws vs gcp vs azure", "cloud provider comparison", "choosing cloud provider", "cloud strategy", "multi-cloud strategy", "cloud migration framework"],
-    content: choosingCloudProviderMd
+    content: stripLeadingH1(choosingCloudProviderMd)
   },
   {
     id: "vscode-devops-pack",
@@ -114,7 +126,7 @@ export const articles: Article[] = [
     authorRole: "Tool Developers",
     featured: true,
     seoKeywords: ["vscode devops", "vscode devops extension pack", "vscode extensions", "devops tools", "vscode pack", "terraform vscode", "kubernetes vscode"],
-    content: vscodeDevopsPackMd
+    content: stripLeadingH1(vscodeDevopsPackMd)
   },
   {
     id: "gitswitch-per-directory-identity",
@@ -127,7 +139,7 @@ export const articles: Article[] = [
     authorRole: "Tool Developers",
     featured: true,
     seoKeywords: ["gitswitch", "git identity", "multiple git accounts", "git includeIf", "per-directory git config", "ssh key per project", "git pre-commit hook"],
-    content: gitswitchPerDirectoryIdentityMd
+    content: stripLeadingH1(gitswitchPerDirectoryIdentityMd)
   },
   {
     id: "kubernetes-observability-lgtm-stack",
@@ -140,6 +152,6 @@ export const articles: Article[] = [
     authorRole: "Platform Engineers",
     featured: true,
     seoKeywords: ["kubernetes observability", "grafana lgtm stack", "grafana alloy", "mimir loki tempo", "self-hosted observability", "opentelemetry kubernetes", "loki tempo mimir helm"],
-    content: kubernetesObservabilityLgtmStackMd
+    content: stripLeadingH1(kubernetesObservabilityLgtmStackMd)
   }
 ];

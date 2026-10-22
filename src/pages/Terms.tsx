@@ -9,7 +9,7 @@ const Terms = () => {
       <Helmet>
         <title>Terms of Service | Target-Ops</title>
         <meta name="description" content="Target-Ops Terms of Service. Read our terms and conditions for using our website and services." />
-        <link rel="canonical" href="https://target-ops.io/terms" />
+        <link rel="canonical" href="https://target-ops.io/terms/" />
       </Helmet>
       <Navigation />
       <main className="pt-16">

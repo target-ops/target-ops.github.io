@@ -44,7 +44,7 @@ const ArticleDetail = () => {
         {article.tags.map(tag => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
-        <link rel="canonical" href={`https://target-ops.io/articles/${article.id}`} />
+        <link rel="canonical" href={`https://target-ops.io/articles/${article.id}/`} />
       </Helmet>
 
       <Navigation />

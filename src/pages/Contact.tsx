@@ -79,7 +79,7 @@ const Contact = () => {
         <meta name="description" content="Contact Target-Ops for expert DevOps consulting. Schedule a free 30-minute consultation to discuss your infrastructure, cloud migration, or CI/CD needs. No commitment required." />
         <meta property="og:title" content="Contact Us | Target-Ops" />
         <meta property="og:description" content="Get a free DevOps consultation. Discuss your infrastructure challenges with expert engineers." />
-        <link rel="canonical" href="https://target-ops.io/contact" />
+        <link rel="canonical" href="https://target-ops.io/contact/" />
       </Helmet>
       <Navigation />
       <main className="pt-16">

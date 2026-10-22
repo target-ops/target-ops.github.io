@@ -20,7 +20,7 @@ const SecurityCompliance = () => {
         <meta name="description" content="DevOps security and compliance services: SOC 2, HIPAA, PCI-DSS, GDPR. Automated security scanning, vulnerability management, and audit preparation." />
         <meta property="og:title" content="Security & Compliance Services | Target-Ops" />
         <meta property="og:description" content="Pass SOC 2, HIPAA, PCI-DSS audits. Automated security, compliance as code, continuous monitoring." />
-        <link rel="canonical" href="https://target-ops.io/solutions/security-compliance" />
+        <link rel="canonical" href="https://target-ops.io/solutions/security-compliance/" />
       </Helmet>
       <Navigation />
       
