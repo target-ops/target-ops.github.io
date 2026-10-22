@@ -21,7 +21,7 @@ const DevOpsConsulting = () => {
         <meta name="keywords" content="devops consulting, devops strategy consulting, devops consultant, devops transformation, kubernetes consulting, terraform consulting, aws consulting, gcp consulting" />
         <meta property="og:title" content="DevOps Consulting & Strategy | Target-Ops" />
         <meta property="og:description" content="DevOps consulting from senior engineers who build and ship production infrastructure daily. Free 30-minute call to discuss your challenges." />
-        <link rel="canonical" href="https://target-ops.io/solutions/devops-consulting" />
+        <link rel="canonical" href="https://target-ops.io/solutions/devops-consulting/" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
