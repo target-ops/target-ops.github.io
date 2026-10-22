@@ -20,7 +20,7 @@ const InfrastructureAutomation = () => {
         <meta name="description" content="Infrastructure automation with Terraform, Pulumi, and IaC. Automate provisioning, scaling, and disaster recovery. Deploy in minutes, not days." />
         <meta property="og:title" content="Infrastructure Automation | Target-Ops" />
         <meta property="og:description" content="Automate your infrastructure with Terraform and IaC. Deploy faster, scale smarter, eliminate manual errors." />
-        <link rel="canonical" href="https://target-ops.io/solutions/infrastructure-automation" />
+        <link rel="canonical" href="https://target-ops.io/solutions/infrastructure-automation/" />
       </Helmet>
       <Navigation />
       
