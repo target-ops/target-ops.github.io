@@ -47,10 +47,10 @@ const SecurityCompliance = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8" asChild>
-                <Link to="/contact">Get Started</Link>
+                <Link to="/contact/">Get Started</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link to="/solutions">View All Solutions</Link>
+                <Link to="/solutions/">View All Solutions</Link>
               </Button>
             </div>
           </div>
@@ -212,7 +212,7 @@ const SecurityCompliance = () => {
                   The engineer who scopes your security engagement is the engineer who implements it.
                   No offshore handoff, no junior rotation, no middle layer.
                 </p>
-                <Link to="/team" className="text-primary hover:underline text-sm font-medium">
+                <Link to="/team/" className="text-primary hover:underline text-sm font-medium">
                   Meet the team →
                 </Link>
               </Card>
@@ -225,7 +225,7 @@ const SecurityCompliance = () => {
                   We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
                   Homebrew taps — that other engineers use daily.
                 </p>
-                <Link to="/open-source" className="text-primary hover:underline text-sm font-medium">
+                <Link to="/open-source/" className="text-primary hover:underline text-sm font-medium">
                   See our OSS work →
                 </Link>
               </Card>
@@ -238,7 +238,7 @@ const SecurityCompliance = () => {
                   Our articles on Helm chart security patterns and production-grade Kubernetes
                   infrastructure show how we approach secure-by-default setups.
                 </p>
-                <Link to="/articles" className="text-primary hover:underline text-sm font-medium">
+                <Link to="/articles/" className="text-primary hover:underline text-sm font-medium">
                   Read the articles →
                 </Link>
               </Card>
@@ -371,7 +371,7 @@ const SecurityCompliance = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-10 py-6 shadow-lg shadow-primary/20" asChild>
-                <Link to="/contact">
+                <Link to="/contact/">
                   Schedule Your Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -384,7 +384,7 @@ const SecurityCompliance = () => {
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground mb-4">Or explore our other solutions:</p>
               <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
-                <Link to="/solutions">
+                <Link to="/solutions/">
                   View All Solutions
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -400,4 +400,3 @@ const SecurityCompliance = () => {
 };
 
 export default SecurityCompliance;
-
