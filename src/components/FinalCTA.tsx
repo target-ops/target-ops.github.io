@@ -20,7 +20,7 @@ const FinalCTA = () => {
         
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4 sm:mb-6 px-4">
           <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 shadow-lg shadow-primary/20 w-full sm:w-auto" asChild>
-            <Link to="/contact">
+            <Link to="/contact/">
               Schedule Your Free Consultation
               <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
@@ -35,7 +35,7 @@ const FinalCTA = () => {
         <div className="pt-6 sm:pt-8 border-t border-border px-4">
           <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">Or explore our solutions:</p>
           <Button variant="ghost" className="text-primary hover:text-primary/80 text-sm sm:text-base" asChild>
-            <Link to="/solutions">
+            <Link to="/solutions/">
               View All Solutions
               <ArrowRight className="ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </Link>
@@ -47,4 +47,3 @@ const FinalCTA = () => {
 };
 
 export default FinalCTA;
-
