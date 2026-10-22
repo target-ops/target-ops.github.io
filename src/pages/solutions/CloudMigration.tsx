@@ -20,7 +20,7 @@ const CloudMigration = () => {
         <meta name="description" content="Expert cloud migration services for AWS, GCP, and Azure. Zero-downtime migration, cost optimization, and security. Migrate your infrastructure with confidence." />
         <meta property="og:title" content="Cloud Migration Services | Target-Ops" />
         <meta property="og:description" content="Expert cloud migration to AWS, GCP, Azure. Zero downtime, optimized costs, enterprise security." />
-        <link rel="canonical" href="https://target-ops.io/solutions/cloud-migration" />
+        <link rel="canonical" href="https://target-ops.io/solutions/cloud-migration/" />
       </Helmet>
       <Navigation />
       
