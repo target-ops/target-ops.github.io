@@ -14,7 +14,7 @@ const About = () => {
         <meta name="description" content="Meet the Target-Ops team: Hagay, Ofir, and Vladi. Expert DevOps engineers with decades of experience helping startups and enterprises scale infrastructure on AWS, GCP, and Azure." />
         <meta property="og:title" content="About Us | Meet the Target-Ops Team" />
         <meta property="og:description" content="Meet the Target-Ops team: Hagay, Ofir, and Vladi. Expert DevOps engineers with decades of experience helping startups and enterprises scale infrastructure." />
-        <link rel="canonical" href="https://target-ops.io/about" />
+        <link rel="canonical" href="https://target-ops.io/about/" />
       </Helmet>
       <Navigation />
       <main className="relative overflow-hidden">
