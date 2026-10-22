@@ -45,13 +45,13 @@ const CloudMigration = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90" asChild>
-                <Link to="/contact">
+                <Link to="/contact/">
                   Start Your Migration
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link to="/solutions">
+                <Link to="/solutions/">
                   View All Solutions
                 </Link>
               </Button>
@@ -236,7 +236,7 @@ const CloudMigration = () => {
                     The engineer who scopes your migration is the engineer who executes it.
                     No offshore handoff, no junior rotation, no middle layer.
                   </p>
-                  <Link to="/team" className="text-primary hover:underline text-sm font-medium">
+                  <Link to="/team/" className="text-primary hover:underline text-sm font-medium">
                     Meet the team →
                   </Link>
                 </CardContent>
@@ -251,7 +251,7 @@ const CloudMigration = () => {
                     We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
                     Homebrew taps — that other engineers use daily.
                   </p>
-                  <Link to="/open-source" className="text-primary hover:underline text-sm font-medium">
+                  <Link to="/open-source/" className="text-primary hover:underline text-sm font-medium">
                     See our OSS work →
                   </Link>
                 </CardContent>
@@ -266,7 +266,7 @@ const CloudMigration = () => {
                     Our articles on cloud provider selection, IPv6 Kubernetes, and Helm chart
                     patterns show exactly how we approach cloud infrastructure.
                   </p>
-                  <Link to="/articles" className="text-primary hover:underline text-sm font-medium">
+                  <Link to="/articles/" className="text-primary hover:underline text-sm font-medium">
                     Read the articles →
                   </Link>
                 </CardContent>
@@ -436,7 +436,7 @@ const CloudMigration = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-10 py-6 shadow-lg shadow-primary/20" asChild>
-                <Link to="/contact">
+                <Link to="/contact/">
                   Schedule Your Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -449,7 +449,7 @@ const CloudMigration = () => {
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground mb-4">Or explore our other solutions:</p>
               <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
-                <Link to="/solutions">
+                <Link to="/solutions/">
                   View All Solutions
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -464,4 +464,3 @@ const CloudMigration = () => {
 };
 
 export default CloudMigration;
-

@@ -47,10 +47,10 @@ const CICDPipelines = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8" asChild>
-                <Link to="/contact">Get Started</Link>
+                <Link to="/contact/">Get Started</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link to="/solutions">View All Solutions</Link>
+                <Link to="/solutions/">View All Solutions</Link>
               </Button>
             </div>
           </div>
@@ -212,7 +212,7 @@ const CICDPipelines = () => {
                   The engineer who scopes your CI/CD engagement is the engineer who builds it.
                   No offshore handoff, no junior rotation, no middle layer.
                 </p>
-                <Link to="/team" className="text-primary hover:underline text-sm font-medium mt-4 inline-block">
+                <Link to="/team/" className="text-primary hover:underline text-sm font-medium mt-4 inline-block">
                   Meet the team →
                 </Link>
               </Card>
@@ -225,7 +225,7 @@ const CICDPipelines = () => {
                   We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
                   Homebrew taps — that other engineers use daily. Our work is public.
                 </p>
-                <Link to="/open-source" className="text-primary hover:underline text-sm font-medium mt-4 inline-block">
+                <Link to="/open-source/" className="text-primary hover:underline text-sm font-medium mt-4 inline-block">
                   See our OSS work →
                 </Link>
               </Card>
@@ -238,7 +238,7 @@ const CICDPipelines = () => {
                   Our articles on Kubernetes ingress, IPv6, Helm charts, K9s, and cloud provider
                   selection show exactly how we think about infrastructure.
                 </p>
-                <Link to="/articles" className="text-primary hover:underline text-sm font-medium mt-4 inline-block">
+                <Link to="/articles/" className="text-primary hover:underline text-sm font-medium mt-4 inline-block">
                   Read the articles →
                 </Link>
               </Card>
@@ -371,7 +371,7 @@ const CICDPipelines = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-10 py-6 shadow-lg shadow-primary/20" asChild>
-                <Link to="/contact">
+                <Link to="/contact/">
                   Schedule Your Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -384,7 +384,7 @@ const CICDPipelines = () => {
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground mb-4">Or explore our other solutions:</p>
               <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
-                <Link to="/solutions">
+                <Link to="/solutions/">
                   View All Solutions
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -400,4 +400,3 @@ const CICDPipelines = () => {
 };
 
 export default CICDPipelines;
-

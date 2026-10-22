@@ -53,7 +53,7 @@ const OpenSource = () => {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button className="bg-gradient-primary hover:opacity-90 transition-all" asChild>
-                <Link to="/open-source">
+                <Link to="/open-source/">
                   View All Projects
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

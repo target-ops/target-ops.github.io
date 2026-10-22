@@ -125,7 +125,7 @@ const Services = () => {
                       ))}
                     </ul>
                     <Button variant="outline" className="w-full group-hover:bg-gradient-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 rounded-xl" asChild>
-                      <Link to={`/solutions/${solution.slug}`}>
+                      <Link to={`/solutions/${solution.slug}/`}>
                         Learn About {solution.title}
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
@@ -160,7 +160,7 @@ const Services = () => {
                       ))}
                     </ul>
                     <Button variant="outline" className="w-full group-hover:bg-gradient-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 rounded-xl" asChild>
-                      <Link to={`/solutions/${solution.slug}`}>
+                      <Link to={`/solutions/${solution.slug}/`}>
                         Learn About {solution.title}
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
@@ -174,7 +174,7 @@ const Services = () => {
 
         <div className="text-center mt-10 sm:mt-12 md:mt-16">
           <Button size="lg" className="bg-gradient-primary hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-xl shadow-primary/30 rounded-xl px-8 py-6 text-base sm:text-lg" asChild>
-            <Link to="/solutions">
+            <Link to="/solutions/">
               Check Our Solutions
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

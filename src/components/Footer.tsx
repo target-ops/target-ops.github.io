@@ -4,20 +4,20 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   const quickLinks = [
-    { name: "About", href: "/about" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Open Source", href: "/open-source" },
-    { name: "Articles", href: "/articles" },
-    { name: "Team", href: "/team" },
-    { name: "Contact", href: "/contact" },
+    { name: "About", href: "/about/" },
+    { name: "Solutions", href: "/solutions/" },
+    { name: "Open Source", href: "/open-source/" },
+    { name: "Articles", href: "/articles/" },
+    { name: "Team", href: "/team/" },
+    { name: "Contact", href: "/contact/" },
   ];
 
   const solutions = [
-    { name: "DevOps Consulting", href: "/solutions/devops-consulting" },
-    { name: "Cloud Migration", href: "/solutions/cloud-migration" },
-    { name: "Infrastructure Automation", href: "/solutions/infrastructure-automation" },
-    { name: "CI/CD Pipelines", href: "/solutions/cicd" },
-    { name: "Security & Compliance", href: "/solutions/security-compliance" },
+    { name: "DevOps Consulting", href: "/solutions/devops-consulting/" },
+    { name: "Cloud Migration", href: "/solutions/cloud-migration/" },
+    { name: "Infrastructure Automation", href: "/solutions/infrastructure-automation/" },
+    { name: "CI/CD Pipelines", href: "/solutions/cicd/" },
+    { name: "Security & Compliance", href: "/solutions/security-compliance/" },
   ];
 
   return (
@@ -111,10 +111,10 @@ const Footer = () => {
               © 2024 Target-Ops. All rights reserved.
             </p>
             <div className="flex space-x-4 sm:space-x-6">
-              <Link to="/privacy" className="text-muted-foreground hover:text-primary text-xs sm:text-sm transition-colors">
+              <Link to="/privacy/" className="text-muted-foreground hover:text-primary text-xs sm:text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-muted-foreground hover:text-primary text-xs sm:text-sm transition-colors">
+              <Link to="/terms/" className="text-muted-foreground hover:text-primary text-xs sm:text-sm transition-colors">
                 Terms of Service
               </Link>
             </div>

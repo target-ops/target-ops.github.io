@@ -78,13 +78,13 @@ const DevOpsConsulting = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90" asChild>
-                <Link to="/contact">
+                <Link to="/contact/">
                   Start Your Transformation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link to="/solutions">
+                <Link to="/solutions/">
                   View All Solutions
                 </Link>
               </Button>
@@ -252,7 +252,7 @@ const DevOpsConsulting = () => {
                     The engineer who meets you on the intro call is the engineer doing the work.
                     No offshore handoff. No junior rotation. No middle layer between you and the builder.
                   </p>
-                  <Link to="/team" className="text-primary hover:underline text-sm font-medium">
+                  <Link to="/team/" className="text-primary hover:underline text-sm font-medium">
                     Meet the team →
                   </Link>
                 </CardContent>
@@ -265,7 +265,7 @@ const DevOpsConsulting = () => {
                     We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
                     Homebrew taps — that other engineers use daily. Our reputation is in public.
                   </p>
-                  <Link to="/open-source" className="text-primary hover:underline text-sm font-medium">
+                  <Link to="/open-source/" className="text-primary hover:underline text-sm font-medium">
                     See our OSS work →
                   </Link>
                 </CardContent>
@@ -278,7 +278,7 @@ const DevOpsConsulting = () => {
                     Our articles on Kubernetes ingress tuning, IPv6, Helm chart patterns, K9s, and
                     cloud provider selection show exactly how we think about infrastructure.
                   </p>
-                  <Link to="/articles" className="text-primary hover:underline text-sm font-medium">
+                  <Link to="/articles/" className="text-primary hover:underline text-sm font-medium">
                     Read the articles →
                   </Link>
                 </CardContent>
@@ -479,7 +479,7 @@ const DevOpsConsulting = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-10 py-6 shadow-lg shadow-primary/20" asChild>
-                <Link to="/contact">
+                <Link to="/contact/">
                   Schedule Your Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -492,7 +492,7 @@ const DevOpsConsulting = () => {
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground mb-4">Or explore our other solutions:</p>
               <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
-                <Link to="/solutions">
+                <Link to="/solutions/">
                   View All Solutions
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -507,4 +507,3 @@ const DevOpsConsulting = () => {
 };
 
 export default DevOpsConsulting;
-

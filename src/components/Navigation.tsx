@@ -11,12 +11,12 @@ const Navigation = () => {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Open Source", href: "/open-source" },
-    { name: "Articles", href: "/articles" },
-    { name: "Team", href: "/team" },
-    { name: "Contact", href: "/contact" },
+    { name: "About", href: "/about/" },
+    { name: "Solutions", href: "/solutions/" },
+    { name: "Open Source", href: "/open-source/" },
+    { name: "Articles", href: "/articles/" },
+    { name: "Team", href: "/team/" },
+    { name: "Contact", href: "/contact/" },
   ];
 
   const isActive = (path: string) => location.pathname === path;

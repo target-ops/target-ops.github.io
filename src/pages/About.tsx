@@ -162,7 +162,7 @@ const About = () => {
                 </p>
 
                 <p>
-                  <Link to="/open-source" className="text-primary hover:underline font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                  <Link to="/open-source/" className="text-primary hover:underline font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all duration-300">
                     Check out our open source projects →
                   </Link>
                 </p>
@@ -180,7 +180,7 @@ const About = () => {
                 We fix DevOps problems. Cloud migrations. CI/CD pipelines. Infrastructure automation. Security hardening. The whole stack.
               </p>
               <Button size="lg" variant="outline" className="hover:scale-105 hover:border-primary transition-all duration-300 group" asChild>
-                <Link to="/solutions">
+                <Link to="/solutions/">
                   See Our Solutions
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -200,13 +200,13 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 hover:scale-105 text-lg px-10 py-6 shadow-lg shadow-primary/20 transition-all duration-300" asChild>
-                <Link to="/team">
+                <Link to="/team/">
                   Meet the Team
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="hover:scale-105 hover:border-primary transition-all duration-300" asChild>
-                <Link to="/contact">
+                <Link to="/contact/">
                   Get in Touch
                 </Link>
               </Button>
