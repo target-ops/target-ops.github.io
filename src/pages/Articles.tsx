@@ -21,7 +21,7 @@ const Articles = () => {
         <meta name="description" content="DevOps tutorials, Kubernetes guides, cloud migration strategies, and infrastructure automation best practices from Target-Ops engineers. Updated weekly with hands-on tutorials." />
         <meta property="og:title" content="DevOps Articles & Tutorials | Target-Ops" />
         <meta property="og:description" content="Learn DevOps from expert engineers: Kubernetes tutorials, cloud migration strategies, and infrastructure automation best practices." />
-        <link rel="canonical" href="https://target-ops.io/articles" />
+        <link rel="canonical" href="https://target-ops.io/articles/" />
       </Helmet>
       <Navigation />
       <main className="relative pt-16">
