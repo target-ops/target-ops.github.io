@@ -150,7 +150,7 @@ Add your article's URL entry for search engine indexing.
 
 ```xml
 <url>
-  <loc>https://target-ops.io/articles/your-article-id</loc>
+  <loc>https://target-ops.io/articles/your-article-id/</loc>
   <lastmod>2024-10-27</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
@@ -335,7 +335,7 @@ const articleRoutes = [
 #### 4. Update `public/sitemap.xml`:
 ```xml
 <url>
-  <loc>https://target-ops.io/articles/terraform-best-practices</loc>
+  <loc>https://target-ops.io/articles/terraform-best-practices/</loc>
   <lastmod>2024-10-27</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>

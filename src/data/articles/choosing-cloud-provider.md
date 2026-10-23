@@ -232,7 +232,7 @@ Ready to make a cloud provider decision you can defend?
 
 - [IPv6 Kubernetes: Complete Dual-Stack Implementation Guide for EKS and GKE](/articles/ipv6-kubernetes/)
 - [Helm Chart Best Practices: Production-Grade Kubernetes Packaging](/articles/best-practices-helm-chart/)
-- [Target-Ops Cloud Infrastructure Consulting](/solutions/cloud-migration/)
+- [Target-Ops Cloud Migration Services](/solutions/cloud-migration/)
 - [Target-Ops DevOps Consulting](/solutions/devops-consulting/)
 
 ---

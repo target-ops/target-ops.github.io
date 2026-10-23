@@ -137,14 +137,14 @@ Examples:
 ```
 Ready to boost your DevOps productivity? [Download the extension](link) and start optimizing your workflow today.
 
-**Need help setting up your DevOps toolchain?** [Contact our team](/contact) for personalized recommendations.
+**Need help setting up your DevOps toolchain?** [Contact our team](/contact/) for personalized recommendations.
 ```
 
 **For Technical How-To Articles:**
 ```
 Following these practices will help you achieve production-grade reliability and performance. At Target-Ops, we've implemented these patterns for companies processing billions of requests daily.
 
-**Want expert guidance on your Kubernetes infrastructure?** [Schedule a consultation](/contact) with our team.
+**Want expert guidance on your Kubernetes infrastructure?** [Schedule a consultation](/contact/) with our team.
 ```
 
 ## SEO Checklist
@@ -155,7 +155,7 @@ Before publishing, verify:
 - [ ] Primary keyword in first 100 words
 - [ ] Primary keyword in at least one H2
 - [ ] Primary keyword in conclusion
-- [ ] 3-5 internal links to other Target-Ops content
+- [ ] 3-5 internal links to other Target-Ops content (use trailing-slash paths, e.g. `/articles/k9s-advanced/`, and only link pages that exist)
 - [ ] 2-3 external links to authoritative sources
 - [ ] Meta description (120-160 characters)
 - [ ] Clear CTA
@@ -266,12 +266,12 @@ Following these battle-tested practices will help you handle massive traffic spi
 3. Enable HTTP/2 and optimize SSL/TLS
 4. Set up monitoring and alerting
 
-**Need help optimizing your Kubernetes infrastructure?** [Contact Target-Ops](/contact) for expert guidance tailored to your specific requirements.
+**Need help optimizing your Kubernetes infrastructure?** [Contact Target-Ops](/contact/) for expert guidance tailored to your specific requirements.
 
 ## Related Resources
 
-- [Kubernetes Security Best Practices](/articles/kubernetes-security)
-- [Cloud Infrastructure Consulting](/solutions/cloud-infrastructure)
+- [Helm Chart Best Practices](/articles/best-practices-helm-chart/)
+- [Cloud Migration Services](/solutions/cloud-migration/)
 - [Official ingress-nginx Documentation](https://kubernetes.github.io/ingress-nginx/)
 
 ---

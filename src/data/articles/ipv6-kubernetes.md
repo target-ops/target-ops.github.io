@@ -332,7 +332,7 @@ Ready to plan your IPv6 Kubernetes migration? Here's what to do this week:
 ## Related Resources
 
 - [Kubernetes Ingress Optimization: Production-Grade ingress-nginx Performance Tuning](/articles/mastering-ingress-nginx/)
-- [Target-Ops Cloud Infrastructure Consulting](/solutions/cloud-migration/)
+- [Target-Ops Cloud Migration Services](/solutions/cloud-migration/)
 - [Target-Ops DevOps Managed Services](/solutions/devops-consulting/)
 - [AWS: EKS IPv6 official documentation](https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html)
 - [Google Cloud: GKE dual-stack networking](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/alias-ips#create_dual_stack_cluster)
