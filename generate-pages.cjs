@@ -143,6 +143,14 @@ const routeMeta = {
     title: 'Contact Target-Ops | Get a Free DevOps Consultation',
     description: 'Get in touch with Target-Ops for a free DevOps consultation. Discuss your infrastructure challenges and get expert recommendations.',
   },
+  '/privacy': {
+    title: 'Privacy Policy | Target-Ops',
+    description: 'Target-Ops Privacy Policy. Learn how we collect, use, and protect your personal information.',
+  },
+  '/terms': {
+    title: 'Terms of Service | Target-Ops',
+    description: 'Target-Ops Terms of Service. Read our terms and conditions for using our website and services.',
+  },
 };
 
 // Publish dates per article route — used for Article/BlogPosting structured data.
@@ -329,6 +337,9 @@ function generateStaticPages() {
   routes.forEach(route => {
     try {
       const meta = routeMeta[route];
+      if (!meta) {
+        throw new Error(`Missing routeMeta entry for ${route}`);
+      }
       const html = generateHTML(route, meta, assetReferences);
 
       // Create directory structure
@@ -373,6 +384,9 @@ function generateStaticPages() {
   if (errors === 0) {
     console.log(`\n🎉 All pages generated successfully!`);
     console.log(`   Each route now has a physical HTML file that returns 200 status.\n`);
+  } else {
+    console.error(`\n💥 ${errors} page(s) failed to generate. Failing the build so missing pages cannot be deployed silently.`);
+    process.exit(1);
   }
 }
 
