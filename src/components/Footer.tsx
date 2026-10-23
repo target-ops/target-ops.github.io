@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MessageCircle, Send } from "lucide-react";
+import { Github, Linkedin, Mail, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -46,11 +46,6 @@ const Footer = () => {
               <Button variant="ghost" size="sm" asChild>
                 <a href="https://www.linkedin.com/company/target-ops" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Linkedin className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="sm" asChild>
-                <a href="https://join.slack.com/t/target-ops/shared_invite/zt-2kxdr9djp-YoQSCoRzARa9psxO8aYoaQ" target="_blank" rel="noopener noreferrer" aria-label="Slack Community">
-                  <MessageCircle className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="sm" asChild>

@@ -1,0 +1,55 @@
+# Check every link on the built site before it ships
+name: Link check
+
+on:
+  pull_request:
+    branches: ["main"]
+
+  # External links rot without any change on our side; catch them weekly
+  schedule:
+    - cron: "0 6 * * 1"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Same as deploy.yml: prerender.cjs needs Chrome so article bodies (and
+      # their links) are in the built HTML.
+      - name: Locate Chrome for prerender
+        run: echo "PUPPETEER_EXECUTABLE_PATH=$(which google-chrome || which google-chrome-stable || which chromium-browser)" >> "$GITHUB_ENV"
+
+      - name: Build
+        run: npm run build
+
+      - name: Internal links use trailing slashes
+        run: node check-internal-links.cjs
+
+      # Internal links resolve against dist/ (a route must have an index.html);
+      # external links are fetched. 429 = rate-limited, not broken.
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: >-
+            --root-dir ${{ github.workspace }}/dist
+            --index-files index.html
+            --accept '200..=299,429'
+            --max-retries 3
+            --no-progress
+            './dist/**/*.html'
