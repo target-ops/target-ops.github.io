@@ -61,7 +61,7 @@ Ready to implement these strategies? Here's what to do:
 2. [Actionable step 2]
 3. [Actionable step 3]
 
-**Need expert help?** [Contact our DevOps team](/contact) for personalized guidance on [topic].
+**Need expert help?** [Contact our DevOps team](/contact/) for personalized guidance on [topic].
 
 ## Related Resources
 

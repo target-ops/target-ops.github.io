@@ -44,21 +44,21 @@ const routes = [
 // Google Search Console shows these old paths still getting impressions —
 // emit meta-refresh + canonical HTML files so the equity transfers to the new URLs.
 const redirects = {
-  '/posts': '/articles',
-  '/posts/k9s': '/articles/k9s-advanced',
-  '/posts/ipv6': '/articles/ipv6-kubernetes',
-  '/posts/choosingcloudprovider': '/articles/choosing-cloud-provider',
-  '/posts/homebrewtap': '/open-source',
-  '/meettheteam': '/team',
-  '/meettheteam/ofir': '/team',
-  '/meettheteam/hagay': '/team',
-  '/oss': '/open-source',
-  '/oss/homebrewtap': '/open-source',
-  '/oss/gitswitch': '/open-source',
-  '/oss/vscodepack': '/articles/vscode-devops-pack',
-  '/tags': '/articles',
-  '/solutions/ci-cd': '/solutions/cicd',
-  '/solutions/why-us': '/solutions',
+  '/posts': '/articles/',
+  '/posts/k9s': '/articles/k9s-advanced/',
+  '/posts/ipv6': '/articles/ipv6-kubernetes/',
+  '/posts/choosingcloudprovider': '/articles/choosing-cloud-provider/',
+  '/posts/homebrewtap': '/open-source/',
+  '/meettheteam': '/team/',
+  '/meettheteam/ofir': '/team/',
+  '/meettheteam/hagay': '/team/',
+  '/oss': '/open-source/',
+  '/oss/homebrewtap': '/open-source/',
+  '/oss/gitswitch': '/open-source/',
+  '/oss/vscodepack': '/articles/vscode-devops-pack/',
+  '/tags': '/articles/',
+  '/solutions/ci-cd': '/solutions/cicd/',
+  '/solutions/why-us': '/solutions/',
 };
 
 // Route-specific meta tags for better SEO
