@@ -335,7 +335,7 @@ Ready to plan your IPv6 Kubernetes migration? Here's what to do this week:
 - [Target-Ops Cloud Infrastructure Consulting](/solutions/cloud-migration/)
 - [Target-Ops DevOps Managed Services](/solutions/devops-consulting/)
 - [AWS: EKS IPv6 official documentation](https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html)
-- [Google Cloud: GKE dual-stack networking](https://cloud.google.com/kubernetes-engine/docs/how-to/dual-stack)
+- [Google Cloud: GKE dual-stack networking](https://cloud.google.com/kubernetes-engine/docs/how-to/alias-ips)
 - [Kubernetes: IPv4/IPv6 dual-stack](https://kubernetes.io/docs/concepts/services-networking/dual-stack/)
 
 ---
