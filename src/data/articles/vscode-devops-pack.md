@@ -34,7 +34,7 @@ We built the pack for our own team. We're sharing it because every DevOps organi
 **Command line:**
 
 ```bash
-code --install-extension target-ops.vscode-pack
+code --install-extension target-ops.target-ops-ultrapack
 ```
 
 **GitHub:**
@@ -149,7 +149,7 @@ Round out the workflow:
 - **Commit the `.vscode/` directory.** Settings that enable linters, formatters, and workspace-specific features should be version-controlled so the team inherits them automatically.
 - **Pair with a shared `.editorconfig`.** Ensures formatting consistency even for editors outside the pack.
 - **Disable what you don't use.** The pack is comprehensive by design; turn off categories (e.g., Azure) you don't touch to keep the palette clean.
-- **Keep it current.** We update the pack quarterly as the DevOps tooling landscape shifts — run `code --install-extension target-ops.vscode-pack --force` periodically.
+- **Keep it current.** We update the pack quarterly as the DevOps tooling landscape shifts — run `code --install-extension target-ops.target-ops-ultrapack --force` periodically.
 - **Complement with workspace-specific extensions.** The pack covers the 80% every team needs; add ~5 workspace-specific extensions per repo via `.vscode/extensions.json` recommendations.
 
 ## Common Pitfalls
@@ -180,7 +180,7 @@ At Target-Ops we use the Ultra Pack every day. We keep it updated, maintain it a
 
 Ready to level up your VS Code setup?
 
-1. **Install the pack** from the [VS Code Marketplace](https://marketplace.visualstudio.com/) or via `code --install-extension target-ops.vscode-pack`.
+1. **Install the pack** from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=target-ops.target-ops-ultrapack) or via `code --install-extension target-ops.target-ops-ultrapack`.
 2. **Commit `.vscode/extensions.json`** in your repos to recommend the pack to every team member automatically.
 3. **Audit your workspace settings** to ensure formatters, linters, and workspace trust are configured.
 4. **Share feedback or contribute** at [target-ops/vscode-pack](https://github.com/target-ops/vscode-pack).

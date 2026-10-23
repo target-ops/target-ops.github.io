@@ -586,7 +586,7 @@ Ready to optimize your Kubernetes ingress? Here's your action plan:
 - Kubernetes Security Best Practices - Secure your ingress properly
 - [DevOps Consulting Services](/solutions/devops-consulting/) - Expert guidance for your infrastructure
 - [Official ingress-nginx Documentation](https://kubernetes.github.io/ingress-nginx/) - Comprehensive reference
-- [NGINX Performance Tuning Guide](https://www.nginx.com/blog/tuning-nginx/) - Deep dive into NGINX internals
+- [NGINX Performance Tuning Guide](https://www.f5.com/company/blog/nginx/tuning-nginx) - Deep dive into NGINX internals
 
 ---
 
