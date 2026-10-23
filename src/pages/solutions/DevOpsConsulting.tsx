@@ -35,7 +35,7 @@ const DevOpsConsulting = () => {
           "description": "DevOps consulting and strategy services covering Kubernetes, Terraform, CI/CD pipelines, cloud migration, and infrastructure automation.",
           "offers": {
             "@type": "Offer",
-            "url": "https://target-ops.io/contact",
+            "url": "https://target-ops.io/contact/",
             "availability": "https://schema.org/InStock"
           }
         })}</script>
