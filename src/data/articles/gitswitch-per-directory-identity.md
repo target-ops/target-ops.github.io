@@ -195,15 +195,15 @@ For DevOps engineers who work across many client environments, the savings show 
 3. **Bind your work and personal directories** with `gitswitch use <name> <dir>`.
 4. **Install the pre-commit guard** with `gitswitch guard install`.
 
-**Need help designing internal developer tooling, or want to talk about per-team identity management?** [Book a free 30-minute call with Target-Ops](/contact) — happy to trade notes on developer experience or scope something for your team.
+**Need help designing internal developer tooling, or want to talk about per-team identity management?** [Book a free 30-minute call with Target-Ops](/contact/) — happy to trade notes on developer experience or scope something for your team.
 
 ## Related Resources
 
 - [gitswitch on GitHub](https://github.com/target-ops/gitswitch) — source, releases, issue tracker
-- [AnyClown: One-Click Git Repository Cloning to VS Code](/articles/anyclown-vscode-extension)
-- [VScode DevOps Ultra Pack](/articles/vscode-devops-pack)
+- [AnyClown: One-Click Git Repository Cloning to VS Code](/articles/anyclown-vscode-extension/)
+- [VScode DevOps Ultra Pack](/articles/vscode-devops-pack/)
 - [git documentation: Conditional Includes](https://git-scm.com/docs/git-config#_conditional_includes)
-- [Target-Ops DevOps Consulting](/solutions/devops-consulting)
+- [Target-Ops DevOps Consulting](/solutions/devops-consulting/)
 
 ---
 

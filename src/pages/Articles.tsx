@@ -87,7 +87,7 @@ const Articles = () => {
                       ))}
                     </div>
                     <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary transition-colors" asChild>
-                      <Link to={`/articles/${article.id}`}>
+                      <Link to={`/articles/${article.id}/`}>
                         Read Article
                         <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Link>

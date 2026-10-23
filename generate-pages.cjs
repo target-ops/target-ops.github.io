@@ -35,6 +35,8 @@ const routes = [
   '/open-source',
   '/articles',
   '/contact',
+  '/privacy',
+  '/terms',
   ...articleRoutes,
 ];
 

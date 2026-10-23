@@ -74,7 +74,7 @@ const Solutions = () => {
                         ))}
                       </ul>
                       <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all" asChild>
-                        <Link to={`/solutions/${solution.slug}`}>
+                        <Link to={`/solutions/${solution.slug}/`}>
                           Learn More
                           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </Link>

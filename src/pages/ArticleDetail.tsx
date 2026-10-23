@@ -162,7 +162,7 @@ const ArticleDetail = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-8">Related Articles</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {relatedArticles.map((related) => (
-                <Link key={related.id} to={`/articles/${related.id}`}>
+                <Link key={related.id} to={`/articles/${related.id}/`}>
                   <Card className="bg-background/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow/20 h-full group">
                     <div className="p-6">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">

@@ -146,13 +146,13 @@ Ready to stop typing `git clone` by hand?
 3. **Add any self-hosted Git hostnames** your team uses.
 4. **Share it with your team** as part of onboarding.
 
-**Want to talk about developer tooling or internal platforms?** [Book a free 30-minute call with Target-Ops](/contact) — happy to trade notes or help you scope an internal tool of your own.
+**Want to talk about developer tooling or internal platforms?** [Book a free 30-minute call with Target-Ops](/contact/) — happy to trade notes or help you scope an internal tool of your own.
 
 ## Related Resources
 
-- [VScode DevOps Ultra Pack](/articles/vscode-devops-pack)
-- [K9s Kubernetes CLI: Advanced Productivity Techniques](/articles/k9s-advanced)
-- [Target-Ops DevOps Consulting](/solutions/devops-consulting)
+- [VScode DevOps Ultra Pack](/articles/vscode-devops-pack/)
+- [K9s Kubernetes CLI: Advanced Productivity Techniques](/articles/k9s-advanced/)
+- [Target-Ops DevOps Consulting](/solutions/devops-consulting/)
 - [AnyClown on the Chrome Web Store](https://chromewebstore.google.com/search/anyClown)
 - [AnyClown on GitHub](https://github.com/target-ops/anyclown)
 

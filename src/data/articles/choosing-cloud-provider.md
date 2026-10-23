@@ -226,14 +226,14 @@ Ready to make a cloud provider decision you can defend?
 3. **Model 3-year TCO** including egress, support, and migration/exit cost.
 4. **Run a 30-day bake-off** with real workloads on your top two candidates.
 
-**Want an independent technical opinion on your cloud strategy?** [Book a free 30-minute call with Target-Ops](/contact) — we'll walk through your workload shape, team, and constraints, and give you a straight answer. We're not tied to any single provider, so the recommendation is driven by what actually fits you.
+**Want an independent technical opinion on your cloud strategy?** [Book a free 30-minute call with Target-Ops](/contact/) — we'll walk through your workload shape, team, and constraints, and give you a straight answer. We're not tied to any single provider, so the recommendation is driven by what actually fits you.
 
 ## Related Resources
 
-- [IPv6 Kubernetes: Complete Dual-Stack Implementation Guide for EKS and GKE](/articles/ipv6-kubernetes)
-- [Helm Chart Best Practices: Production-Grade Kubernetes Packaging](/articles/best-practices-helm-chart)
-- [Target-Ops Cloud Infrastructure Consulting](/solutions/cloud-infrastructure)
-- [Target-Ops DevOps Consulting](/solutions/devops-consulting)
+- [IPv6 Kubernetes: Complete Dual-Stack Implementation Guide for EKS and GKE](/articles/ipv6-kubernetes/)
+- [Helm Chart Best Practices: Production-Grade Kubernetes Packaging](/articles/best-practices-helm-chart/)
+- [Target-Ops Cloud Infrastructure Consulting](/solutions/cloud-migration/)
+- [Target-Ops DevOps Consulting](/solutions/devops-consulting/)
 
 ---
 

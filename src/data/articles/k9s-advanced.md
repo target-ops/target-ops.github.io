@@ -283,13 +283,13 @@ Ready to get faster with K9s? Do these in order:
 3. **Build one team-specific plugin per week.** Every painful `kubectl` workflow is a plugin opportunity.
 4. **Separate your production kubeconfig.** Read-only by default; escalate explicitly.
 
-**Want help standardizing Kubernetes tooling across your engineering team?** [Book a free 30-minute call with Target-Ops](/contact) — we'll walk through your current setup and share the configs, RBAC patterns, and operational playbooks we use day to day.
+**Want help standardizing Kubernetes tooling across your engineering team?** [Book a free 30-minute call with Target-Ops](/contact/) — we'll walk through your current setup and share the configs, RBAC patterns, and operational playbooks we use day to day.
 
 ## Related Resources
 
-- [Kubernetes Ingress Optimization: Production-Grade ingress-nginx Performance Tuning](/articles/mastering-ingress-nginx)
-- [IPv6 Kubernetes: Complete Dual-Stack Implementation Guide for EKS and GKE](/articles/ipv6-kubernetes)
-- [Target-Ops DevOps Consulting](/solutions/devops-consulting)
+- [Kubernetes Ingress Optimization: Production-Grade ingress-nginx Performance Tuning](/articles/mastering-ingress-nginx/)
+- [IPv6 Kubernetes: Complete Dual-Stack Implementation Guide for EKS and GKE](/articles/ipv6-kubernetes/)
+- [Target-Ops DevOps Consulting](/solutions/devops-consulting/)
 - [K9s official documentation](https://k9scli.io/)
 - [K9s GitHub repository](https://github.com/derailed/k9s)
 
