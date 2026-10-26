@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { trackFaqExpand } from "@/lib/analytics";
 import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -17,7 +18,7 @@ AccordionItem.displayName = "AccordionItem";
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, onClick, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
@@ -25,6 +26,16 @@ const AccordionTrigger = React.forwardRef<
         "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
         className,
       )}
+      onClick={(event) => {
+        onClick?.(event);
+        // data-state is the state BEFORE the toggle: closed means this click opens the item.
+        if (event.currentTarget.getAttribute("data-state") === "closed") {
+          const trigger = event.currentTarget;
+          const triggers = Array.from(document.querySelectorAll('button[data-state][aria-controls]'));
+          const index = triggers.indexOf(trigger);
+          if (index >= 0) trackFaqExpand(`faq_${index + 1}`, window.location.pathname);
+        }
+      }}
       {...props}
     >
       {children}
