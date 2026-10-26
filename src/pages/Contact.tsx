@@ -7,8 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Linkedin, Github, MessageSquare, Calendar, CheckCircle2, AlertCircle } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
-import { trackLead, trackContactFormError } from "@/lib/analytics";
+import { useRef, useState } from "react";
+import { trackLead, trackContactFormError, trackContactFormStart } from "@/lib/analytics";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,9 +18,16 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formStartedRef = useRef(false);
+  const handleFormStart = () => {
+    if (formStartedRef.current) return;
+    formStartedRef.current = true;
+    trackContactFormStart();
+  };
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    handleFormStart();
     setFormData({
       ...formData,
       [e.target.id]: e.target.value
@@ -54,7 +61,7 @@ const Contact = () => {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (data.success === true) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', company: '', message: '' });
         trackLead('contact_form');
