@@ -1,4 +1,6 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { useParams, Link, Navigate, useLocation } from "react-router-dom";
+import { trackArticleProgress, trackArticleEngaged } from "@/lib/analytics";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -14,6 +16,56 @@ import rehypeRaw from "rehype-raw";
 import "highlight.js/styles/github-dark.css";
 
 const ArticleDetail = () => {
+  const location = useLocation();
+  const firedRef = useRef<Set<number>>(new Set());
+
+  // Reading-progress milestones for long-form articles. One event per
+  // threshold per page view; complements (does not duplicate) the single
+  // 90% enhanced-measurement scroll signal, which shows reach but not
+  // partial reading depth.
+  useEffect(() => {
+    firedRef.current = new Set();
+    let activeSeconds = 0;
+    let lastInteraction = Date.now();
+    const interacted = () => { lastInteraction = Date.now(); };
+    window.addEventListener("pointerdown", interacted);
+    window.addEventListener("keydown", interacted);
+    const activeTimer = window.setInterval(() => {
+      if (document.visibilityState === "visible" && document.hasFocus() && Date.now() - lastInteraction < 60000) {
+        activeSeconds += 1;
+        if (activeSeconds === 30) trackArticleEngaged(location.pathname);
+      }
+    }, 1000);
+    const thresholds = [25, 50, 75, 100];
+    let ticking = false;
+    const onScroll = () => {
+      lastInteraction = Date.now();
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        ticking = false;
+        const body = document.querySelector("article .prose");
+        if (!body) return;
+        const rect = body.getBoundingClientRect();
+        const pct = Math.min(100, Math.max(0, Math.floor(((window.innerHeight - rect.top) / rect.height) * 100)));
+        for (const t of thresholds) {
+          if (pct >= t && !firedRef.current.has(t)) {
+            firedRef.current.add(t);
+            trackArticleProgress(t, location.pathname);
+          }
+        }
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("pointerdown", interacted);
+      window.removeEventListener("keydown", interacted);
+      window.clearInterval(activeTimer);
+    };
+  }, [location.pathname]);
+
   const { id } = useParams<{ id: string }>();
   const article = articles.find(a => a.id === id);
 
