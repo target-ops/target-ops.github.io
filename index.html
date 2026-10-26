@@ -30,13 +30,21 @@
     <meta name="twitter:description" content="Expert DevOps consulting for startups and enterprises. Speed up deploys by 10×, cut cloud costs 50%, automate infrastructure." />
     <meta name="twitter:image" content="https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YWWR9DFR3T"></script>
+    <!-- Google Analytics (production only: skips localhost/dev/preview hosts) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YWWR9DFR3T');
+      (function () {
+        var productionHosts = ['target-ops.io', 'www.target-ops.io'];
+        if (productionHosts.indexOf(window.location.hostname) === -1) return;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YWWR9DFR3T';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-YWWR9DFR3T');
+      })();
     </script>
 
     <!-- Structured Data for SEO -->
