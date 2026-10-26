@@ -7,7 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Linkedin, Github, MessageSquare, Calendar, CheckCircle2, AlertCircle } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { trackLead, trackContactFormError, trackContactFormStart } from "@/lib/analytics";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,9 +18,16 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formStartedRef = useRef(false);
+  const handleFormStart = () => {
+    if (formStartedRef.current) return;
+    formStartedRef.current = true;
+    trackContactFormStart();
+  };
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    handleFormStart();
     setFormData({
       ...formData,
       [e.target.id]: e.target.value
@@ -32,7 +40,6 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     const apiKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-    console.log('🔑 API Key loaded:', apiKey ? 'Yes ✅' : 'No ❌');
 
     try {
       const payload = {
@@ -44,8 +51,6 @@ const Contact = () => {
         subject: `New Contact Form Submission from ${formData.name}`,
       };
 
-      console.log('📤 Sending to Web3Forms:', payload);
-
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -55,17 +60,17 @@ const Contact = () => {
       });
 
       const data = await response.json();
-      console.log('📥 Response from Web3Forms:', data);
 
-      if (data.success) {
+      if (data.success === true) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', company: '', message: '' });
+        trackLead('contact_form');
       } else {
-        console.error('❌ Web3Forms error:', data);
+        trackContactFormError();
         setSubmitStatus('error');
       }
     } catch (error) {
-      console.error('❌ Error submitting form:', error);
+      trackContactFormError();
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

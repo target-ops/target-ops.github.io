@@ -1,6 +1,9 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { initClickTracking } from "./lib/analytics";
+
+initClickTracking();
 
 // Handle GitHub Pages SPA redirect from 404.html
 const redirect = sessionStorage.getItem('redirect');
