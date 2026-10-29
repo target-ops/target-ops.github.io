@@ -6,7 +6,7 @@ export const solutions: Solution[] = [
     id: "devops-consulting",
     title: "DevOps Consulting",
     slug: "devops-consulting",
-    description: "Struggling with slow deployments or team silos? We assess your current processes, create a clear roadmap, and guide your team through implementing DevOps practices that actually work—reducing deployment time by up to 80%.",
+    description: "Struggling with slow deployments or team silos? We assess your current processes, create a clear roadmap, and guide your team through implementing DevOps practices that actually work—so releases stop being a bottleneck.",
     features: [
       "We evaluate your current setup and identify bottlenecks",
       "Create a step-by-step plan tailored to your business",
@@ -20,10 +20,10 @@ export const solutions: Solution[] = [
     id: "cloud-migration",
     title: "Cloud Migration",
     slug: "cloud-migration",
-    description: "Moving to the cloud but worried about downtime or data loss? We plan and execute your entire migration—from AWS to GCP to Azure—ensuring zero downtime and immediate cost savings of 30-50%.",
+    description: "Moving to the cloud but worried about downtime or data loss? We plan and execute your entire migration—from AWS to GCP to Azure—with a cutover plan that minimizes downtime and keeps costs visible from day one.",
     features: [
       "We analyze your infrastructure and plan the migration",
-      "Execute the move with zero downtime guarantee",
+      "Execute the move with a detailed cutover plan that minimizes downtime",
       "Optimize your cloud costs from day one",
       "Monitor and support you after the migration"
     ],
@@ -48,7 +48,7 @@ export const solutions: Solution[] = [
     id: "cicd",
     title: "CI/CD Pipelines",
     slug: "cicd",
-    description: "Still deploying code manually? We build automated pipelines that test and deploy your code in minutes—enabling your team to release updates 10x faster while catching bugs before they reach production.",
+    description: "Still deploying code manually? We build automated pipelines that test and deploy your code on every merge—so your team can release updates as often as it's ready while catching bugs before they reach production.",
     features: [
       "We design pipelines customized to your tech stack",
       "Automate testing to catch bugs early",
@@ -95,4 +95,3 @@ export const whyChooseUs = {
     }
   ]
 };
-
