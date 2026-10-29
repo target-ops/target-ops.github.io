@@ -182,8 +182,7 @@ const CICDPipelines = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
                 <p className="text-muted-foreground text-sm">
-                  A small founding team of three senior engineers. The person who scopes
-                  your CI/CD engagement is the person who builds it.
+                  A small founding team of three senior engineers.
                 </p>
                 <Link to="/team/" className="text-primary hover:underline text-sm font-medium mt-4 inline-block">
                   Meet the team →
@@ -342,8 +341,8 @@ const CICDPipelines = () => {
             <p className="text-xl text-muted-foreground mb-10">
               Book a free 30-minute consultation, no sales pitch, just honest advice about your DevOps challenges.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-10 py-6 shadow-lg shadow-primary/20" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-6 sm:px-10 py-6 shadow-lg shadow-primary/20 w-full sm:w-auto max-w-full whitespace-normal text-center h-auto" asChild>
                 <Link to="/contact/">
                   Schedule Your Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
