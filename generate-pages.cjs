@@ -76,8 +76,8 @@ const routeMeta = {
     description: 'DevOps consulting and strategy from senior engineers who build and ship production infrastructure daily. Kubernetes, Terraform, CI/CD, AWS/GCP/Azure. Free 30-minute call.',
   },
   '/solutions/cloud-migration': {
-    title: 'Cloud Migration Services | AWS, GCP, Azure Migration',
-    description: 'Zero-downtime cloud migration services. Migrate to AWS, GCP, or Azure with confidence. Infrastructure assessment, planning, and execution.',
+    title: 'Cloud Migration Services | AWS, GCP, Azure Migration | Target-Ops',
+    description: 'Cloud migration services for AWS, GCP, and Azure. Zero-downtime migration strategy, cost optimization from day one, and security built in. Free 30-minute call.',
   },
   '/solutions/infrastructure-automation': {
     title: 'Infrastructure Automation Consulting | Target-Ops',
@@ -88,8 +88,8 @@ const routeMeta = {
     description: 'CI/CD automation services: pipelines that test and deploy on every merge. GitHub Actions, GitLab CI, Jenkins. Catch bugs before production. Free 30-minute call.',
   },
   '/solutions/security-compliance': {
-    title: 'DevSecOps & Security Compliance | SOC 2, HIPAA, PCI-DSS',
-    description: 'Security-first DevOps practices. SOC 2, HIPAA, PCI-DSS compliance. Automated security scanning, vulnerability management.',
+    title: 'Security & Compliance | SOC 2, HIPAA, PCI-DSS | Target-Ops',
+    description: 'DevOps security and compliance services: SOC 2, HIPAA, PCI-DSS, GDPR. Automated security scanning, vulnerability management, and audit preparation.',
   },
   '/team': {
     title: 'Meet the Team | DevOps Experts at Target-Ops',
