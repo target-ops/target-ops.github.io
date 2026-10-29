@@ -43,7 +43,7 @@ const InfrastructureAutomation = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-2">
-              Tired of manual server setup and configuration? We automate your entire infrastructure—from provisioning to scaling—so your team can deploy in minutes instead of days and eliminate human errors.
+              Tired of manual server setup and configuration? We automate your infrastructure—from provisioning to scaling—with the goal of deployments that take minutes instead of days and far fewer manual errors.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8" asChild>
@@ -65,21 +65,21 @@ const InfrastructureAutomation = () => {
                 <Clock className="h-10 w-10 text-tech-cyan mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Slow Deployments</h3>
                 <p className="text-muted-foreground">
-                  Manual server setup taking days? We automate provisioning, configuration, and deployment—reducing time from days to minutes.
+                  Manual server setup taking days? We automate provisioning, configuration, and deployment—work aimed at cutting setup from days to minutes.
                 </p>
               </Card>
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
                 <Zap className="h-10 w-10 text-tech-cyan mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Configuration Drift</h3>
                 <p className="text-muted-foreground">
-                  Servers configured differently? We implement Infrastructure as Code (IaC) to ensure every environment is identical and version-controlled.
+                  Servers configured differently? We implement Infrastructure as Code (IaC) so environments stay consistent and version-controlled.
                 </p>
               </Card>
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
                 <TrendingDown className="h-10 w-10 text-tech-cyan mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Scaling Nightmares</h3>
                 <p className="text-muted-foreground">
-                  Can't handle traffic spikes? We build auto-scaling infrastructure that grows with demand and shrinks when traffic drops—saving you money.
+                  Can't handle traffic spikes? We build auto-scaling infrastructure designed to grow with demand and shrink when traffic drops—so you stop paying for idle capacity.
                 </p>
               </Card>
             </div>
@@ -182,8 +182,8 @@ const InfrastructureAutomation = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
                 <p className="text-muted-foreground text-sm mb-4">
-                  The engineer who scopes your automation engagement is the engineer who builds it.
-                  No offshore handoff, no junior rotation, no middle layer.
+                  A small founding team of three senior engineers. The person who scopes
+                  your automation engagement is the person who builds it.
                 </p>
                 <Link to="/team/" className="text-primary hover:underline text-sm font-medium">
                   Meet the team →
@@ -196,7 +196,7 @@ const InfrastructureAutomation = () => {
                 <h3 className="text-xl font-semibold mb-2">Open-source tooling</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
-                  Homebrew taps — that other engineers use daily.
+                  Homebrew taps — in public repositories you can inspect.
                 </p>
                 <Link to="/open-source/" className="text-primary hover:underline text-sm font-medium">
                   See our OSS work →
@@ -309,7 +309,7 @@ const InfrastructureAutomation = () => {
                 },
                 {
                   q: "Will my team be able to maintain this after you're done?",
-                  a: "Absolutely. Knowledge transfer is built into our process. We provide documentation, training sessions, and code reviews. Your team will be confident managing and extending the automation."
+                  a: "That's the goal. Knowledge transfer is built into our process—documentation, training sessions, and code reviews—so your team can manage and extend the automation without us."
                 },
                 {
                   q: "What if we're using legacy systems?",
