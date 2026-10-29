@@ -159,7 +159,7 @@ const DevOpsConsulting = () => {
               </Card>
               <Card className="bg-gradient-to-br from-tech-blue/10 to-tech-cyan/10 border-tech-blue/30 p-8 text-center">
                 <div className="text-2xl font-bold text-tech-blue mb-2">Fewer 3am incidents</div>
-                <div className="text-sm text-muted-foreground">Observability, rollout guardrails, and infrastructure that recovers on its own</div>
+                <div className="text-sm text-muted-foreground">Observability, rollout guardrails, and self-healing infrastructure patterns</div>
               </Card>
               <Card className="bg-gradient-to-br from-tech-cyan/10 to-primary/10 border-tech-cyan/30 p-8 text-center">
                 <div className="text-2xl font-bold text-tech-cyan mb-2">Cloud spend under control</div>
@@ -227,8 +227,8 @@ const DevOpsConsulting = () => {
                   <Users className="h-10 w-10 text-primary mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
                   <p className="text-muted-foreground mb-4">
-                    The engineer who meets you on the intro call is the engineer doing the work.
-                    No offshore handoff. No junior rotation. No middle layer between you and the builder.
+                    A small founding team of three senior engineers. The person who meets you
+                    on the intro call is the person doing the work.
                   </p>
                   <Link to="/team/" className="text-primary hover:underline text-sm font-medium">
                     Meet the team →
@@ -241,7 +241,7 @@ const DevOpsConsulting = () => {
                   <h3 className="text-xl font-semibold mb-2">Open-source tooling</h3>
                   <p className="text-muted-foreground mb-4">
                     We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
-                    Homebrew taps — that other engineers use daily. Our reputation is in public.
+                    Homebrew taps — in public repositories you can inspect.
                   </p>
                   <Link to="/open-source/" className="text-primary hover:underline text-sm font-medium">
                     See our OSS work →
