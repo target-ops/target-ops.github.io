@@ -43,7 +43,7 @@ const CICDPipelines = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-2">
-              Still deploying code manually? We build automated pipelines that test and deploy your code on every merge—so your team ships when it's ready, and bugs get caught before they reach production.
+              Still deploying code manually? We build automated pipelines that test and deploy your code on every merge—so your team ships when it's ready, with checks designed to catch bugs before they reach production.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8" asChild>
@@ -65,14 +65,14 @@ const CICDPipelines = () => {
                 <Rocket className="h-10 w-10 text-tech-blue mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Slow Release Cycles</h3>
                 <p className="text-muted-foreground">
-                  Deploying once a week (or month)? We automate testing and deployment so you can ship multiple times per day with confidence.
+                  Deploying once a week (or month)? We automate testing and deployment with the goal of making several deploys a day routine.
                 </p>
               </Card>
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
                 <Bug className="h-10 w-10 text-tech-blue mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Production Bugs</h3>
                 <p className="text-muted-foreground">
-                  Bugs slipping through to production? Automated testing in your pipeline catches issues before users ever see them.
+                  Bugs slipping through to production? We put automated testing in the pipeline to catch issues before users see them.
                 </p>
               </Card>
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
@@ -182,8 +182,8 @@ const CICDPipelines = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
                 <p className="text-muted-foreground text-sm">
-                  The engineer who scopes your CI/CD engagement is the engineer who builds it.
-                  No offshore handoff, no junior rotation, no middle layer.
+                  A small founding team of three senior engineers. The person who scopes
+                  your CI/CD engagement is the person who builds it.
                 </p>
                 <Link to="/team/" className="text-primary hover:underline text-sm font-medium mt-4 inline-block">
                   Meet the team →
@@ -196,7 +196,7 @@ const CICDPipelines = () => {
                 <h3 className="text-xl font-semibold mb-2">Open-source tooling</h3>
                 <p className="text-muted-foreground text-sm">
                   We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
-                  Homebrew taps — that other engineers use daily. Our work is public.
+                  Homebrew taps — in public repositories you can inspect.
                 </p>
                 <Link to="/open-source/" className="text-primary hover:underline text-sm font-medium mt-4 inline-block">
                   See our OSS work →
