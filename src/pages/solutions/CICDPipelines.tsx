@@ -16,10 +16,10 @@ const CICDPipelines = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>CI/CD Pipeline Services | GitHub Actions, GitLab CI, Jenkins | Target-Ops</title>
-        <meta name="description" content="Build automated CI/CD pipelines with GitHub Actions, GitLab CI, and Jenkins. Deploy 10× faster with automated testing, security scanning, and zero-downtime releases." />
-        <meta property="og:title" content="CI/CD Pipeline Services | Target-Ops" />
-        <meta property="og:description" content="Automated CI/CD pipelines: faster deploys, automated testing, zero downtime." />
+        <title>CI/CD Automation Services | Target-Ops</title>
+        <meta name="description" content="CI/CD automation services: pipelines that test and deploy on every merge. GitHub Actions, GitLab CI, Jenkins. Catch bugs before production. Free 30-minute call." />
+        <meta property="og:title" content="CI/CD Automation Services | Target-Ops" />
+        <meta property="og:description" content="Automated CI/CD pipelines: testing on every commit, deployment on every merge." />
         <link rel="canonical" href="https://target-ops.io/solutions/cicd/" />
       </Helmet>
       <Navigation />
@@ -39,11 +39,11 @@ const CICDPipelines = () => {
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                CI/CD Pipelines
+                CI/CD Pipeline Automation
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-2">
-              Still deploying code manually? We build automated pipelines that test and deploy your code in minutes—enabling your team to release updates 10x faster while catching bugs before they reach production.
+              Still deploying code manually? We build automated pipelines that test and deploy your code on every merge—so your team ships when it's ready, and bugs get caught before they reach production.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8" asChild>
@@ -142,53 +142,26 @@ const CICDPipelines = () => {
           </div>
         </section>
 
-        {/* Results */}
-        <section className="relative py-8 px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Results</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-tech-blue/10 to-tech-cyan/10 border-tech-blue/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-blue mb-2">10x</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Faster Releases</div>
-              </Card>
-              <Card className="bg-gradient-to-br from-tech-cyan/10 to-tech-purple/10 border-tech-cyan/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-cyan mb-2">85%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Fewer Bugs</div>
-              </Card>
-              <Card className="bg-gradient-to-br from-tech-purple/10 to-tech-blue/10 border-tech-purple/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-purple mb-2">70%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Less Manual Work</div>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Case Study */}
+        {/* How a CI/CD Engagement Works */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">SaaS Startup: From Weekly to Daily Deployments</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">How a CI/CD Engagement Works</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Senior engineers, honest scoping, pipelines you own</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
-              <div className="space-y-6 text-muted-foreground">
+              <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">The Challenge</h3>
-                  <p>A fast-growing SaaS company was deploying manually once a week. Their QA team spent 2 days testing before each release, and production bugs were frequent. Developers were afraid to ship code.</p>
+                  <h3 className="text-foreground font-semibold mb-2">1. Free 30-minute call</h3>
+                  <p className="text-muted-foreground mb-6">A focused conversation about what you deploy, how often, and what breaks when you do. If we're not the right fit, we'll say so on the call.</p>
+                  <h3 className="text-foreground font-semibold mb-2">2. Pipeline assessment</h3>
+                  <p className="text-muted-foreground">A structured review of your current build, test, and release flow. You get a written findings document with a prioritized, realistic scope.</p>
                 </div>
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">Our Solution</h3>
-                  <p>We built a comprehensive CI/CD pipeline with GitHub Actions. Every commit triggered automated tests, security scans, and code quality checks. Successful builds auto-deployed to staging, then production after approval.</p>
-                </div>
-                <div>
-                  <h3 className="text-foreground font-semibold mb-2">The Results</h3>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Release frequency increased from weekly to multiple times per day</li>
-                    <li>QA time reduced from 2 days to 2 hours (automated tests)</li>
-                    <li>Production bugs dropped by 85%</li>
-                    <li>Developer velocity increased by 3x</li>
-                    <li>Time-to-market for new features cut in half</li>
-                  </ul>
+                  <h3 className="text-foreground font-semibold mb-2">3. Hands-on implementation</h3>
+                  <p className="text-muted-foreground mb-6">We build the pipelines alongside your team — GitHub Actions, GitLab CI, Jenkins, or whatever fits — checked into your repository, reviewed by your engineers, owned by you.</p>
+                  <h3 className="text-foreground font-semibold mb-2">4. Documentation and handoff</h3>
+                  <p className="text-muted-foreground">Your team owns the pipelines when we leave. We document every workflow, pair on operational playbooks, and stay available for follow-up questions.</p>
                 </div>
               </div>
             </Card>
@@ -332,7 +305,7 @@ const CICDPipelines = () => {
                 },
                 {
                   q: "How long does it take to set up a pipeline?",
-                  a: "Most pipelines are up and running in 2-4 weeks. Simple projects (single service, basic tests): 1-2 weeks. Complex microservices with extensive testing: 4-6 weeks."
+                  a: "It depends on your stack and existing test coverage. A single service with tests already in place moves fast; microservices with legacy test suites take longer. After the assessment you get a concrete timeline before any commitment."
                 },
                 {
                   q: "Will this work with our existing tests?",
