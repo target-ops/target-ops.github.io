@@ -354,6 +354,21 @@ const CICDPipelines = () => {
               </div>
             </div>
             <div className="mt-12 pt-8 border-t border-border">
+              <p className="text-sm text-muted-foreground mb-4">Related services:</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
+                <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
+                  <Link to="/solutions/infrastructure-automation/">
+                    Infrastructure Automation
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
+                  <Link to="/solutions/devops-consulting/">
+                    DevOps Consulting
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground mb-4">Or explore our other solutions:</p>
               <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
                 <Link to="/solutions/">
