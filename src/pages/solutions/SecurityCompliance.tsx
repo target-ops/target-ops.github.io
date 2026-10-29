@@ -142,53 +142,28 @@ const SecurityCompliance = () => {
           </div>
         </section>
 
-        {/* Results */}
-        <section className="relative py-8 px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Results</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-tech-purple/10 to-tech-blue/10 border-tech-purple/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-purple mb-2">100%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Audit Pass Rate</div>
-              </Card>
-              <Card className="bg-gradient-to-br from-tech-blue/10 to-tech-cyan/10 border-tech-blue/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-blue mb-2">90%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Fewer Incidents</div>
-              </Card>
-              <Card className="bg-gradient-to-br from-tech-cyan/10 to-tech-purple/10 border-tech-cyan/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-cyan mb-2">6-8</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Weeks to Compliance</div>
-              </Card>
-            </div>
-          </div>
-        </section>
 
-        {/* Case Study */}
+
+        {/* How a Security & Compliance Engagement Works */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">HealthTech Company: SOC 2 Compliant in 8 Weeks</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">How a Security & Compliance Engagement Works</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Senior engineers, honest scoping, controls you own</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
-              <div className="space-y-6 text-muted-foreground">
+              <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">The Challenge</h3>
-                  <p>A fast-growing healthcare SaaS company needed SOC 2 Type II certification to close enterprise deals. They had basic security but no formal compliance program, and their first audit attempt failed.</p>
+                  <h3 className="text-foreground font-semibold mb-2">1. Free 30-minute call</h3>
+                  <p className="text-muted-foreground mb-6">A focused conversation about your security posture, the frameworks your customers are asking for, and your timeline. If we're not the right fit, we'll say so on the call.</p>
+                  <h3 className="text-foreground font-semibold mb-2">2. Assessment and gap analysis</h3>
+                  <p className="text-muted-foreground">A structured review of your infrastructure, access controls, and processes against your target framework. You get a written gap analysis with a prioritized remediation plan.</p>
                 </div>
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">Our Solution</h3>
-                  <p>We implemented a comprehensive security and compliance program: hardened infrastructure, implemented access controls, set up monitoring and logging, created audit documentation, and trained the team on security best practices.</p>
-                </div>
-                <div>
-                  <h3 className="text-foreground font-semibold mb-2">The Results</h3>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Achieved SOC 2 Type II certification in 8 weeks</li>
-                    <li>Security incidents dropped by 92%</li>
-                    <li>Closed $2M in enterprise deals waiting on compliance</li>
-                    <li>Passed audit with zero findings</li>
-                    <li>Built foundation for HIPAA compliance</li>
-                  </ul>
+                  <h3 className="text-foreground font-semibold mb-2">3. Hands-on implementation</h3>
+                  <p className="text-muted-foreground mb-6">We implement the controls alongside your team—hardening, access management, monitoring, and logging—and build the audit documentation as we go.</p>
+                  <h3 className="text-foreground font-semibold mb-2">4. Audit preparation and handoff</h3>
+                  <p className="text-muted-foreground">We prepare you for the audit, support you through auditor questions, and leave your team with the documentation and training to stay compliant.</p>
                 </div>
               </div>
             </Card>
@@ -209,8 +184,7 @@ const SecurityCompliance = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
                 <p className="text-muted-foreground text-sm mb-4">
-                  The engineer who scopes your security engagement is the engineer who implements it.
-                  No offshore handoff, no junior rotation, no middle layer.
+A small founding team of three senior engineers.
                 </p>
                 <Link to="/team/" className="text-primary hover:underline text-sm font-medium">
                   Meet the team →
@@ -223,7 +197,7 @@ const SecurityCompliance = () => {
                 <h3 className="text-xl font-semibold mb-2">Open-source tooling</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
-                  Homebrew taps — that other engineers use daily.
+                  Homebrew taps — in public repositories you can inspect.
                 </p>
                 <Link to="/open-source/" className="text-primary hover:underline text-sm font-medium">
                   See our OSS work →
@@ -340,7 +314,7 @@ const SecurityCompliance = () => {
                 },
                 {
                   q: "What if we fail the audit?",
-                  a: "We prepare you so thoroughly that audit failure is rare. But if findings are identified, we'll remediate them quickly and get you re-audited. Our track record: 100% pass rate."
+                  a: "We prepare you thoroughly against the framework's requirements before the audit. If findings are identified, we remediate them quickly and support you through re-audit."
                 },
                 {
                   q: "Do you provide ongoing security support?",
@@ -367,10 +341,10 @@ const SecurityCompliance = () => {
               🚀 Free Consultation Available
             </div>
             <p className="text-xl text-muted-foreground mb-10">
-              Book a free 30-minute consultationm, no sales pitch, just honest advice about your DevOps challenges.
+              Book a free 30-minute consultation, no sales pitch, just honest advice about your DevOps challenges.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-10 py-6 shadow-lg shadow-primary/20" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-6 sm:px-10 py-6 shadow-lg shadow-primary/20 w-full sm:w-auto max-w-full whitespace-normal text-center h-auto" asChild>
                 <Link to="/contact/">
                   Schedule Your Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -382,6 +356,21 @@ const SecurityCompliance = () => {
               </div>
             </div>
             <div className="mt-12 pt-8 border-t border-border">
+              <p className="text-sm text-muted-foreground mb-4">Related services:</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
+                <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
+                  <Link to="/solutions/devops-consulting/">
+                    DevOps Consulting
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
+                  <Link to="/solutions/cicd/">
+                    CI/CD Pipelines
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground mb-4">Or explore our other solutions:</p>
               <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
                 <Link to="/solutions/">
