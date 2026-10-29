@@ -16,37 +16,20 @@ const DevOpsConsulting = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>DevOps Consulting & Strategy | Senior DevOps Engineers | Target-Ops</title>
+        <title>DevOps Strategy Consulting | Senior Engineers | Target-Ops</title>
         <meta name="description" content="DevOps consulting and strategy from senior engineers who build and ship production infrastructure daily. Kubernetes, Terraform, CI/CD, AWS/GCP/Azure. Free 30-minute call." />
         <meta name="keywords" content="devops consulting, devops strategy consulting, devops consultant, devops transformation, kubernetes consulting, terraform consulting, aws consulting, gcp consulting" />
-        <meta property="og:title" content="DevOps Consulting & Strategy | Target-Ops" />
+        <meta property="og:title" content="DevOps Strategy Consulting | Target-Ops" />
         <meta property="og:description" content="DevOps consulting from senior engineers who build and ship production infrastructure daily. Free 30-minute call to discuss your challenges." />
         <link rel="canonical" href="https://target-ops.io/solutions/devops-consulting/" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Service",
-          "serviceType": "DevOps Consulting",
-          "provider": {
-            "@type": "Organization",
-            "name": "Target-Ops",
-            "url": "https://target-ops.io"
-          },
-          "areaServed": "Worldwide",
-          "description": "DevOps consulting and strategy services covering Kubernetes, Terraform, CI/CD pipelines, cloud migration, and infrastructure automation.",
-          "offers": {
-            "@type": "Offer",
-            "url": "https://target-ops.io/contact/",
-            "availability": "https://schema.org/InStock"
-          }
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "How long does a typical DevOps consulting engagement take?", "acceptedAnswer": { "@type": "Answer", "text": "Most engagements run 8–16 weeks from initial assessment to handoff. You usually see measurable improvements within the first few weeks through targeted quick wins, while larger transformations build over the full engagement." } },
+            { "@type": "Question", "name": "How long does a typical DevOps consulting engagement take?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on scope. A focused audit can take a few weeks; a full transformation a few months. Quick wins land early, and you get a realistic timeline in the written assessment before any commitment." } },
             { "@type": "Question", "name": "Do we need existing DevOps knowledge before engaging?", "acceptedAnswer": { "@type": "Answer", "text": "No. We work with teams at every maturity level — from founders setting up infrastructure for the first time to platform teams that want an outside opinion on their setup." } },
             { "@type": "Question", "name": "Will you work with our existing tools?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We're tool-agnostic. We assess what you have, keep what works, and only recommend changes where there's clear value. No vendor loyalty biases the answer." } },
-            { "@type": "Question", "name": "How much does DevOps consulting cost?", "acceptedAnswer": { "@type": "Answer", "text": "Engagements vary based on scope and complexity. Focused audits start in the low tens of thousands; full transformations scale with team and infrastructure size. We scope everything explicitly after a free 30-minute call." } },
+            { "@type": "Question", "name": "How much does DevOps consulting cost?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on scope and complexity - a focused audit is a very different engagement from a full transformation. After the free 30-minute call you get a detailed proposal with clear pricing before anything starts." } },
             { "@type": "Question", "name": "Do you offer ongoing support after implementation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many engagements transition into a monthly retainer, on-demand consulting hours, or periodic optimization reviews. Everything stays flexible." } }
           ]
         })}</script>
@@ -68,7 +51,7 @@ const DevOpsConsulting = () => {
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                DevOps Consulting & Strategy
+                DevOps Strategy Consulting
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto px-2">
@@ -162,32 +145,27 @@ const DevOpsConsulting = () => {
           </div>
         </section>
 
-        {/* Results */}
+        {/* What the Work Targets */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What a Well-Run DevOps Transformation Achieves</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Typical outcomes when the practices in this guide are applied consistently</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">What the Work Targets</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">The outcomes every engagement is measured against</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-gradient-to-br from-primary/10 to-tech-blue/10 border-primary/30 p-8 text-center">
-                <div className="text-5xl font-bold text-primary mb-2">5–10x</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Deployment Frequency</div>
+                <div className="text-2xl font-bold text-primary mb-2">Release often</div>
+                <div className="text-sm text-muted-foreground">Pipelines and IaC that make deployments routine instead of risky</div>
               </Card>
               <Card className="bg-gradient-to-br from-tech-blue/10 to-tech-cyan/10 border-tech-blue/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-blue mb-2">50–70%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Fewer Production Incidents</div>
+                <div className="text-2xl font-bold text-tech-blue mb-2">Fewer 3am incidents</div>
+                <div className="text-sm text-muted-foreground">Observability, rollout guardrails, and infrastructure that recovers on its own</div>
               </Card>
               <Card className="bg-gradient-to-br from-tech-cyan/10 to-primary/10 border-tech-cyan/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-cyan mb-2">30–50%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Lower Cloud Spend</div>
+                <div className="text-2xl font-bold text-tech-cyan mb-2">Cloud spend under control</div>
+                <div className="text-sm text-muted-foreground">Right-sized resources and visibility into where the money goes</div>
               </Card>
             </div>
-            <p className="text-sm text-muted-foreground text-center mt-6 max-w-3xl mx-auto">
-              Ranges reflect what teams typically achieve when CI/CD, Infrastructure as Code,
-              and observability are implemented together rather than piecemeal. Your specific
-              numbers depend on your starting point.
-            </p>
           </div>
         </section>
 
@@ -424,7 +402,7 @@ const DevOpsConsulting = () => {
               {[
                 {
                   q: "How long does a typical DevOps consulting engagement take?",
-                  a: "Most transformations take 12-16 weeks from assessment to full implementation and handoff. However, you'll see improvements within the first month with quick wins. We can adjust the timeline based on your specific needs and pace."
+                  a: "It depends on scope. A focused audit can take a few weeks; a full transformation a few months. Quick wins land early, and you get a realistic timeline in the written assessment before any commitment."
                 },
                 {
                   q: "Do we need to have existing DevOps knowledge?",
@@ -440,7 +418,7 @@ const DevOpsConsulting = () => {
                 },
                 {
                   q: "How much does DevOps consulting cost?",
-                  a: "Investment varies based on your infrastructure complexity, team size, and goals. Most engagements range from $50K-$150K for a complete transformation. We provide a detailed proposal after our initial assessment call. The ROI typically exceeds the investment within 6-12 months through efficiency gains."
+                  a: "It depends on scope and complexity - a focused audit is a very different engagement from a full transformation. After the free 30-minute call you get a detailed proposal with clear pricing before anything starts."
                 },
                 {
                   q: "Can you help with cloud migration at the same time?",
