@@ -16,10 +16,10 @@ const InfrastructureAutomation = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Infrastructure Automation | Terraform, Pulumi, IaC | Target-Ops</title>
-        <meta name="description" content="Infrastructure automation with Terraform, Pulumi, and IaC. Automate provisioning, scaling, and disaster recovery. Deploy in minutes, not days." />
-        <meta property="og:title" content="Infrastructure Automation | Target-Ops" />
-        <meta property="og:description" content="Automate your infrastructure with Terraform and IaC. Deploy faster, scale smarter, eliminate manual errors." />
+        <title>Infrastructure Automation Consulting | Target-Ops</title>
+        <meta name="description" content="Infrastructure automation consulting: from manual provisioning to rapid, reliable deployment. Terraform, Pulumi and IaC on AWS, GCP and Azure. Free 30-minute call." />
+        <meta property="og:title" content="Infrastructure Automation Consulting | Target-Ops" />
+        <meta property="og:description" content="From manual provisioning to rapid, reliable deployment. Terraform, Pulumi and IaC on AWS, GCP and Azure." />
         <link rel="canonical" href="https://target-ops.io/solutions/infrastructure-automation/" />
       </Helmet>
       <Navigation />
@@ -39,7 +39,7 @@ const InfrastructureAutomation = () => {
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Infrastructure Automation
+                Infrastructure Automation Consulting
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-2">
@@ -142,52 +142,26 @@ const InfrastructureAutomation = () => {
           </div>
         </section>
 
-        {/* Results */}
-        <section className="relative py-8 px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Results</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-tech-cyan/10 to-tech-blue/10 border-tech-cyan/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-cyan mb-2">90%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Faster Deployments</div>
-              </Card>
-              <Card className="bg-gradient-to-br from-tech-blue/10 to-tech-purple/10 border-tech-blue/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-blue mb-2">95%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Fewer Errors</div>
-              </Card>
-              <Card className="bg-gradient-to-br from-tech-purple/10 to-tech-cyan/10 border-tech-purple/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-purple mb-2">40%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Cost Reduction</div>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Case Study */}
+        {/* How an Engagement Works */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">E-commerce Platform: From 2-Day Deploys to 15 Minutes</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">How an Automation Engagement Works</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Senior engineers, honest scoping, code you own</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
-              <div className="space-y-6 text-muted-foreground">
+              <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">The Challenge</h3>
-                  <p>A fast-growing e-commerce company was manually provisioning servers for each new microservice. Each deployment took 2+ days of DevOps time, and configuration inconsistencies caused frequent production issues.</p>
+                  <h3 className="text-foreground font-semibold mb-2">1. Free 30-minute call</h3>
+                  <p className="text-muted-foreground mb-6">A focused conversation about what you're running today and what "deploy in minutes" would need to look like for your team. If we're not the right fit, we'll say so on the call.</p>
+                  <h3 className="text-foreground font-semibold mb-2">2. Infrastructure assessment</h3>
+                  <p className="text-muted-foreground">A structured review of your provisioning, configuration, environments, and deployment flow. You get a written findings document with a prioritized, realistic scope.</p>
                 </div>
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">Our Solution</h3>
-                  <p>We implemented Terraform for infrastructure provisioning and Ansible for configuration management. All infrastructure became code-defined, version-controlled, and automated through GitOps workflows.</p>
-                </div>
-                <div>
-                  <h3 className="text-foreground font-semibold mb-2">The Results</h3>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Deployment time reduced from 2 days to 15 minutes</li>
-                    <li>Zero configuration drift across 50+ servers</li>
-                    <li>Auto-scaling reduced infrastructure costs by 35%</li>
-                    <li>Team can now deploy 10x more frequently</li>
-                  </ul>
+                  <h3 className="text-foreground font-semibold mb-2">3. Hands-on implementation</h3>
+                  <p className="text-muted-foreground mb-6">We build the automation alongside your team — Terraform or Pulumi modules, configuration management, auto-scaling — checked into your repository, reviewed by your engineers, owned by you.</p>
+                  <h3 className="text-foreground font-semibold mb-2">4. Documentation and handoff</h3>
+                  <p className="text-muted-foreground">Your team runs the new setup when we leave. We document every pattern, pair on operational playbooks, and stay available for follow-up questions.</p>
                 </div>
               </div>
             </Card>
@@ -331,7 +305,7 @@ const InfrastructureAutomation = () => {
                 },
                 {
                   q: "How long does implementation take?",
-                  a: "Most projects take 4-8 weeks depending on complexity. Simple infrastructure: 2-3 weeks. Complex multi-cloud setups: 8-12 weeks. We'll provide a detailed timeline after assessment."
+                  a: "It depends on scope. Automating a single service is a matter of weeks; multi-cloud or heavily manual environments take longer. After the assessment you get a concrete timeline before any commitment."
                 },
                 {
                   q: "Will my team be able to maintain this after you're done?",
