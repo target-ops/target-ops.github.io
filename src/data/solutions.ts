@@ -34,7 +34,7 @@ export const solutions: Solution[] = [
     id: "infrastructure-automation",
     title: "Infrastructure Automation",
     slug: "infrastructure-automation",
-    description: "Tired of manual server setup and configuration? We automate your entire infrastructure—from provisioning to scaling—so your team can deploy in minutes instead of days and eliminate human errors.",
+    description: "Tired of manual server setup and configuration? We automate your infrastructure—from provisioning to scaling—with the goal of deployments that take minutes instead of days and far fewer manual errors.",
     features: [
       "We automate server provisioning and configuration",
       "Set up auto-scaling to handle traffic spikes",
@@ -48,7 +48,7 @@ export const solutions: Solution[] = [
     id: "cicd",
     title: "CI/CD Pipelines",
     slug: "cicd",
-    description: "Still deploying code manually? We build automated pipelines that test and deploy your code on every merge—so your team can release updates as often as it's ready while catching bugs before they reach production.",
+    description: "Still deploying code manually? We build automated pipelines that test and deploy your code on every merge—so your team can release updates as often as it's ready, with checks designed to catch bugs before production.",
     features: [
       "We design pipelines customized to your tech stack",
       "Automate testing to catch bugs early",
