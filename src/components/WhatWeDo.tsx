@@ -27,12 +27,12 @@ const WhatWeDo = () => {
   ];
 
   const outcomes = [
-    "Deploy on every merge with automated CI/CD pipelines",
-    "Cut cloud waste through right-sizing and optimization",
-    "Fewer manual errors with Infrastructure as Code",
+    "CI/CD pipelines that deploy on every merge",
+    "Right-sized infrastructure that cuts cloud waste",
+    "Infrastructure as Code instead of manual, error-prone changes",
     "Zero-downtime deployment patterns with instant rollbacks",
-    "Pass SOC 2, HIPAA, PCI-DSS audits with confidence",
-    "Auto-scale infrastructure based on real-time demand"
+    "Audit-ready infrastructure for SOC 2, HIPAA and PCI-DSS",
+    "Auto-scaling that follows real-time demand"
   ];
 
   return (
@@ -45,7 +45,7 @@ const WhatWeDo = () => {
             <span className="bg-gradient-primary bg-clip-text text-transparent">vs. After Us</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Startups don't realize they have an ops problem — they just know things feel broken.
+            Whether you're a startup outgrowing its setup or an enterprise stuck in manual ops — it feels the same: slow, fragile, expensive.
             <span className="block text-primary font-semibold mt-2 text-sm sm:text-base">Here's what changes when we step in.</span>
           </p>
         </div>
@@ -112,7 +112,7 @@ const WhatWeDo = () => {
         {/* Outcomes - Clean Simple Layout */}
         <div className="mb-6 sm:mb-8">
           <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-5 sm:mb-6 md:mb-8 text-center px-2">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">The Results You Get</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">What We Deliver</span>
           </h3>
           
           {/* Simple list with clean cards */}
