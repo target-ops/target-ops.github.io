@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-tech-blue/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tech-cyan/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 md:pt-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-12">
         <div className="max-w-5xl mx-auto">
           {/* Main heading - Clear service offering */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight px-2 text-white">
@@ -49,6 +49,15 @@ const Hero = () => {
               </Link>
             </Button>
           </div>
+
+          {/* Proof - real people, public work */}
+          <p className="text-sm sm:text-base text-muted-foreground mb-10 sm:mb-12 px-4">
+            Want proof before a call?{' '}
+            <Link to="/team/" className="text-primary hover:underline font-medium">Meet the team</Link>
+            {' '}and{' '}
+            <Link to="/open-source/" className="text-primary hover:underline font-medium">read our open-source code</Link>
+            {' '}on GitHub.
+          </p>
 
           {/* Service icons */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto px-4">
