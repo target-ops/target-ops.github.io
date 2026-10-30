@@ -83,7 +83,7 @@ const Services = () => {
           
           <div 
             ref={scrollRef}
-            className="flex gap-4 md:gap-8 py-4 overflow-x-auto scrollbar-hide snap-x md:snap-none snap-mandatory touch-pan-x"
+            className="flex gap-4 md:gap-8 py-4 overflow-x-auto scrollbar-hide snap-x md:snap-none snap-mandatory touch-auto"
             onMouseEnter={() => {
               console.log('Mouse entered carousel');
               setIsHovering(true);
