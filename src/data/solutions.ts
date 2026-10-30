@@ -62,7 +62,7 @@ export const solutions: Solution[] = [
     id: "security-compliance",
     title: "Security & Compliance",
     slug: "security-compliance",
-    description: "Need GDPR, HIPAA, or SOC 2 compliance but don't know where to start? We implement security measures and compliance frameworks that pass audits—without slowing down your development team.",
+    description: "Need GDPR, HIPAA, or SOC 2 compliance but don't know where to start? We implement security controls and audit-readiness work, aligned to your infrastructure and your team's requirements.",
     features: [
       "We audit your security and identify vulnerabilities",
       "Implement security best practices across your stack",
