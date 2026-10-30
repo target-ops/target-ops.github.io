@@ -27,12 +27,12 @@ const WhatWeDo = () => {
   ];
 
   const outcomes = [
-    "Deploy on every merge with automated CI/CD pipelines",
-    "Cut cloud waste through right-sizing and optimization",
-    "Fewer manual errors with Infrastructure as Code",
-    "Zero-downtime deployment patterns with instant rollbacks",
-    "Pass SOC 2, HIPAA, PCI-DSS audits with confidence",
-    "Auto-scale infrastructure based on real-time demand"
+    "CI/CD pipelines with automated checks and controlled releases",
+    "Cloud right-sizing and cost monitoring",
+    "Infrastructure as Code instead of manual, error-prone changes",
+    "Zero-downtime deployment strategy with planned rollback workflows",
+    "Controls implementation and audit preparation for SOC 2, HIPAA and PCI-DSS - scoped to the requirements that apply to your stack",
+    "Auto-scaling setup based on real-time demand"
   ];
 
   return (
@@ -41,12 +41,12 @@ const WhatWeDo = () => {
         {/* What We Do */}
         <div className="text-center mb-6 sm:mb-10 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 px-2">
-            <span className="text-foreground">Before Us </span>
-            <span className="bg-gradient-primary bg-clip-text text-transparent">vs. After Us</span>
+            <span className="text-foreground">The Problem </span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">vs. The Goal</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Startups don't realize they have an ops problem — they just know things feel broken.
-            <span className="block text-primary font-semibold mt-2 text-sm sm:text-base">Here's what changes when we step in.</span>
+            Whether you're a startup outgrowing its setup or an enterprise stuck in manual ops — it feels the same: slow, fragile, expensive.
+            <span className="block text-primary font-semibold mt-2 text-sm sm:text-base">Common examples from our work areas - goals we aim for, not case results.</span>
           </p>
         </div>
 
@@ -71,7 +71,7 @@ const WhatWeDo = () => {
                     <div className="flex items-center gap-1 mb-1.5">
                       <XCircle className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-red-400 flex-shrink-0" />
                       <p className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-wide text-red-400 font-bold">
-                        Before
+                        Today
                       </p>
                     </div>
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight sm:leading-snug">
@@ -89,7 +89,7 @@ const WhatWeDo = () => {
                     <div className="flex items-center gap-1 mb-1.5">
                       <CheckCircle2 className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-green-400 flex-shrink-0" />
                       <p className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-wide text-green-400 font-bold">
-                        After
+                        The goal
                       </p>
                     </div>
                     <p className="text-[9px] sm:text-[10px] md:text-xs text-foreground font-medium leading-tight sm:leading-snug">
@@ -112,7 +112,7 @@ const WhatWeDo = () => {
         {/* Outcomes - Clean Simple Layout */}
         <div className="mb-6 sm:mb-8">
           <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-5 sm:mb-6 md:mb-8 text-center px-2">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">The Results You Get</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">What We Deliver</span>
           </h3>
           
           {/* Simple list with clean cards */}
