@@ -15,7 +15,7 @@ const WhatWeDo = () => {
       service: "Cloud Costs",
       before: "Bills spike unexpectedly. No cost visibility. Over-provisioned resources. Budget overruns.",
       after: "Predictable monthly costs. Real-time monitoring. Right-sized infrastructure.",
-      metric: "Typical savings: 30–50%"
+      metric: "Goal: predictable monthly spend"
     },
     {
       icon: Users,
@@ -27,10 +27,10 @@ const WhatWeDo = () => {
   ];
 
   const outcomes = [
-    "Deploy 10× faster with automated CI/CD pipelines",
-    "Cut cloud costs by 30–50% through optimization",
-    "95% fewer manual errors with Infrastructure as Code",
-    "Zero-downtime deployments with instant rollbacks",
+    "Deploy on every merge with automated CI/CD pipelines",
+    "Cut cloud waste through right-sizing and optimization",
+    "Fewer manual errors with Infrastructure as Code",
+    "Zero-downtime deployment patterns with instant rollbacks",
     "Pass SOC 2, HIPAA, PCI-DSS audits with confidence",
     "Auto-scale infrastructure based on real-time demand"
   ];
@@ -148,4 +148,3 @@ const WhatWeDo = () => {
 };
 
 export default WhatWeDo;
-

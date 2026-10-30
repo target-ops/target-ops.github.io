@@ -6,7 +6,7 @@ export const solutions: Solution[] = [
     id: "devops-consulting",
     title: "DevOps Consulting",
     slug: "devops-consulting",
-    description: "Struggling with slow deployments or team silos? We assess your current processes, create a clear roadmap, and guide your team through implementing DevOps practices that actually work—reducing deployment time by up to 80%.",
+    description: "Struggling with slow deployments or team silos? We assess your current processes, create a clear roadmap, and guide your team through implementing DevOps practices that actually work—so releases stop being a bottleneck.",
     features: [
       "We evaluate your current setup and identify bottlenecks",
       "Create a step-by-step plan tailored to your business",
@@ -20,10 +20,10 @@ export const solutions: Solution[] = [
     id: "cloud-migration",
     title: "Cloud Migration",
     slug: "cloud-migration",
-    description: "Moving to the cloud but worried about downtime or data loss? We plan and execute your entire migration—from AWS to GCP to Azure—ensuring zero downtime and immediate cost savings of 30-50%.",
+    description: "Moving to the cloud but worried about downtime or data loss? We plan and execute your entire migration—from AWS to GCP to Azure—with a cutover plan that minimizes downtime and keeps costs visible from day one.",
     features: [
       "We analyze your infrastructure and plan the migration",
-      "Execute the move with zero downtime guarantee",
+      "Execute the move with a detailed cutover plan that minimizes downtime",
       "Optimize your cloud costs from day one",
       "Monitor and support you after the migration"
     ],
@@ -34,7 +34,7 @@ export const solutions: Solution[] = [
     id: "infrastructure-automation",
     title: "Infrastructure Automation",
     slug: "infrastructure-automation",
-    description: "Tired of manual server setup and configuration? We automate your entire infrastructure—from provisioning to scaling—so your team can deploy in minutes instead of days and eliminate human errors.",
+    description: "Tired of manual server setup and configuration? We automate your infrastructure—from provisioning to scaling—with the goal of deployments that take minutes instead of days and far fewer manual errors.",
     features: [
       "We automate server provisioning and configuration",
       "Set up auto-scaling to handle traffic spikes",
@@ -48,7 +48,7 @@ export const solutions: Solution[] = [
     id: "cicd",
     title: "CI/CD Pipelines",
     slug: "cicd",
-    description: "Still deploying code manually? We build automated pipelines that test and deploy your code in minutes—enabling your team to release updates 10x faster while catching bugs before they reach production.",
+    description: "Still deploying code manually? We build automated pipelines that test and deploy your code on every merge—so your team can release updates as often as it's ready, with checks designed to catch bugs before production.",
     features: [
       "We design pipelines customized to your tech stack",
       "Automate testing to catch bugs early",
@@ -62,7 +62,7 @@ export const solutions: Solution[] = [
     id: "security-compliance",
     title: "Security & Compliance",
     slug: "security-compliance",
-    description: "Need GDPR, HIPAA, or SOC 2 compliance but don't know where to start? We implement security measures and compliance frameworks that pass audits—without slowing down your development team.",
+    description: "Need GDPR, HIPAA, or SOC 2 compliance but don't know where to start? We implement security controls and audit-readiness work, aligned to your infrastructure and your team's requirements.",
     features: [
       "We audit your security and identify vulnerabilities",
       "Implement security best practices across your stack",
@@ -95,4 +95,3 @@ export const whyChooseUs = {
     }
   ]
 };
-

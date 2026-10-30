@@ -72,24 +72,24 @@ const routeMeta = {
     description: 'Comprehensive DevOps solutions: Cloud migration, infrastructure automation, CI/CD pipelines, security & compliance. AWS, GCP, Azure expertise.',
   },
   '/solutions/devops-consulting': {
-    title: 'DevOps Strategy & Consulting Services | Target-Ops',
-    description: 'DevOps strategy consulting from senior engineers who ship production infrastructure daily. Kubernetes, Terraform, CI/CD, AWS/GCP/Azure. Book a free 30-minute call.',
+    title: 'DevOps Strategy Consulting | Senior Engineers | Target-Ops',
+    description: 'DevOps consulting and strategy from senior engineers who build and ship production infrastructure daily. Kubernetes, Terraform, CI/CD, AWS/GCP/Azure. Free 30-minute call.',
   },
   '/solutions/cloud-migration': {
-    title: 'Cloud Migration Services | AWS, GCP, Azure Migration',
-    description: 'Zero-downtime cloud migration services. Migrate to AWS, GCP, or Azure with confidence. Infrastructure assessment, planning, and execution.',
+    title: 'Cloud Migration Services | AWS, GCP, Azure Migration | Target-Ops',
+    description: 'Cloud migration services for AWS, GCP, and Azure. Zero-downtime migration strategy, cost optimization from day one, and security built in. Free 30-minute call.',
   },
   '/solutions/infrastructure-automation': {
-    title: 'Infrastructure Automation | Terraform, Pulumi, IaC',
-    description: 'Automate your infrastructure with Infrastructure as Code. Terraform, Pulumi, CloudFormation expertise. Reduce manual work by 90%.',
+    title: 'Infrastructure Automation Consulting | Target-Ops',
+    description: 'Infrastructure automation consulting: from manual provisioning to rapid, reliable deployment. Terraform, Pulumi and IaC on AWS, GCP and Azure. Free 30-minute call.',
   },
   '/solutions/cicd': {
-    title: 'CI/CD Pipeline Development | Fast & Reliable Deployments',
-    description: 'Build robust CI/CD pipelines. GitHub Actions, GitLab CI, Jenkins, CircleCI. Deploy 10x faster with automated testing and rollbacks.',
+    title: 'CI/CD Automation Services | Target-Ops',
+    description: 'CI/CD automation services: pipelines that test and deploy on every merge. GitHub Actions, GitLab CI, Jenkins. Catch bugs before production. Free 30-minute call.',
   },
   '/solutions/security-compliance': {
-    title: 'DevSecOps & Security Compliance | SOC 2, HIPAA, PCI-DSS',
-    description: 'Security-first DevOps practices. SOC 2, HIPAA, PCI-DSS compliance. Automated security scanning, vulnerability management.',
+    title: 'Security & Compliance | SOC 2, HIPAA, PCI-DSS | Target-Ops',
+    description: 'DevOps security and compliance services: SOC 2, HIPAA, PCI-DSS, GDPR. Automated security scanning, vulnerability management, and audit preparation.',
   },
   '/team': {
     title: 'Meet the Team | DevOps Experts at Target-Ops',
@@ -198,6 +198,35 @@ function buildStructuredData(route, meta) {
       publisher: { '@id': 'https://target-ops.io/#organization' },
     },
   ];
+
+  const solutionServices = {
+    '/solutions/devops-consulting': 'DevOps Strategy Consulting',
+    '/solutions/cloud-migration': 'Cloud Migration Services',
+    '/solutions/infrastructure-automation': 'Infrastructure Automation Consulting',
+    '/solutions/cicd': 'CI/CD Automation Services',
+    '/solutions/security-compliance': 'Security & Compliance Consulting',
+  };
+
+  if (solutionServices[route]) {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${url}#service`,
+      serviceType: solutionServices[route],
+      name: solutionServices[route],
+      description: meta.description,
+      provider: { '@id': 'https://target-ops.io/#organization' },
+      url,
+      areaServed: 'Worldwide',
+    });
+    graph.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://target-ops.io/' },
+        { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://target-ops.io/solutions/' },
+        { '@type': 'ListItem', position: 3, name: solutionServices[route], item: url },
+      ],
+    });
+  }
 
   if (route.startsWith('/articles/') && articleDates[route]) {
     graph.push({
@@ -392,4 +421,3 @@ function generateStaticPages() {
 
 // Run the generator
 generateStaticPages();
-

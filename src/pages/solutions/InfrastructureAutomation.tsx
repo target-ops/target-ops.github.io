@@ -16,10 +16,10 @@ const InfrastructureAutomation = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Infrastructure Automation | Terraform, Pulumi, IaC | Target-Ops</title>
-        <meta name="description" content="Infrastructure automation with Terraform, Pulumi, and IaC. Automate provisioning, scaling, and disaster recovery. Deploy in minutes, not days." />
-        <meta property="og:title" content="Infrastructure Automation | Target-Ops" />
-        <meta property="og:description" content="Automate your infrastructure with Terraform and IaC. Deploy faster, scale smarter, eliminate manual errors." />
+        <title>Infrastructure Automation Consulting | Target-Ops</title>
+        <meta name="description" content="Infrastructure automation consulting: from manual provisioning to rapid, reliable deployment. Terraform, Pulumi and IaC on AWS, GCP and Azure. Free 30-minute call." />
+        <meta property="og:title" content="Infrastructure Automation Consulting | Target-Ops" />
+        <meta property="og:description" content="From manual provisioning to rapid, reliable deployment. Terraform, Pulumi and IaC on AWS, GCP and Azure." />
         <link rel="canonical" href="https://target-ops.io/solutions/infrastructure-automation/" />
       </Helmet>
       <Navigation />
@@ -39,11 +39,11 @@ const InfrastructureAutomation = () => {
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-2">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Infrastructure Automation
+                Infrastructure Automation Consulting
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-2">
-              Tired of manual server setup and configuration? We automate your entire infrastructure—from provisioning to scaling—so your team can deploy in minutes instead of days and eliminate human errors.
+              Tired of manual server setup and configuration? We automate your infrastructure—from provisioning to scaling—with the goal of deployments that take minutes instead of days and far fewer manual errors.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8" asChild>
@@ -65,21 +65,21 @@ const InfrastructureAutomation = () => {
                 <Clock className="h-10 w-10 text-tech-cyan mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Slow Deployments</h3>
                 <p className="text-muted-foreground">
-                  Manual server setup taking days? We automate provisioning, configuration, and deployment—reducing time from days to minutes.
+                  Manual server setup taking days? We automate provisioning, configuration, and deployment—work aimed at cutting setup from days to minutes.
                 </p>
               </Card>
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
                 <Zap className="h-10 w-10 text-tech-cyan mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Configuration Drift</h3>
                 <p className="text-muted-foreground">
-                  Servers configured differently? We implement Infrastructure as Code (IaC) to ensure every environment is identical and version-controlled.
+                  Servers configured differently? We implement Infrastructure as Code (IaC) so environments stay consistent and version-controlled.
                 </p>
               </Card>
               <Card className="bg-background/50 backdrop-blur-sm border-border p-6">
                 <TrendingDown className="h-10 w-10 text-tech-cyan mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Scaling Nightmares</h3>
                 <p className="text-muted-foreground">
-                  Can't handle traffic spikes? We build auto-scaling infrastructure that grows with demand and shrinks when traffic drops—saving you money.
+                  Can't handle traffic spikes? We build auto-scaling infrastructure designed to grow with demand and shrink when traffic drops—so you stop paying for idle capacity.
                 </p>
               </Card>
             </div>
@@ -142,52 +142,26 @@ const InfrastructureAutomation = () => {
           </div>
         </section>
 
-        {/* Results */}
-        <section className="relative py-8 px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center px-2">The Results</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-gradient-to-br from-tech-cyan/10 to-tech-blue/10 border-tech-cyan/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-cyan mb-2">90%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Faster Deployments</div>
-              </Card>
-              <Card className="bg-gradient-to-br from-tech-blue/10 to-tech-purple/10 border-tech-blue/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-blue mb-2">95%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Fewer Errors</div>
-              </Card>
-              <Card className="bg-gradient-to-br from-tech-purple/10 to-tech-cyan/10 border-tech-purple/30 p-8 text-center">
-                <div className="text-5xl font-bold text-tech-purple mb-2">40%</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wide">Cost Reduction</div>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Case Study */}
+        {/* How an Engagement Works */}
         <section className="relative py-8 px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">Success Story</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">E-commerce Platform: From 2-Day Deploys to 15 Minutes</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-2">How an Automation Engagement Works</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2">Senior engineers, honest scoping, code you own</p>
             </div>
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8">
-              <div className="space-y-6 text-muted-foreground">
+              <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">The Challenge</h3>
-                  <p>A fast-growing e-commerce company was manually provisioning servers for each new microservice. Each deployment took 2+ days of DevOps time, and configuration inconsistencies caused frequent production issues.</p>
+                  <h3 className="text-foreground font-semibold mb-2">1. Free 30-minute call</h3>
+                  <p className="text-muted-foreground mb-6">A focused conversation about what you're running today and what "deploy in minutes" would need to look like for your team. If we're not the right fit, we'll say so on the call.</p>
+                  <h3 className="text-foreground font-semibold mb-2">2. Infrastructure assessment</h3>
+                  <p className="text-muted-foreground">A structured review of your provisioning, configuration, environments, and deployment flow. You get a written findings document with a prioritized, realistic scope.</p>
                 </div>
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">Our Solution</h3>
-                  <p>We implemented Terraform for infrastructure provisioning and Ansible for configuration management. All infrastructure became code-defined, version-controlled, and automated through GitOps workflows.</p>
-                </div>
-                <div>
-                  <h3 className="text-foreground font-semibold mb-2">The Results</h3>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Deployment time reduced from 2 days to 15 minutes</li>
-                    <li>Zero configuration drift across 50+ servers</li>
-                    <li>Auto-scaling reduced infrastructure costs by 35%</li>
-                    <li>Team can now deploy 10x more frequently</li>
-                  </ul>
+                  <h3 className="text-foreground font-semibold mb-2">3. Hands-on implementation</h3>
+                  <p className="text-muted-foreground mb-6">We build the automation alongside your team — Terraform or Pulumi modules, configuration management, auto-scaling — checked into your repository, reviewed by your engineers, owned by you.</p>
+                  <h3 className="text-foreground font-semibold mb-2">4. Documentation and handoff</h3>
+                  <p className="text-muted-foreground">Your team runs the new setup when we leave. We document every pattern, pair on operational playbooks, and stay available for follow-up questions.</p>
                 </div>
               </div>
             </Card>
@@ -208,8 +182,7 @@ const InfrastructureAutomation = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Experienced engineers</h3>
                 <p className="text-muted-foreground text-sm mb-4">
-                  The engineer who scopes your automation engagement is the engineer who builds it.
-                  No offshore handoff, no junior rotation, no middle layer.
+                  A small founding team of three senior engineers.
                 </p>
                 <Link to="/team/" className="text-primary hover:underline text-sm font-medium">
                   Meet the team →
@@ -222,7 +195,7 @@ const InfrastructureAutomation = () => {
                 <h3 className="text-xl font-semibold mb-2">Open-source tooling</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   We build and maintain developer tooling — the VS Code DevOps Pack, AnyClown,
-                  Homebrew taps — that other engineers use daily.
+                  Homebrew taps — in public repositories you can inspect.
                 </p>
                 <Link to="/open-source/" className="text-primary hover:underline text-sm font-medium">
                   See our OSS work →
@@ -331,11 +304,11 @@ const InfrastructureAutomation = () => {
                 },
                 {
                   q: "How long does implementation take?",
-                  a: "Most projects take 4-8 weeks depending on complexity. Simple infrastructure: 2-3 weeks. Complex multi-cloud setups: 8-12 weeks. We'll provide a detailed timeline after assessment."
+                  a: "It depends on scope. Automating a single service is a matter of weeks; multi-cloud or heavily manual environments take longer. After the assessment you get a concrete timeline before any commitment."
                 },
                 {
                   q: "Will my team be able to maintain this after you're done?",
-                  a: "Absolutely. Knowledge transfer is built into our process. We provide documentation, training sessions, and code reviews. Your team will be confident managing and extending the automation."
+                  a: "That's the goal. Knowledge transfer is built into our process—documentation, training sessions, and code reviews—so your team can manage and extend the automation without us."
                 },
                 {
                   q: "What if we're using legacy systems?",
@@ -368,8 +341,8 @@ const InfrastructureAutomation = () => {
             <p className="text-xl text-muted-foreground mb-10">
               Book a free 30-minute consultation, no sales pitch, just honest advice about your DevOps challenges.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-10 py-6 shadow-lg shadow-primary/20" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-6 sm:px-10 py-6 shadow-lg shadow-primary/20 w-full sm:w-auto max-w-full whitespace-normal text-center h-auto" asChild>
                 <Link to="/contact/">
                   Schedule Your Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -381,6 +354,21 @@ const InfrastructureAutomation = () => {
               </div>
             </div>
             <div className="mt-12 pt-8 border-t border-border">
+              <p className="text-sm text-muted-foreground mb-4">Related services:</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
+                <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
+                  <Link to="/solutions/devops-consulting/">
+                    DevOps Consulting
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
+                  <Link to="/solutions/cicd/">
+                    CI/CD Pipelines
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground mb-4">Or explore our other solutions:</p>
               <Button variant="ghost" className="text-primary hover:text-primary/80" asChild>
                 <Link to="/solutions/">
