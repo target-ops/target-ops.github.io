@@ -24,7 +24,7 @@ const Articles = () => {
         <link rel="canonical" href="https://target-ops.io/articles/" />
       </Helmet>
       <Navigation />
-      <main className="relative pt-16">
+      <main className="relative pt-16 overflow-hidden">
         {/* Animated background - same as other pages */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background"></div>
         <div 
