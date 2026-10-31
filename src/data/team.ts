@@ -9,7 +9,7 @@ export const teamMembers: TeamMember[] = [
     bio: "With over a decade of experience, Ofir specializes in architecting and managing large-scale cloud infrastructures that power thousands of applications. His expertise lies in turning complex technical challenges into streamlined, automated solutions that drive business growth.\n\nOfir's strategic approach combines cutting-edge technology with practical business outcomes. He helps organizations accelerate their deployment cycles, reduce operational costs, and build resilient systems that scale effortlessly. His passion for innovation ensures your infrastructure stays ahead of the curve.",
     avatar: "https://avatars.githubusercontent.com/u/29667112?s=330&v=4",
     social: {
-      github: "https://github.com/ofirhaim"
+      github: "https://github.com/OfirHaim1"
     },
     weight: 1
   },
@@ -35,4 +35,3 @@ export const teamMembers: TeamMember[] = [
     weight: 2
   }
 ];
-
