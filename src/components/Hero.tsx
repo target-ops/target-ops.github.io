@@ -39,7 +39,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 px-4">
             <Button size="lg" className="bg-gradient-primary hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 group w-full sm:w-auto" asChild>
               <Link to="/contact/">
-                Book a Free 30-Minute Call
+                Request a Free 30-Minute Call
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
