@@ -105,7 +105,7 @@ const Articles = () => {
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8 text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated</h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                We publish DevOps insights, tutorials, and best practices on dev.to. Follow us there to never miss an update.
+                Find our articles on dev.to. Follow us there to never miss an update.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-all duration-300 shadow-glow" asChild>
