@@ -103,7 +103,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 sm:mt-12 pt-6 sm:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
             <p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
-              © 2024 Target-Ops. All rights reserved.
+              © {new Date().getFullYear()} Target-Ops. All rights reserved.
             </p>
             <div className="flex space-x-4 sm:space-x-6">
               <Link to="/privacy/" className="text-muted-foreground hover:text-primary text-xs sm:text-sm transition-colors">
