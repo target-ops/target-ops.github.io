@@ -18,7 +18,7 @@ const Articles = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>DevOps Articles & Tutorials | Kubernetes, Cloud, CI/CD | Target-Ops</title>
-        <meta name="description" content="DevOps tutorials, Kubernetes guides, cloud migration strategies, and infrastructure automation best practices from Target-Ops engineers. Updated weekly with hands-on tutorials." />
+        <meta name="description" content="DevOps tutorials, Kubernetes guides, cloud migration strategies, and infrastructure automation best practices from Target-Ops engineers. Hands-on tutorials." />
         <meta property="og:title" content="DevOps Articles & Tutorials | Target-Ops" />
         <meta property="og:description" content="Learn DevOps from expert engineers: Kubernetes tutorials, cloud migration strategies, and infrastructure automation best practices." />
         <link rel="canonical" href="https://target-ops.io/articles/" />
@@ -51,7 +51,7 @@ const Articles = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Real-world DevOps insights, battle-tested strategies, and hands-on tutorials from engineers who've deployed at scale. New articles every week.
+              Real-world DevOps insights, battle-tested strategies, and hands-on tutorials from engineers who've deployed at scale.
             </p>
           </div>
         </section>
@@ -105,7 +105,7 @@ const Articles = () => {
             <Card className="bg-background/50 backdrop-blur-sm border-border p-8 text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated</h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                We publish new DevOps insights, tutorials, and best practices every week. Follow us on dev.to to never miss an update.
+                We publish DevOps insights, tutorials, and best practices on dev.to. Follow us there to never miss an update.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-all duration-300 shadow-glow" asChild>
