@@ -9,7 +9,10 @@
     "build:dev": "vite build --mode development",
     "prerender": "node prerender.cjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prebuild": "node prepare-brand-assets.cjs",
+    "predev": "node prepare-brand-assets.cjs",
+    "prebuild:dev": "node prepare-brand-assets.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
