@@ -168,6 +168,7 @@ const articleDates = {
 };
 
 const OG_IMAGE = 'https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp';
+const SOCIAL_IMAGE = 'https://target-ops.io/assets/og-cover.png';
 
 // Build JSON-LD for a route: Organization + WebSite sitewide, plus
 // BlogPosting + BreadcrumbList on article detail pages (rich-result eligible).
@@ -277,9 +278,9 @@ function generateHTML(route, meta, assetReferences) {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=20261118" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20261118" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20261118" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Primary Meta Tags -->
@@ -295,7 +296,11 @@ function generateHTML(route, meta, assetReferences) {
     <meta property="og:url" content="https://target-ops.io${route}/" />
     <meta property="og:title" content="${meta.title}" />
     <meta property="og:description" content="${meta.description}" />
-    <meta property="og:image" content="https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp" />
+    <meta property="og:image" content="${SOCIAL_IMAGE}" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Target Ops - DevOps & AI infrastructure consulting" />
     <meta property="og:site_name" content="Target-Ops" />
 
     <!-- Twitter -->
@@ -303,7 +308,7 @@ function generateHTML(route, meta, assetReferences) {
     <meta name="twitter:url" content="https://target-ops.io${route}/" />
     <meta name="twitter:title" content="${meta.title}" />
     <meta name="twitter:description" content="${meta.description}" />
-    <meta name="twitter:image" content="https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp" />
+    <meta name="twitter:image" content="${SOCIAL_IMAGE}" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YWWR9DFR3T"></script>
