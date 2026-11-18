@@ -1,4 +1,4 @@
-// Source assets are encoded losslessly in brand/assets.base64.json so changes
+// Source assets are encoded losslessly in brand-assets.base64.json so changes
 // can be reviewed without a binary upload. No network or image dependencies.
 const fs = require('node:fs');
 const path = require('node:path');
