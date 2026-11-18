@@ -167,7 +167,7 @@ const articleDates = {
   '/articles/gitswitch-per-directory-identity': '2026-05-02',
 };
 
-const OG_IMAGE = 'https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp';
+const OG_IMAGE = 'https://target-ops.io/assets/og-cover.png';
 
 // Build JSON-LD for a route: Organization + WebSite sitewide, plus
 // BlogPosting + BreadcrumbList on article detail pages (rich-result eligible).
@@ -295,7 +295,11 @@ function generateHTML(route, meta, assetReferences) {
     <meta property="og:url" content="https://target-ops.io${route}/" />
     <meta property="og:title" content="${meta.title}" />
     <meta property="og:description" content="${meta.description}" />
-    <meta property="og:image" content="https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp" />
+    <meta property="og:image" content="${OG_IMAGE}" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:image:alt" content="Target Ops - DevOps & AI infrastructure consulting" />
     <meta property="og:site_name" content="Target-Ops" />
 
     <!-- Twitter -->
@@ -303,7 +307,7 @@ function generateHTML(route, meta, assetReferences) {
     <meta name="twitter:url" content="https://target-ops.io${route}/" />
     <meta name="twitter:title" content="${meta.title}" />
     <meta name="twitter:description" content="${meta.description}" />
-    <meta name="twitter:image" content="https://target-ops.io/assets/targetOpsBlackNOBG-FULL.webp" />
+    <meta name="twitter:image" content="${OG_IMAGE}" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YWWR9DFR3T"></script>
